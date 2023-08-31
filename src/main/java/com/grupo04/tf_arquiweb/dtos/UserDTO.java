@@ -8,7 +8,7 @@ public class UserDTO {
     private String User_Correo;
     private String User_Contrasena;
     private int User_Telefono;
-    private byte User_EsAdmin;
+    private byte User_Esadmin;
 
     public int getUser_ID() {
         return User_ID;
@@ -58,11 +58,11 @@ public class UserDTO {
         User_Telefono = user_Telefono;
     }
 
-    public byte isUser_EsAdmin() {
-        return User_EsAdmin;
+    public byte isUser_Esadmin() {
+        return User_Esadmin;
     }
 
-    public void setUser_EsAdmin(byte user_EsAdmin) {
-        User_EsAdmin = user_EsAdmin;
+    public void setUser_EsAdmin(byte user_Esadmin) {
+        User_Esadmin = user_Esadmin;
     }
 }
