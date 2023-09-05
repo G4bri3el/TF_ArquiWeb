@@ -8,7 +8,7 @@ public class Reserva {
 
     @Id//anotación para marcar atributo como ID
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int RerservaID;
+    private int ReservaID;
 
     @Column(name = "ReservaEstado", nullable = false)
     private Boolean ReservaEstado;
@@ -22,17 +22,17 @@ public class Reserva {
     }
 
     public Reserva(int rerservaID, Boolean reservaEstado, User user) {
-        RerservaID = rerservaID;
+        ReservaID = rerservaID;
         ReservaEstado = reservaEstado;
         this.user = user;
     }
 
     public int getRerservaID() {
-        return RerservaID;
+        return ReservaID;
     }
 
     public void setRerservaID(int rerservaID) {
-        RerservaID = rerservaID;
+        ReservaID = rerservaID;
     }
 
     public Boolean getReservaEstado() {
