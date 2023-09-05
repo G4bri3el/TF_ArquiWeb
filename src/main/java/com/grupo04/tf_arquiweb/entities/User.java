@@ -7,86 +7,87 @@ import jakarta.persistence.*;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int User_ID;
+    private int UserID;
 
     @Column(name = "User_Nombre",nullable = false,length = 50)
-    private String User_Nombre;
+    private String UserNombre;
     @Column(name = "User_Apellido",nullable = false,length = 50)
-    private String User_Apellido;
+    private String UserApellido;
     @Column(name = "User_Correo",nullable = false,length = 50)
-    private String User_Correo;
+    private String UserCorreo;
     @Column(name = "User_Contrasena",nullable = false,length = 50)
-    private String User_Contrasena;
+    private String UserContrasena;
     @Column(name = "User_Telefono",nullable = false)
-    private int User_Telefono;
+    private int UserTelefono;
     @Column(name = "User_Esadmin",nullable = false)
-    private byte User_Esadmin;
+    private byte UserEsadmin;
 
     public User() {
     }
-    public User(int user_ID, String user_Nombre, String user_Apellido, String user_Correo, String user_Contrasena, int user_Telefono, byte user_Esadmin) {
-        this.User_ID = user_ID;
-        this.User_Nombre = user_Nombre;
-        this.User_Apellido = user_Apellido;
-        this.User_Correo = user_Correo;
-        this.User_Contrasena = user_Contrasena;
-        this.User_Telefono = user_Telefono;
-        this.User_Esadmin = user_Esadmin;
+
+    public User(int userID, String userNombre, String userApellido, String userCorreo, String userContrasena, int userTelefono, byte userEsadmin) {
+        UserID = userID;
+        UserNombre = userNombre;
+        UserApellido = userApellido;
+        UserCorreo = userCorreo;
+        UserContrasena = userContrasena;
+        UserTelefono = userTelefono;
+        UserEsadmin = userEsadmin;
     }
 
-    public int getUser_ID() {
-        return User_ID;
+    public int getUserID() {
+        return UserID;
     }
 
-    public void setUser_ID(int user_ID) {
-        User_ID = user_ID;
+    public void setUserID(int userID) {
+        UserID = userID;
     }
 
-    public String getUser_Nombre() {
-        return User_Nombre;
+    public String getUserNombre() {
+        return UserNombre;
     }
 
-    public void setUser_Nombre(String user_Nombre) {
-        User_Nombre = user_Nombre;
+    public void setUserNombre(String userNombre) {
+        UserNombre = userNombre;
     }
 
-    public String getUser_Apellido() {
-        return User_Apellido;
+    public String getUserApellido() {
+        return UserApellido;
     }
 
-    public void setUser_Apellido(String user_Apellido) {
-        User_Apellido = user_Apellido;
+    public void setUserApellido(String userApellido) {
+        UserApellido = userApellido;
     }
 
-    public String getUser_Correo() {
-        return User_Correo;
+    public String getUserCorreo() {
+        return UserCorreo;
     }
 
-    public void setUser_Correo(String user_Correo) {
-        User_Correo = user_Correo;
+    public void setUserCorreo(String userCorreo) {
+        UserCorreo = userCorreo;
     }
 
-    public String getUser_Contrasena() {
-        return User_Contrasena;
+    public String getUserContrasena() {
+        return UserContrasena;
     }
 
-    public void setUser_Contrasena(String user_Contrasena) {
-        User_Contrasena = user_Contrasena;
+    public void setUserContrasena(String userContrasena) {
+        UserContrasena = userContrasena;
     }
 
-    public int getUser_Telefono() {
-        return User_Telefono;
+    public int getUserTelefono() {
+        return UserTelefono;
     }
 
-    public void setUser_Telefono(int user_Telefono) {
-        User_Telefono = user_Telefono;
+    public void setUserTelefono(int userTelefono) {
+        UserTelefono = userTelefono;
     }
 
-    public byte isUser_Esadmin() {
-        return User_Esadmin;
+    public byte getUserEsadmin() {
+        return UserEsadmin;
     }
 
-    public void setUser_EsAdmin(byte user_Esadmin) {
-        User_Esadmin = user_Esadmin;
+    public void setUserEsadmin(byte userEsadmin) {
+        UserEsadmin = userEsadmin;
     }
 }
