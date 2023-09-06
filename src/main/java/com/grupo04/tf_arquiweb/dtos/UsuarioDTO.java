@@ -2,9 +2,8 @@ package com.grupo04.tf_arquiweb.dtos;
 
 
 import com.grupo04.tf_arquiweb.entities.Roles;
-import jakarta.persistence.Column;
 
-public class UserDTO {
+public class UsuarioDTO {
 
     private String UserCorreo;
 
