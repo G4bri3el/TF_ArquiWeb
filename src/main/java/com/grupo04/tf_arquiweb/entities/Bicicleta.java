@@ -8,7 +8,7 @@ public class Bicicleta {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int BicicletaID;
+    private int BicicletaId;
 
     @Column(name = "BicicletaModelo", nullable = false, length = 50)
     private String BicicletaModelo;
@@ -29,30 +29,31 @@ public class Bicicleta {
     private String BicletaFoto;
 
     @ManyToOne
-    @JoinColumn(name = "LocalID")
+    @JoinColumn(name = "LocalId")
     private Local local;
 
     public Bicicleta() {
 
     }
 
-    public Bicicleta(int bicicletaID, String bicicletaModelo, Boolean bicicletaEstado, double bicicletaPrecio, int bicicletaNumAro, String bicicletaDetalles, String bicicletaFoto,Local local) {
-        BicicletaID = bicicletaID;
+    public Bicicleta(int bicicletaId, String bicicletaModelo, Boolean bicicletaEstado, double bicicletaPrecio, int bicicletaNumAro, String bicicletaDetalles, String bicletaFoto, Local local) {
+        BicicletaId = bicicletaId;
         BicicletaModelo = bicicletaModelo;
         BicicletaEstado = bicicletaEstado;
         BicicletaPrecio = bicicletaPrecio;
         BicicletaNumAro = bicicletaNumAro;
         BicicletaDetalles = bicicletaDetalles;
-        BicletaFoto = bicicletaFoto;
+        BicletaFoto = bicletaFoto;
         this.local = local;
     }
 
-    public int getBicicletaID() {
-        return BicicletaID;
+
+    public int getBicicletaId() {
+        return BicicletaId;
     }
 
-    public void setBicicletaID(int bicicletaID) {
-        BicicletaID = bicicletaID;
+    public void setBicicletaId(int bicicletaId) {
+        BicicletaId = bicicletaId;
     }
 
     public String getBicicletaModelo() {
