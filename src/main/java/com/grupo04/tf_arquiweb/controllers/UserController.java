@@ -37,7 +37,7 @@ public class UserController {
         userService.delete(id);
     }
 
-    @PostMapping
+    @PutMapping
     public void modificar(@RequestBody UserDTO dto){
         ModelMapper m = new ModelMapper();
         Usuarios u = m.map(dto,Usuarios.class);
