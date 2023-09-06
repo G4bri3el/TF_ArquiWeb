@@ -15,13 +15,13 @@ public class Reserva {
 
     @ManyToOne
     @JoinColumn(name="UserID")
-    private User user;
+    private Usuarios user;
 
     public Reserva(){
 
     }
 
-    public Reserva(int rerservaID, Boolean reservaEstado, User user) {
+    public Reserva(int rerservaID, Boolean reservaEstado, Usuarios user) {
         ReservaID = rerservaID;
         ReservaEstado = reservaEstado;
         this.user = user;
@@ -43,11 +43,11 @@ public class Reserva {
         ReservaEstado = reservaEstado;
     }
 
-    public User getUser() {
+    public Usuarios getUser() {
         return user;
     }
 
-    public void setUser(User user) {
+    public void setUser(Usuarios user) {
         this.user = user;
     }
 }
