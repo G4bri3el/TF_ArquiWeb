@@ -35,7 +35,7 @@ public class LocalController {
         }).collect(Collectors.toList());
     }
 
-    @DeleteMapping("{/id}")
+    @DeleteMapping("/{id}")
     public void delete(@PathVariable("id") Integer id) {
         lS.delete(id);
     }

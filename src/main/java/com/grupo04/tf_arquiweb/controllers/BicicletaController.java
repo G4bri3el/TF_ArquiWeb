@@ -35,7 +35,7 @@ public class BicicletaController {
         }).collect(Collectors.toList());
     }
 
-    @DeleteMapping("{/id}")
+    @DeleteMapping("/{id}")
     public void delete(@PathVariable("id") Integer id) {
         bS.delete(id);
     }

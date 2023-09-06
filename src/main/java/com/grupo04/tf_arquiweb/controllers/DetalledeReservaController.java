@@ -35,7 +35,7 @@ public class DetalledeReservaController {
         }).collect(Collectors.toList());
     }
 
-    @DeleteMapping("{/id}")
+    @DeleteMapping("/{id}")
     public void delete(@PathVariable("id") Integer id) {
         dS.delete(id);
     }

@@ -32,7 +32,7 @@ public class UserController {
         }).collect(Collectors.toList());
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     public void eliminar(@PathVariable("id") Integer id) {
         userService.delete(id);
     }
