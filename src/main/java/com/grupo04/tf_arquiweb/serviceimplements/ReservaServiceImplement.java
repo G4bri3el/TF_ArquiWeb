@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class IReservaServiceImplement implements IReservaService {
+public class ReservaServiceImplement implements IReservaService {
 
     @Autowired
     private IReservaRepository reR;
