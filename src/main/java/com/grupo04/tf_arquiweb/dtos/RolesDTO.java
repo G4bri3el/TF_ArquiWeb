@@ -2,15 +2,15 @@ package com.grupo04.tf_arquiweb.dtos;
 
 public class RolesDTO {
 
-    private int RolesID;
+    private int RolesId;
     private String rol;
 
-    public int getRolesID() {
-        return RolesID;
+    public int getRolesId() {
+        return RolesId;
     }
 
-    public void setRolesID(int rolesID) {
-        RolesID = rolesID;
+    public void setRolesId(int rolesId) {
+        RolesId = rolesId;
     }
 
     public String getRol() {
