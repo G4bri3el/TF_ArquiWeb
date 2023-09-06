@@ -1,25 +1,25 @@
 package com.grupo04.tf_arquiweb.dtos;
 
-import com.grupo04.tf_arquiweb.entities.Usuarios;
+import com.grupo04.tf_arquiweb.entities.Usuario;
 import jakarta.persistence.*;
 
 public class LocalDTO {
 
-    private int LocalID;
+    private int LocalId;
 
     private String LocalDireccion;
 
     private String LocalNombre;
 
     private String LocalFoto;
-    private Usuarios user;
+    private Usuario user;
 
-    public int getLocalID() {
-        return LocalID;
+    public int getLocalId() {
+        return LocalId;
     }
 
-    public void setLocalID(int localID) {
-        LocalID = localID;
+    public void setLocalId(int localId) {
+        LocalId = localId;
     }
 
     public String getLocalDireccion() {
@@ -46,11 +46,11 @@ public class LocalDTO {
         LocalFoto = localFoto;
     }
 
-    public Usuarios getUser() {
+    public Usuario getUser() {
         return user;
     }
 
-    public void setUser(Usuarios user) {
+    public void setUser(Usuario user) {
         this.user = user;
     }
 }

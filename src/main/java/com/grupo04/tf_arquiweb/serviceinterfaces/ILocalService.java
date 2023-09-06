@@ -8,7 +8,7 @@ public interface ILocalService {
 
     public void insert(Local local);
     public List<Local> list();
-    public void delete(int LocalID);
+    public void delete(int LocalId);
 
 
 }

@@ -10,7 +10,7 @@ public class Local {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int LocalID;
+    private int LocalId;
 
     @Column(name = "LocalDireccion", length = 50, nullable = false)
     private String LocalDireccion;
@@ -20,27 +20,27 @@ public class Local {
     @Column(name = "LocalFoto", length = 50, nullable = false)
     private String LocalFoto;
     @ManyToOne
-    @JoinColumn(name = "UserID")
-    private Usuarios user;
+    @JoinColumn(name = "UserId")
+    private Usuario usuario;
 
     public Local() {
 
     }
 
-    public Local(int localID, String localDireccion, String localNombre, String localFoto, Usuarios user) {
-        LocalID = localID;
+    public Local(int localId, String localDireccion, String localNombre, String localFoto, Usuario usuario) {
+        LocalId = localId;
         LocalDireccion = localDireccion;
         LocalNombre = localNombre;
         LocalFoto = localFoto;
-        this.user = user;
+        this.usuario = usuario;
     }
 
-    public int getLocalID() {
-        return LocalID;
+    public int getLocalId() {
+        return LocalId;
     }
 
-    public void setLocalID(int localID) {
-        LocalID = localID;
+    public void setLocalId(int localId) {
+        LocalId = localId;
     }
 
     public String getLocalDireccion() {
@@ -59,10 +59,6 @@ public class Local {
         LocalNombre = localNombre;
     }
 
-    public Usuarios getUser() {
-        return user;
-    }
-
     public String getLocalFoto() {
         return LocalFoto;
     }
@@ -71,7 +67,11 @@ public class Local {
         LocalFoto = localFoto;
     }
 
-    public void setUser(Usuarios user) {
-        this.user = user;
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 }

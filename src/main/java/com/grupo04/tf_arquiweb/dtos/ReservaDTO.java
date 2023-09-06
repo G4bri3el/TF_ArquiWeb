@@ -6,7 +6,7 @@ public class ReservaDTO {
 
     private int ReservaId;
 
-    private Usuario user;
+    private Usuario usuario;
 
     public int getReservaId() {
         return ReservaId;
@@ -16,11 +16,11 @@ public class ReservaDTO {
         ReservaId = reservaId;
     }
 
-    public Usuario getUser() {
-        return user;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
-    public void setUser(Usuario user) {
-        this.user = user;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 }
