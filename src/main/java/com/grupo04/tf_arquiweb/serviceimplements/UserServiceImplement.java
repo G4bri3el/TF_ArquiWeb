@@ -27,7 +27,7 @@ public class UserServiceImplement implements IUserService {
     }
 
     @Override
-    public void delete(int userID) {
-        uR.deleteById(userID);
+    public void delete(int UserID) {
+        uR.deleteById(UserID);
     }
 }

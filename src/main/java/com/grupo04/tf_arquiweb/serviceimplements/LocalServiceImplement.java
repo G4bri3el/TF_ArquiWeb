@@ -6,6 +6,7 @@ import com.grupo04.tf_arquiweb.repositories.ILocalRepository;
 import com.grupo04.tf_arquiweb.repositories.IReservaRepository;
 import com.grupo04.tf_arquiweb.serviceinterfaces.ILocalService;
 import com.grupo04.tf_arquiweb.serviceinterfaces.IReservaService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,6 +14,8 @@ import java.util.List;
 @Service
 public class LocalServiceImplement implements ILocalService {
 
+
+    @Autowired
     private ILocalRepository lR;
 
     @Override

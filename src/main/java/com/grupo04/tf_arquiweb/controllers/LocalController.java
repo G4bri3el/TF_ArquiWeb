@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@RestController
+@RequestMapping("/locales")
 public class LocalController {
 
     private ILocalService lS;
@@ -32,8 +34,8 @@ public class LocalController {
     }
 
     @DeleteMapping("{/id}")
-    public void delete(int LocalID) {
-        lS.delete(LocalID);
+    public void delete(@PathVariable("id") Integer id) {
+        lS.delete(id);
     }
 
     @PutMapping
