@@ -2,6 +2,8 @@ package com.grupo04.tf_arquiweb.entities;
 
 import jakarta.persistence.*;
 
+import java.awt.Image;
+
 @Entity
 @Table(name = "Local")
 public class Local {
@@ -15,20 +17,21 @@ public class Local {
     @Column(name = "LocalNombre", length = 50, nullable = false)
     private String LocalNombre;
 
-    //private LocalFoto *************+
-
+    @Column(name = "LocalFoto", length = 50, nullable = false)
+    private String LocalFoto;
     @ManyToOne
-    @JoinColumn(name ="UserID")
+    @JoinColumn(name = "UserID")
     private Usuarios user;
 
-    public Local(){
+    public Local() {
 
     }
 
-    public Local(int localID, String localDireccion, String localNombre, Usuarios user) {
+    public Local(int localID, String localDireccion, String localNombre, String localFoto, Usuarios user) {
         LocalID = localID;
         LocalDireccion = localDireccion;
         LocalNombre = localNombre;
+        LocalFoto = localFoto;
         this.user = user;
     }
 
@@ -58,6 +61,14 @@ public class Local {
 
     public Usuarios getUser() {
         return user;
+    }
+
+    public String getLocalFoto() {
+        return LocalFoto;
+    }
+
+    public void setLocalFoto(String localFoto) {
+        LocalFoto = localFoto;
     }
 
     public void setUser(Usuarios user) {

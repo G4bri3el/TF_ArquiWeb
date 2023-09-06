@@ -37,4 +37,10 @@ public class RolesController {
         rS.delete(id);
     }
 
+    @PostMapping
+    public void modificar(@RequestBody RolesDTO dto) {
+        ModelMapper m = new ModelMapper();
+        Roles r = m.map(dto, Roles.class);
+        rS.insert(r);
+    }
 }

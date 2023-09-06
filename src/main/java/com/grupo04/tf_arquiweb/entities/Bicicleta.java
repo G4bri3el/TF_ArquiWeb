@@ -2,6 +2,8 @@ package com.grupo04.tf_arquiweb.entities;
 
 import jakarta.persistence.*;
 
+import java.math.BigDecimal;
+
 @Entity
 @Table(name = "Bicicleta")
 public class Bicicleta {
@@ -10,37 +12,40 @@ public class Bicicleta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int BicicletaID;
 
-    @Column(name="BicicletaModelo", length = 50, nullable = false)
+    @Column(name = "BicicletaModelo", nullable = false, length = 50)
     private String BicicletaModelo;
 
-    @Column(name="BicicletaEstado", nullable = false)
+    @Column(name = "BicicletaEstado", nullable = false)
     private Boolean BicicletaEstado;
 
-    @Column(name="BicicletaPrecio",nullable = false)
+    @Column(name = "BicicletaPrecio", nullable = false)
     private double BicicletaPrecio; //ver esto (money)**********
 
-    @Column(name="BicicletaNumAro", nullable = false)
+    @Column(name = "BicicletaNumAro", nullable = false)
     private int BicicletaNumAro;
 
-    @Column(name="BicicletaDetalles",length = 100, nullable = false)
+    @Column(name = "BicicletaDetalles", nullable = false, length = 100)
     private String BicicletaDetalles;
 
-    //FOTO ***************
+    @Column(name = "BicletaFoto", nullable = false, length = 50)
+    private String BicletaFoto;
 
     @ManyToOne
-    @JoinColumn(name ="LocalID")
+    @JoinColumn(name = "LocalID")
     private Local local;
 
-    public Bicicleta(){
+    public Bicicleta() {
 
     }
-    public Bicicleta(int bicicletaID, String bicicletaModelo, Boolean bicicletaEstado, double bicicletaPrecio, int bicicletaNumAro, String bicicletaDetalles, Local local) {
+
+    public Bicicleta(int bicicletaID, String bicicletaModelo, Boolean bicicletaEstado, double bicicletaPrecio, int bicicletaNumAro, String bicicletaDetalles, String bicicletaFoto,Local local) {
         BicicletaID = bicicletaID;
         BicicletaModelo = bicicletaModelo;
         BicicletaEstado = bicicletaEstado;
         BicicletaPrecio = bicicletaPrecio;
         BicicletaNumAro = bicicletaNumAro;
         BicicletaDetalles = bicicletaDetalles;
+        BicletaFoto = bicicletaFoto;
         this.local = local;
     }
 
@@ -90,6 +95,14 @@ public class Bicicleta {
 
     public void setBicicletaDetalles(String bicicletaDetalles) {
         BicicletaDetalles = bicicletaDetalles;
+    }
+
+    public String getBicletaFoto() {
+        return BicletaFoto;
+    }
+
+    public void setBicletaFoto(String bicletaFoto) {
+        BicletaFoto = bicletaFoto;
     }
 
     public Local getLocal() {

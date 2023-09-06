@@ -33,7 +33,15 @@ public class UserController {
     }
 
     @DeleteMapping
-    public  void eliminar(@PathVariable("id")Integer id){
+    public void eliminar(@PathVariable("id") Integer id) {
         userService.delete(id);
     }
+
+    @PostMapping
+    public void modificar(@RequestBody UserDTO dto){
+        ModelMapper m = new ModelMapper();
+        Usuarios u = m.map(dto,Usuarios.class);
+        userService.insert(u);
+    }
+
 }

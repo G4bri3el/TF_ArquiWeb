@@ -11,8 +11,7 @@ public class LocalDTO {
 
     private String LocalNombre;
 
-    //private LocalFoto;
-
+    private String LocalFoto;
     private Usuarios user;
 
     public int getLocalID() {
@@ -37,6 +36,14 @@ public class LocalDTO {
 
     public void setLocalNombre(String localNombre) {
         LocalNombre = localNombre;
+    }
+
+    public String getLocalFoto() {
+        return LocalFoto;
+    }
+
+    public void setLocalFoto(String localFoto) {
+        LocalFoto = localFoto;
     }
 
     public Usuarios getUser() {

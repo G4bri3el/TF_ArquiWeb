@@ -17,7 +17,7 @@ public class BicicletaDTO {
 
     private String BicicletaDetalles;
 
-    //FOTO ***************
+    private String BicletaFoto;
 
     private Local local;
 
@@ -67,6 +67,14 @@ public class BicicletaDTO {
 
     public void setBicicletaDetalles(String bicicletaDetalles) {
         BicicletaDetalles = bicicletaDetalles;
+    }
+
+    public String getBicletaFoto() {
+        return BicletaFoto;
+    }
+
+    public void setBicletaFoto(String bicletaFoto) {
+        BicletaFoto = bicletaFoto;
     }
 
     public Local getLocal() {

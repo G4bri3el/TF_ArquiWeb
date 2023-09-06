@@ -3,30 +3,30 @@ package com.grupo04.tf_arquiweb.entities;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name="Calificacion")
+@Table(name = "Calificacion")
 public class Calificacion {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int CalificacionID;
-    @Column(name="CalificacionEstrellas", nullable = false)
+    @Column(name = "CalificacionEstrellas", nullable = false)
     private int CalificacionEstrellas;
-    @Column(name="CalificacionComentario", length = 200, nullable = false)
+    @Column(name = "CalificacionComentario", length = 200, nullable = false)
     private String CalificacionComentario;
-   @OneToOne
-   @JoinColumn(name="ReservaID")
-   private Reserva reserva;
+    @OneToOne
+    @JoinColumn(name = "ReservaID")
+    private Reserva reserva;
 
-    public Calificacion(){
+    public Calificacion() {
 
     }
 
-   public Calificacion(int calificacionID, int calificacionEstrellas, String calificacionComentario, Reserva reserva) {
-       CalificacionID = calificacionID;
-       CalificacionEstrellas = calificacionEstrellas;
-       CalificacionComentario = calificacionComentario;
-       this.reserva = reserva;
-   }
+    public Calificacion(int calificacionID, int calificacionEstrellas, String calificacionComentario, Reserva reserva) {
+        CalificacionID = calificacionID;
+        CalificacionEstrellas = calificacionEstrellas;
+        CalificacionComentario = calificacionComentario;
+        this.reserva = reserva;
+    }
 
     public int getCalificacionID() {
         return CalificacionID;
@@ -53,10 +53,10 @@ public class Calificacion {
     }
 
     public Reserva getReserva() {
-       return reserva;
-   }
+        return reserva;
+    }
 
-   public void setReserva(Reserva reserva) {
+    public void setReserva(Reserva reserva) {
         this.reserva = reserva;
     }
 }
