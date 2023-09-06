@@ -8,34 +8,35 @@ public class Reserva {
 
     @Id//anotación para marcar atributo como ID
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int ReservaID;
+    private int ReservaId;
 
     @ManyToOne
-    @JoinColumn(name="UserID")
-    private Usuarios user;
+    @JoinColumn(name="UserId")
+    private Usuario user;
 
     public Reserva(){
 
     }
 
-    public Reserva(int rerservaID, Usuarios user) {
-        ReservaID = rerservaID;
+    public Reserva(int reservaId, Usuario user) {
+        ReservaId = reservaId;
         this.user = user;
     }
 
-    public int getRerservaID() {
-        return ReservaID;
+
+    public int getReservaId() {
+        return ReservaId;
     }
 
-    public void setRerservaID(int rerservaID) {
-        ReservaID = rerservaID;
+    public void setReservaId(int reservaId) {
+        ReservaId = reservaId;
     }
 
-    public Usuarios getUser() {
+    public Usuario getUser() {
         return user;
     }
 
-    public void setUser(Usuarios user) {
+    public void setUser(Usuario user) {
         this.user = user;
     }
 }
