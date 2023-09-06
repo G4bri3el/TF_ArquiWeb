@@ -2,8 +2,6 @@ package com.grupo04.tf_arquiweb.entities;
 
 import jakarta.persistence.*;
 
-import java.math.BigDecimal;
-
 @Entity
 @Table(name = "Bicicleta")
 public class Bicicleta {

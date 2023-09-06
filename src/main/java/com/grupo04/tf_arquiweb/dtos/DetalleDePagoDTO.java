@@ -1,10 +1,11 @@
 package com.grupo04.tf_arquiweb.dtos;
 
 import com.grupo04.tf_arquiweb.entities.DetalleDePago;
+import com.grupo04.tf_arquiweb.entities.Reserva;
 
 public class DetalleDePagoDTO {
     private int DetalleDePagoID;
-    private DetalleDePago detalleDePago;
+    private Reserva reserva;
 
     public int getDetalleDePagoID() {
         return DetalleDePagoID;
@@ -14,11 +15,11 @@ public class DetalleDePagoDTO {
         DetalleDePagoID = detalleDePagoID;
     }
 
-    public DetalleDePago getDetalleDePago() {
-        return detalleDePago;
+    public Reserva getReserva() {
+        return reserva;
     }
 
-    public void setDetalleDePago(DetalleDePago detalleDePago) {
-        this.detalleDePago = detalleDePago;
+    public void setReserva(Reserva reserva) {
+        this.reserva = reserva;
     }
 }
