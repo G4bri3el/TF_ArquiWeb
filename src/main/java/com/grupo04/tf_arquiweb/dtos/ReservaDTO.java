@@ -1,27 +1,26 @@
 package com.grupo04.tf_arquiweb.dtos;
 
-import com.grupo04.tf_arquiweb.entities.Usuarios;
+import com.grupo04.tf_arquiweb.entities.Usuario;
 
 public class ReservaDTO {
 
-    private int ReservaID;
+    private int ReservaId;
 
-    private Usuarios user;
+    private Usuario user;
 
-
-    public int getReservaID() {
-        return ReservaID;
+    public int getReservaId() {
+        return ReservaId;
     }
 
-    public void setReservaID(int reservaID) {
-        ReservaID = reservaID;
+    public void setReservaId(int reservaId) {
+        ReservaId = reservaId;
     }
 
-    public Usuarios getUser() {
+    public Usuario getUser() {
         return user;
     }
 
-    public void setUser(Usuarios user) {
+    public void setUser(Usuario user) {
         this.user = user;
     }
 }
