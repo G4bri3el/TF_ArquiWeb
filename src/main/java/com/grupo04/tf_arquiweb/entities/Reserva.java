@@ -12,15 +12,15 @@ public class Reserva {
 
     @ManyToOne
     @JoinColumn(name="UserId")
-    private Usuario user;
+    private Usuario usuario;
 
     public Reserva(){
 
     }
 
-    public Reserva(int reservaId, Usuario user) {
+    public Reserva(int reservaId, Usuario usuario) {
         ReservaId = reservaId;
-        this.user = user;
+        this.usuario = usuario;
     }
 
 
@@ -32,11 +32,11 @@ public class Reserva {
         ReservaId = reservaId;
     }
 
-    public Usuario getUser() {
-        return user;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
-    public void setUser(Usuario user) {
-        this.user = user;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 }

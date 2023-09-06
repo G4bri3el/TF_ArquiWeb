@@ -35,13 +35,13 @@ public class Usuario {
 
     @ManyToOne
     @JoinColumn(name = "RolesId")
-    private Roles Rol;
+    private Roles roles;
 
 
     public Usuario() {
     }
 
-    public Usuario(int userId, String userCorreo, String userContrasena, int userTelefono, String userNombre, String userApellido, String userDni, int userEdad, String userCiudad, String userFoto, String userRazonsocial, String userDireccion, String userRuc, Roles rol) {
+    public Usuario(int userId, String userCorreo, String userContrasena, int userTelefono, String userNombre, String userApellido, String userDni, int userEdad, String userCiudad, String userFoto, String userRazonsocial, String userDireccion, String userRuc, Roles roles) {
         UserId = userId;
         UserCorreo = userCorreo;
         UserContrasena = userContrasena;
@@ -55,7 +55,7 @@ public class Usuario {
         UserRazonsocial = userRazonsocial;
         UserDireccion = userDireccion;
         UserRuc = userRuc;
-        Rol = rol;
+        this.roles = roles;
     }
 
     public int getUserId() {
@@ -162,11 +162,11 @@ public class Usuario {
         UserRuc = userRuc;
     }
 
-    public Roles getRol() {
-        return Rol;
+    public Roles getRoles() {
+        return roles;
     }
 
-    public void setRol(Roles rol) {
-        Rol = rol;
+    public void setRoles(Roles roles) {
+        this.roles = roles;
     }
 }

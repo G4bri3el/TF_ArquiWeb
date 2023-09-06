@@ -29,7 +29,7 @@ public class LocalServiceImplement implements ILocalService {
     }
 
     @Override
-    public void delete(int LocalID) {
-        lR.deleteById(LocalID);
+    public void delete(int LocalId) {
+        lR.deleteById(LocalId);
     }
 }
