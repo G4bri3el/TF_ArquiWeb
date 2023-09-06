@@ -11,4 +11,6 @@ public interface IUserService { //Se pone todos los metodos que tendra la entida
     public List<Usuarios> list();
     public void delete(int userID);
 
+
+
 }
