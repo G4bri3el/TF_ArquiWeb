@@ -8,7 +8,7 @@ import jakarta.persistence.*;
 public class Roles {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int RolesID;
+    private int RolesId;
 
     @Column(name = "Rol", nullable = false, length = 50)
     private String Rol;
@@ -16,17 +16,18 @@ public class Roles {
     public Roles() {
 
     }
-    public Roles(int rolesID, String rol) {
-        RolesID = rolesID;
+
+    public Roles(int rolesId, String rol) {
+        RolesId = rolesId;
         Rol = rol;
     }
 
-    public int getRolesID() {
-        return RolesID;
+    public int getRolesId() {
+        return RolesId;
     }
 
-    public void setRolesID(int rolesID) {
-        RolesID = rolesID;
+    public void setRolesId(int rolesId) {
+        RolesId = rolesId;
     }
 
     public String getRol() {

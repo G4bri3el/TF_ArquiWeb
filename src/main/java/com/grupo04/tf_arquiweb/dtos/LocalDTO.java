@@ -12,7 +12,7 @@ public class LocalDTO {
     private String LocalNombre;
 
     private String LocalFoto;
-    private Usuario user;
+    private Usuario usuario;
 
     public int getLocalId() {
         return LocalId;
@@ -46,11 +46,11 @@ public class LocalDTO {
         LocalFoto = localFoto;
     }
 
-    public Usuario getUser() {
-        return user;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
-    public void setUser(Usuario user) {
-        this.user = user;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 }
