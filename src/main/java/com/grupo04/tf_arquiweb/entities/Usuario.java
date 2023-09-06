@@ -34,7 +34,7 @@ public class Usuario {
     private String UserRuc;
 
     @ManyToOne
-    @JoinColumn(name = "RolesID")
+    @JoinColumn(name = "RolesId")
     private Roles Rol;
 
 

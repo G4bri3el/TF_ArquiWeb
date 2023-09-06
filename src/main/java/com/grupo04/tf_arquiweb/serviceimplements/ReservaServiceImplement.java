@@ -27,7 +27,7 @@ public class ReservaServiceImplement implements IReservaService {
     }
 
     @Override
-    public void delete(int ReservaID) {
-        reR.deleteById(ReservaID);
+    public void delete(int ReservaId) {
+        reR.deleteById(ReservaId);
     }
 }

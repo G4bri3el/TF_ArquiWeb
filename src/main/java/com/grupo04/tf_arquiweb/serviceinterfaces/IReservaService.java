@@ -9,6 +9,6 @@ public interface IReservaService {
     public void insert(Reserva reserva);
     public List<Reserva> list();
 
-    public void delete(int ReservaID);
+    public void delete(int ReservaId);
 
 }
