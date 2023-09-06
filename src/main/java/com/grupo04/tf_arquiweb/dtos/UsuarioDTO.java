@@ -5,133 +5,133 @@ import com.grupo04.tf_arquiweb.entities.Roles;
 
 public class UsuarioDTO {
 
-    private String UserCorreo;
+    private String UsuarioCorreo;
 
-    private String UserContrasena;
+    private String UsuarioContrasena;
 
-    private int UserTelefono;
+    private int UsuarioTelefono;
 
-    private String UserNombre;
+    private String UsuarioNombre;
 
-    private String UserApellido;
+    private String UsuarioApellido;
 
-    private String UserDni;
+    private String UsuarioDni;
 
-    private int UserEdad;
+    private int UsuarioEdad;
 
-    private String UserCiudad;
+    private String UsuarioCiudad;
 
-    private String UserFoto;
+    private String UsuarioFoto;
 
-    private String UserRazonsocial;
+    private String UsuarioRazonsocial;
 
-    private String UserDireccion;
+    private String UsuarioDireccion;
 
-    private String UserRuc;
+    private String UsuarioRuc;
 
-    private Roles Rol;
+    private Roles Roles;
 
-    public String getUserCorreo() {
-        return UserCorreo;
+    public String getUsuarioCorreo() {
+        return UsuarioCorreo;
     }
 
-    public void setUserCorreo(String userCorreo) {
-        UserCorreo = userCorreo;
+    public void setUsuarioCorreo(String usuarioCorreo) {
+        UsuarioCorreo = usuarioCorreo;
     }
 
-    public String getUserContrasena() {
-        return UserContrasena;
+    public String getUsuarioContrasena() {
+        return UsuarioContrasena;
     }
 
-    public void setUserContrasena(String userContrasena) {
-        UserContrasena = userContrasena;
+    public void setUsuarioContrasena(String usuarioContrasena) {
+        UsuarioContrasena = usuarioContrasena;
     }
 
-    public int getUserTelefono() {
-        return UserTelefono;
+    public int getUsuarioTelefono() {
+        return UsuarioTelefono;
     }
 
-    public void setUserTelefono(int userTelefono) {
-        UserTelefono = userTelefono;
+    public void setUsuarioTelefono(int usuarioTelefono) {
+        UsuarioTelefono = usuarioTelefono;
     }
 
-    public String getUserNombre() {
-        return UserNombre;
+    public String getUsuarioNombre() {
+        return UsuarioNombre;
     }
 
-    public void setUserNombre(String userNombre) {
-        UserNombre = userNombre;
+    public void setUsuarioNombre(String usuarioNombre) {
+        UsuarioNombre = usuarioNombre;
     }
 
-    public String getUserApellido() {
-        return UserApellido;
+    public String getUsuarioApellido() {
+        return UsuarioApellido;
     }
 
-    public void setUserApellido(String userApellido) {
-        UserApellido = userApellido;
+    public void setUsuarioApellido(String usuarioApellido) {
+        UsuarioApellido = usuarioApellido;
     }
 
-    public String getUserDni() {
-        return UserDni;
+    public String getUsuarioDni() {
+        return UsuarioDni;
     }
 
-    public void setUserDni(String userDni) {
-        UserDni = userDni;
+    public void setUsuarioDni(String usuarioDni) {
+        UsuarioDni = usuarioDni;
     }
 
-    public int getUserEdad() {
-        return UserEdad;
+    public int getUsuarioEdad() {
+        return UsuarioEdad;
     }
 
-    public void setUserEdad(int userEdad) {
-        UserEdad = userEdad;
+    public void setUsuarioEdad(int usuarioEdad) {
+        UsuarioEdad = usuarioEdad;
     }
 
-    public String getUserCiudad() {
-        return UserCiudad;
+    public String getUsuarioCiudad() {
+        return UsuarioCiudad;
     }
 
-    public void setUserCiudad(String userCiudad) {
-        UserCiudad = userCiudad;
+    public void setUsuarioCiudad(String usuarioCiudad) {
+        UsuarioCiudad = usuarioCiudad;
     }
 
-    public String getUserFoto() {
-        return UserFoto;
+    public String getUsuarioFoto() {
+        return UsuarioFoto;
     }
 
-    public void setUserFoto(String userFoto) {
-        UserFoto = userFoto;
+    public void setUsuarioFoto(String usuarioFoto) {
+        UsuarioFoto = usuarioFoto;
     }
 
-    public String getUserRazonsocial() {
-        return UserRazonsocial;
+    public String getUsuarioRazonsocial() {
+        return UsuarioRazonsocial;
     }
 
-    public void setUserRazonsocial(String userRazonsocial) {
-        UserRazonsocial = userRazonsocial;
+    public void setUsuarioRazonsocial(String usuarioRazonsocial) {
+        UsuarioRazonsocial = usuarioRazonsocial;
     }
 
-    public String getUserDireccion() {
-        return UserDireccion;
+    public String getUsuarioDireccion() {
+        return UsuarioDireccion;
     }
 
-    public void setUserDireccion(String userDireccion) {
-        UserDireccion = userDireccion;
+    public void setUsuarioDireccion(String usuarioDireccion) {
+        UsuarioDireccion = usuarioDireccion;
     }
 
-    public String getUserRuc() {
-        return UserRuc;
+    public String getUsuarioRuc() {
+        return UsuarioRuc;
     }
 
-    public void setUserRuc(String userRuc) {
-        UserRuc = userRuc;
+    public void setUsuarioRuc(String usuarioRuc) {
+        UsuarioRuc = usuarioRuc;
     }
 
-    public Roles getRol() {
-        return Rol;
+    public Roles getRoles() {
+        return Roles;
     }
 
-    public void setRol(Roles rol) {
-        Rol = rol;
+    public void setRoles(Roles rol) {
+        Roles = rol;
     }
 }

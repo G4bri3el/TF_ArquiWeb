@@ -27,7 +27,7 @@ public class UsuarioServiceImplement implements IUsuarioService {
     }
 
     @Override
-    public void delete(int UserId) {
-        uR.deleteById(UserId);
+    public void delete(int UsuarioId) {
+        uR.deleteById(UsuarioId);
     }
 }
