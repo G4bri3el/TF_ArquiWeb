@@ -13,7 +13,7 @@ public class Calificacion {
     private int CalificacionEstrellas;
     @Column(name="CalificacionComentario", length = 200, nullable = false)
     private String CalificacionComentario;
-   @ManyToOne
+   @OneToOne
    @JoinColumn(name="ReservaID")
    private Reserva reserva;
 
