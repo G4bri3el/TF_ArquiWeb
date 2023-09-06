@@ -1,7 +1,7 @@
 package com.grupo04.tf_arquiweb.controllers;
 
 
-import com.grupo04.tf_arquiweb.dtos.UserDTO;
+import com.grupo04.tf_arquiweb.dtos.UsuarioDTO;
 import com.grupo04.tf_arquiweb.entities.Usuarios;
 import com.grupo04.tf_arquiweb.serviceinterfaces.IUserService;
 import org.modelmapper.ModelMapper;
@@ -18,17 +18,17 @@ public class UserController {
     private IUserService userService;
 
     @PostMapping
-    public void registrar(@RequestBody UserDTO dto) {
+    public void registrar(@RequestBody UsuarioDTO dto) {
         ModelMapper m = new ModelMapper();
         Usuarios u = m.map(dto, Usuarios.class);
         userService.insert(u);
     }
 
     @GetMapping
-    public List<UserDTO> listar() {
+    public List<UsuarioDTO> listar() {
         return userService.list().stream().map(x -> {
             ModelMapper m = new ModelMapper();
-            return m.map(x, UserDTO.class);
+            return m.map(x, UsuarioDTO.class);
         }).collect(Collectors.toList());
     }
 
@@ -38,7 +38,7 @@ public class UserController {
     }
 
     @PutMapping
-    public void modificar(@RequestBody UserDTO dto){
+    public void modificar(@RequestBody UsuarioDTO dto){
         ModelMapper m = new ModelMapper();
         Usuarios u = m.map(dto,Usuarios.class);
         userService.insert(u);

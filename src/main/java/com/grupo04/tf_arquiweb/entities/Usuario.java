@@ -3,11 +3,11 @@ package com.grupo04.tf_arquiweb.entities;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "Usuarios")
-public class Usuarios {
+@Table(name = "Usuario")
+public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int UserID;
+    private int UserId;
     @Column(name = "UserCorreo", nullable = false, length = 50)
     private String UserCorreo;
     @Column(name = "UserContrasena", nullable = false, length = 50)
@@ -18,8 +18,8 @@ public class Usuarios {
     private String UserNombre;
     @Column(name = "UserApellido", nullable = false, length = 50)
     private String UserApellido;
-    @Column(name = "UserDNI",nullable = false,length = 8)
-    private String UserDNI;
+    @Column(name = "UserDni",nullable = false,length = 8)
+    private String UserDni;
     @Column(name = "UserEdad",nullable = false)
     private int UserEdad;
     @Column(name = "UserCiudad", nullable = false, length = 50)
@@ -30,40 +30,40 @@ public class Usuarios {
     private String UserRazonsocial;
     @Column(name = "UserDireccion", nullable = false, length = 50)
     private String UserDireccion;
-    @Column(name = "UserRUC", nullable = false, length = 50)
-    private String UserRUC;
+    @Column(name = "UserRuc", nullable = false, length = 50)
+    private String UserRuc;
 
     @ManyToOne
     @JoinColumn(name = "RolesID")
     private Roles Rol;
 
 
-    public Usuarios() {
+    public Usuario() {
     }
 
-    public Usuarios(int userID, String userCorreo, String userContrasena, int userTelefono, String userNombre, String userApellido, String userDNI, int userEdad, String userCiudad, String userFoto, String userRazonsocial, String userDireccion, String userRUC, Roles rol) {
-        UserID = userID;
+    public Usuario(int userId, String userCorreo, String userContrasena, int userTelefono, String userNombre, String userApellido, String userDni, int userEdad, String userCiudad, String userFoto, String userRazonsocial, String userDireccion, String userRuc, Roles rol) {
+        UserId = userId;
         UserCorreo = userCorreo;
         UserContrasena = userContrasena;
         UserTelefono = userTelefono;
         UserNombre = userNombre;
         UserApellido = userApellido;
-        UserDNI = userDNI;
+        UserDni = userDni;
         UserEdad = userEdad;
         UserCiudad = userCiudad;
         UserFoto = userFoto;
         UserRazonsocial = userRazonsocial;
         UserDireccion = userDireccion;
-        UserRUC = userRUC;
-        this.Rol = rol;
+        UserRuc = userRuc;
+        Rol = rol;
     }
 
-    public int getUserID() {
-        return UserID;
+    public int getUserId() {
+        return UserId;
     }
 
-    public void setUserID(int userID) {
-        UserID = userID;
+    public void setUserId(int userId) {
+        UserId = userId;
     }
 
     public String getUserCorreo() {
@@ -106,12 +106,12 @@ public class Usuarios {
         UserApellido = userApellido;
     }
 
-    public String getUserDNI() {
-        return UserDNI;
+    public String getUserDni() {
+        return UserDni;
     }
 
-    public void setUserDNI(String userDNI) {
-        UserDNI = userDNI;
+    public void setUserDni(String userDni) {
+        UserDni = userDni;
     }
 
     public int getUserEdad() {
@@ -154,12 +154,12 @@ public class Usuarios {
         UserDireccion = userDireccion;
     }
 
-    public String getUserRUC() {
-        return UserRUC;
+    public String getUserRuc() {
+        return UserRuc;
     }
 
-    public void setUserRUC(String userRUC) {
-        UserRUC = userRUC;
+    public void setUserRuc(String userRuc) {
+        UserRuc = userRuc;
     }
 
     public Roles getRol() {
@@ -167,6 +167,6 @@ public class Usuarios {
     }
 
     public void setRol(Roles rol) {
-        this.Rol = rol;
+        Rol = rol;
     }
 }

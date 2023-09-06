@@ -1,6 +1,7 @@
 package com.grupo04.tf_arquiweb.serviceimplements;
 
 
+import com.grupo04.tf_arquiweb.entities.Usuario;
 import com.grupo04.tf_arquiweb.entities.Usuarios;
 import com.grupo04.tf_arquiweb.repositories.IUserRepository;
 import com.grupo04.tf_arquiweb.serviceinterfaces.IUserService;
@@ -17,17 +18,17 @@ public class UserServiceImplement implements IUserService {
 
 
     @Override
-    public void insert(Usuarios user) {
-        uR.save(user);
+    public void insert(Usuario usuario) {
+        uR.save(usuario);
     }
 
     @Override
-    public List<Usuarios> list() {
+    public List<Usuario> list() {
         return uR.findAll();
     }
 
     @Override
-    public void delete(int UserID) {
-        uR.deleteById(UserID);
+    public void delete(int UserId) {
+        uR.deleteById(UserId);
     }
 }

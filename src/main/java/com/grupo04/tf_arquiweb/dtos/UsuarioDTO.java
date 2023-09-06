@@ -2,30 +2,35 @@ package com.grupo04.tf_arquiweb.dtos;
 
 
 import com.grupo04.tf_arquiweb.entities.Roles;
+import jakarta.persistence.Column;
 
 public class UserDTO {
-    private int UserID;
+
     private String UserCorreo;
+
     private String UserContrasena;
+
     private int UserTelefono;
-    private String UseUserNombre;
-    private String  UsUserApellido;
-    private String UserDNI;
+
+    private String UserNombre;
+
+    private String UserApellido;
+
+    private String UserDni;
+
     private int UserEdad;
+
     private String UserCiudad;
+
     private String UserFoto;
+
     private String UserRazonsocial;
+
     private String UserDireccion;
-    private String UserRUC;
+
+    private String UserRuc;
+
     private Roles Rol;
-
-    public int getUserID() {
-        return UserID;
-    }
-
-    public void setUserID(int userID) {
-        UserID = userID;
-    }
 
     public String getUserCorreo() {
         return UserCorreo;
@@ -51,28 +56,28 @@ public class UserDTO {
         UserTelefono = userTelefono;
     }
 
-    public String getUseUserNombre() {
-        return UseUserNombre;
+    public String getUserNombre() {
+        return UserNombre;
     }
 
-    public void setUseUserNombre(String useUserNombre) {
-        UseUserNombre = useUserNombre;
+    public void setUserNombre(String userNombre) {
+        UserNombre = userNombre;
     }
 
-    public String getUsUserApellido() {
-        return UsUserApellido;
+    public String getUserApellido() {
+        return UserApellido;
     }
 
-    public void setUsUserApellido(String usUserApellido) {
-        UsUserApellido = usUserApellido;
+    public void setUserApellido(String userApellido) {
+        UserApellido = userApellido;
     }
 
-    public String getUserDNI() {
-        return UserDNI;
+    public String getUserDni() {
+        return UserDni;
     }
 
-    public void setUserDNI(String userDNI) {
-        UserDNI = userDNI;
+    public void setUserDni(String userDni) {
+        UserDni = userDni;
     }
 
     public int getUserEdad() {
@@ -115,12 +120,12 @@ public class UserDTO {
         UserDireccion = userDireccion;
     }
 
-    public String getUserRUC() {
-        return UserRUC;
+    public String getUserRuc() {
+        return UserRuc;
     }
 
-    public void setUserRUC(String userRUC) {
-        UserRUC = userRUC;
+    public void setUserRuc(String userRuc) {
+        UserRuc = userRuc;
     }
 
     public Roles getRol() {
