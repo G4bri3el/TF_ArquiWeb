@@ -10,9 +10,6 @@ public class Reserva {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int ReservaID;
 
-    @Column(name = "ReservaEstado", nullable = false)
-    private Boolean ReservaEstado;
-
     @ManyToOne
     @JoinColumn(name="UserID")
     private Usuarios user;
@@ -21,9 +18,8 @@ public class Reserva {
 
     }
 
-    public Reserva(int rerservaID, Boolean reservaEstado, Usuarios user) {
+    public Reserva(int rerservaID, Usuarios user) {
         ReservaID = rerservaID;
-        ReservaEstado = reservaEstado;
         this.user = user;
     }
 
@@ -33,14 +29,6 @@ public class Reserva {
 
     public void setRerservaID(int rerservaID) {
         ReservaID = rerservaID;
-    }
-
-    public Boolean getReservaEstado() {
-        return ReservaEstado;
-    }
-
-    public void setReservaEstado(Boolean reservaEstado) {
-        ReservaEstado = reservaEstado;
     }
 
     public Usuarios getUser() {
