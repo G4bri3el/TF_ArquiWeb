@@ -7,31 +7,31 @@ import jakarta.persistence.*;
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int UserId;
-    @Column(name = "UserCorreo", nullable = false, length = 50)
-    private String UserCorreo;
-    @Column(name = "UserContrasena", nullable = false, length = 50)
-    private String UserContrasena;
-    @Column(name = "UserTelefono", nullable = false)
-    private int UserTelefono;
-    @Column(name = "UserNombre", nullable = false, length = 50)
-    private String UserNombre;
-    @Column(name = "UserApellido", nullable = false, length = 50)
-    private String UserApellido;
-    @Column(name = "UserDni",nullable = false,length = 8)
-    private String UserDni;
-    @Column(name = "UserEdad",nullable = false)
-    private int UserEdad;
-    @Column(name = "UserCiudad", nullable = false, length = 50)
-    private String UserCiudad;
-    @Column(name = "UserFoto", nullable = false, length = 50)
-    private String UserFoto;
-    @Column(name = "UserRazonsocial", nullable = false, length = 50)
-    private String UserRazonsocial;
-    @Column(name = "UserDireccion", nullable = false, length = 50)
-    private String UserDireccion;
-    @Column(name = "UserRuc", nullable = false, length = 50)
-    private String UserRuc;
+    private int UsuarioId;
+    @Column(name = "UsuarioCorreo", nullable = false, length = 50)
+    private String UsuarioCorreo;
+    @Column(name = "UsuarioContrasena", nullable = false, length = 50)
+    private String UsuarioContrasena;
+    @Column(name = "UsuarioTelefono", nullable = false)
+    private int UsuarioTelefono;
+    @Column(name = "UsuarioNombre", nullable = false, length = 50)
+    private String UsuarioNombre;
+    @Column(name = "UsuarioApellido", nullable = false, length = 50)
+    private String UsuarioApellido;
+    @Column(name = "UsuarioDni",nullable = false,length = 8)
+    private String UsuarioDni;
+    @Column(name = "UsuarioEdad",nullable = false)
+    private int UsuarioEdad;
+    @Column(name = "UsuarioCiudad", nullable = false, length = 50)
+    private String UsuarioCiudad;
+    @Column(name = "UsuarioFoto", nullable = false, length = 50)
+    private String UsuarioFoto;
+    @Column(name = "UsuarioRazonsocial", nullable = false, length = 50)
+    private String UsuarioRazonsocial;
+    @Column(name = "UsuarioDireccion", nullable = false, length = 50)
+    private String UsuarioDireccion;
+    @Column(name = "UsuarioRuc", nullable = false, length = 50)
+    private String UsuarioRuc;
 
     @ManyToOne
     @JoinColumn(name = "RolesId")
@@ -41,125 +41,125 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(int userId, String userCorreo, String userContrasena, int userTelefono, String userNombre, String userApellido, String userDni, int userEdad, String userCiudad, String userFoto, String userRazonsocial, String userDireccion, String userRuc, Roles rol) {
-        UserId = userId;
-        UserCorreo = userCorreo;
-        UserContrasena = userContrasena;
-        UserTelefono = userTelefono;
-        UserNombre = userNombre;
-        UserApellido = userApellido;
-        UserDni = userDni;
-        UserEdad = userEdad;
-        UserCiudad = userCiudad;
-        UserFoto = userFoto;
-        UserRazonsocial = userRazonsocial;
-        UserDireccion = userDireccion;
-        UserRuc = userRuc;
+    public Usuario(int usuarioId, String usuarioCorreo, String usuarioContrasena, int usuarioTelefono, String usuarioNombre, String usuarioApellido, String usuarioDni, int usuarioEdad, String usuarioCiudad, String usuarioFoto, String usuarioRazonsocial, String usuarioDireccion, String usuarioRuc, Roles rol) {
+        UsuarioId = usuarioId;
+        UsuarioCorreo = usuarioCorreo;
+        UsuarioContrasena = usuarioContrasena;
+        UsuarioTelefono = usuarioTelefono;
+        UsuarioNombre = usuarioNombre;
+        UsuarioApellido = usuarioApellido;
+        UsuarioDni = usuarioDni;
+        UsuarioEdad = usuarioEdad;
+        UsuarioCiudad = usuarioCiudad;
+        UsuarioFoto = usuarioFoto;
+        UsuarioRazonsocial = usuarioRazonsocial;
+        UsuarioDireccion = usuarioDireccion;
+        UsuarioRuc = usuarioRuc;
         Rol = rol;
     }
 
-    public int getUserId() {
-        return UserId;
+    public int getUsuarioId() {
+        return UsuarioId;
     }
 
-    public void setUserId(int userId) {
-        UserId = userId;
+    public void setUsuarioId(int usuarioId) {
+        UsuarioId = usuarioId;
     }
 
-    public String getUserCorreo() {
-        return UserCorreo;
+    public String getUsuarioCorreo() {
+        return UsuarioCorreo;
     }
 
-    public void setUserCorreo(String userCorreo) {
-        UserCorreo = userCorreo;
+    public void setUsuarioCorreo(String usuarioCorreo) {
+        UsuarioCorreo = usuarioCorreo;
     }
 
-    public String getUserContrasena() {
-        return UserContrasena;
+    public String getUsuarioContrasena() {
+        return UsuarioContrasena;
     }
 
-    public void setUserContrasena(String userContrasena) {
-        UserContrasena = userContrasena;
+    public void setUsuarioContrasena(String usuarioContrasena) {
+        UsuarioContrasena = usuarioContrasena;
     }
 
-    public int getUserTelefono() {
-        return UserTelefono;
+    public int getUsuarioTelefono() {
+        return UsuarioTelefono;
     }
 
-    public void setUserTelefono(int userTelefono) {
-        UserTelefono = userTelefono;
+    public void setUsuarioTelefono(int usuarioTelefono) {
+        UsuarioTelefono = usuarioTelefono;
     }
 
-    public String getUserNombre() {
-        return UserNombre;
+    public String getUsuarioNombre() {
+        return UsuarioNombre;
     }
 
-    public void setUserNombre(String userNombre) {
-        UserNombre = userNombre;
+    public void setUsuarioNombre(String usuarioNombre) {
+        UsuarioNombre = usuarioNombre;
     }
 
-    public String getUserApellido() {
-        return UserApellido;
+    public String getUsuarioApellido() {
+        return UsuarioApellido;
     }
 
-    public void setUserApellido(String userApellido) {
-        UserApellido = userApellido;
+    public void setUsuarioApellido(String usuarioApellido) {
+        UsuarioApellido = usuarioApellido;
     }
 
-    public String getUserDni() {
-        return UserDni;
+    public String getUsuarioDni() {
+        return UsuarioDni;
     }
 
-    public void setUserDni(String userDni) {
-        UserDni = userDni;
+    public void setUsuarioDni(String usuarioDni) {
+        UsuarioDni = usuarioDni;
     }
 
-    public int getUserEdad() {
-        return UserEdad;
+    public int getUsuarioEdad() {
+        return UsuarioEdad;
     }
 
-    public void setUserEdad(int userEdad) {
-        UserEdad = userEdad;
+    public void setUsuarioEdad(int usuarioEdad) {
+        UsuarioEdad = usuarioEdad;
     }
 
-    public String getUserCiudad() {
-        return UserCiudad;
+    public String getUsuarioCiudad() {
+        return UsuarioCiudad;
     }
 
-    public void setUserCiudad(String userCiudad) {
-        UserCiudad = userCiudad;
+    public void setUsuarioCiudad(String usuarioCiudad) {
+        UsuarioCiudad = usuarioCiudad;
     }
 
-    public String getUserFoto() {
-        return UserFoto;
+    public String getUsuarioFoto() {
+        return UsuarioFoto;
     }
 
-    public void setUserFoto(String userFoto) {
-        UserFoto = userFoto;
+    public void setUsuarioFoto(String usuarioFoto) {
+        UsuarioFoto = usuarioFoto;
     }
 
-    public String getUserRazonsocial() {
-        return UserRazonsocial;
+    public String getUsuarioRazonsocial() {
+        return UsuarioRazonsocial;
     }
 
-    public void setUserRazonsocial(String userRazonsocial) {
-        UserRazonsocial = userRazonsocial;
+    public void setUsuarioRazonsocial(String usuarioRazonsocial) {
+        UsuarioRazonsocial = usuarioRazonsocial;
     }
 
-    public String getUserDireccion() {
-        return UserDireccion;
+    public String getUsuarioDireccion() {
+        return UsuarioDireccion;
     }
 
-    public void setUserDireccion(String userDireccion) {
-        UserDireccion = userDireccion;
+    public void setUsuarioDireccion(String usuarioDireccion) {
+        UsuarioDireccion = usuarioDireccion;
     }
 
-    public String getUserRuc() {
-        return UserRuc;
+    public String getUsuarioRuc() {
+        return UsuarioRuc;
     }
 
-    public void setUserRuc(String userRuc) {
-        UserRuc = userRuc;
+    public void setUsuarioRuc(String usuarioRuc) {
+        UsuarioRuc = usuarioRuc;
     }
 
     public Roles getRol() {

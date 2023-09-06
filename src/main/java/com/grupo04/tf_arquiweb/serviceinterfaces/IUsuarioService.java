@@ -9,5 +9,5 @@ public interface IUsuarioService { //Se pone todos los metodos que tendra la ent
     public void insert(Usuario user);
 
     public List<Usuario> list();
-    public void delete(int UserId);
+    public void delete(int UsuarioId);
 }
