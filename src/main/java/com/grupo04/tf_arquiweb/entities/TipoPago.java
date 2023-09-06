@@ -8,6 +8,8 @@ public class TipoPago {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int TipoPagoID;
+
+    @Column(name = "TipoPagoModo",nullable = false,length = 50)
     private String TipoPagoModo;
 
     public TipoPago() {
