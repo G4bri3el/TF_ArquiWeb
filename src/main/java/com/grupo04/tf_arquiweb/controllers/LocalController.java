@@ -6,6 +6,7 @@ import com.grupo04.tf_arquiweb.entities.Local;
 import com.grupo04.tf_arquiweb.entities.Reserva;
 import com.grupo04.tf_arquiweb.serviceinterfaces.ILocalService;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,6 +17,7 @@ import java.util.stream.Collectors;
 @RequestMapping("/locales")
 public class LocalController {
 
+    @Autowired
     private ILocalService lS;
 
     @PostMapping
