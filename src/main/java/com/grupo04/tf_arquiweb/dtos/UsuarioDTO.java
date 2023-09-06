@@ -29,7 +29,7 @@ public class UsuarioDTO {
 
     private String UsuarioRuc;
 
-    private Roles Rol;
+    private Roles Roles;
 
     public String getUsuarioCorreo() {
         return UsuarioCorreo;
@@ -127,11 +127,11 @@ public class UsuarioDTO {
         UsuarioRuc = usuarioRuc;
     }
 
-    public Roles getRol() {
-        return Rol;
+    public Roles getRoles() {
+        return Roles;
     }
 
-    public void setRol(Roles rol) {
-        Rol = rol;
+    public void setRoles(Roles rol) {
+        Roles = rol;
     }
 }

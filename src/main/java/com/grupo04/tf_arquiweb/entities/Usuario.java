@@ -35,7 +35,7 @@ public class Usuario {
 
     @ManyToOne
     @JoinColumn(name = "RolesId")
-    private Roles Rol;
+    private Roles Roles;
 
 
     public Usuario() {
@@ -55,7 +55,7 @@ public class Usuario {
         UsuarioRazonsocial = usuarioRazonsocial;
         UsuarioDireccion = usuarioDireccion;
         UsuarioRuc = usuarioRuc;
-        Rol = rol;
+        Roles = rol;
     }
 
     public int getUsuarioId() {
@@ -162,11 +162,11 @@ public class Usuario {
         UsuarioRuc = usuarioRuc;
     }
 
-    public Roles getRol() {
-        return Rol;
+    public Roles getRoles() {
+        return Roles;
     }
 
-    public void setRol(Roles rol) {
-        Rol = rol;
+    public void setRoles(Roles rol) {
+        Roles = rol;
     }
 }
