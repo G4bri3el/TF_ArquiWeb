@@ -1,36 +1,19 @@
-package com.grupo04.tf_arquiweb.entities;
+package com.grupo04.tf_arquiweb.dtos;
 
+import com.grupo04.tf_arquiweb.entities.Usuarios;
 import jakarta.persistence.*;
 
-@Entity
-@Table(name = "Local")
-public class Local {
+public class LocalDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int LocalID;
 
-    @Column(name = "LocalDireccion", length = 50, nullable = false)
     private String LocalDireccion;
-    @Column(name = "LocalNombre", length = 50, nullable = false)
+
     private String LocalNombre;
 
     //private LocalFoto;
 
-    @ManyToOne
-    @JoinColumn(name ="UserID")
     private Usuarios user;
-
-    public Local(){
-
-    }
-
-    public Local(int localID, String localDireccion, String localNombre, Usuarios user) {
-        LocalID = localID;
-        LocalDireccion = localDireccion;
-        LocalNombre = localNombre;
-        this.user = user;
-    }
 
     public int getLocalID() {
         return LocalID;

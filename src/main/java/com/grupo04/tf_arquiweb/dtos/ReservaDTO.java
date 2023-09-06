@@ -8,10 +8,6 @@ public class ReservaDTO {
 
     private Usuarios user;
 
-    public ReservaDTO(int reservaID, Usuarios user) {
-        ReservaID = reservaID;
-        this.user = user;
-    }
 
     public int getReservaID() {
         return ReservaID;
