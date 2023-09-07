@@ -1,25 +1,25 @@
 package com.grupo04.tf_arquiweb.serviceimplements;
 
-import com.grupo04.tf_arquiweb.entities.Calificacion;
-import com.grupo04.tf_arquiweb.repositories.ICalificacionRepository;
-import com.grupo04.tf_arquiweb.serviceinterfaces.ICalificacionService;
+import com.grupo04.tf_arquiweb.entities.Resena;
+import com.grupo04.tf_arquiweb.repositories.IResenaRepository;
+import com.grupo04.tf_arquiweb.serviceinterfaces.IResenaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class CalificacionServiceImplement implements ICalificacionService {
+public class ResenaServiceImplement implements IResenaService {
     @Autowired
-    private ICalificacionRepository cR;
+    private IResenaRepository cR;
 
     @Override
-    public void insert(Calificacion calificacion) {
+    public void insert(Resena calificacion) {
         cR.save(calificacion);
     }
 
     @Override
-    public List<Calificacion> list() {
+    public List<Resena> list() {
         return cR.findAll();
     }
 
