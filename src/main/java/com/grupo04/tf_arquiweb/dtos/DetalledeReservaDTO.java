@@ -5,18 +5,18 @@ import com.grupo04.tf_arquiweb.entities.Reserva;
 
 public class DetalledeReservaDTO {
 
-    private int DetalleID;
+    private int DetalleId;
 
     private Reserva reserva;
 
     private Bicicleta bicicleta;
 
-    public int getDetalleID() {
-        return DetalleID;
+    public int getDetalleId() {
+        return DetalleId;
     }
 
-    public void setDetalleID(int detalleID) {
-        DetalleID = detalleID;
+    public void setDetalleId(int detalleId) {
+        DetalleId = detalleId;
     }
 
     public Reserva getReserva() {

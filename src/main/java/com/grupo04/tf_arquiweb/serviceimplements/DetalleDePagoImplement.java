@@ -22,7 +22,7 @@ public class DetalleDePagoImplement implements IDetalleDePagoService {
         return dpR.findAll();
     }
     @Override
-    public void delete(int DetalleDePagoID){
-        dpR.deleteById(DetalleDePagoID);
+    public void delete(int DetalleDePagoId){
+        dpR.deleteById(DetalleDePagoId);
     }
 }

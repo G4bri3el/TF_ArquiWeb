@@ -26,7 +26,7 @@ public class DetalledeReservaImplement implements IDetalledeReservaService {
     }
 
     @Override
-    public void delete(int DetalleID) {
-        dR.deleteById(DetalleID);
+    public void delete(int DetalleId) {
+        dR.deleteById(DetalleId);
     }
 }
