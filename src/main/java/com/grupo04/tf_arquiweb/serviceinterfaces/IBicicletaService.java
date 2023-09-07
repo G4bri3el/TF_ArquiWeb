@@ -8,6 +8,6 @@ public interface IBicicletaService {
 
     public void insert(Bicicleta bicicleta);
     public List<Bicicleta> list();
-    public void delete(int BicicletaID);
+    public void delete(int BicicletaId);
 
 }

@@ -5,7 +5,7 @@ import com.grupo04.tf_arquiweb.entities.Local;
 
 public class BicicletaDTO {
 
-    private int BicicletaID;
+    private int BicicletaId;
 
     private String BicicletaModelo;
 
@@ -21,12 +21,12 @@ public class BicicletaDTO {
 
     private Local local;
 
-    public int getBicicletaID() {
-        return BicicletaID;
+    public int getBicicletaId() {
+        return BicicletaId;
     }
 
-    public void setBicicletaID(int bicicletaID) {
-        BicicletaID = bicicletaID;
+    public void setBicicletaId(int bicicletaId) {
+        BicicletaId = bicicletaId;
     }
 
     public String getBicicletaModelo() {

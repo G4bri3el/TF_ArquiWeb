@@ -25,7 +25,7 @@ public class BicicletaServiceImplement implements IBicicletaService {
     }
 
     @Override
-    public void delete(int BicicletaID) {
-        bR.deleteById(BicicletaID);
+    public void delete(int BicicletaId) {
+        bR.deleteById(BicicletaId);
     }
 }
