@@ -10,8 +10,12 @@ public class DocumentoPago {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int DocumentoPagoId;
+
+    @Column(name = "DocumentoPagoFecha", nullable = false)
     private Date DocumentoPagoFecha;
+    @Column(name = "DocumentoPagoMonto", nullable = false)
     private int DocumentoPagoMonto;
+    @Column(name = "DocumentoPagoMoneda", nullable = false, length = 50)
     private String DocumentoPagoMoneda;
     @ManyToOne
     @JoinColumn(name = "TipoPagoId")
@@ -19,6 +23,8 @@ public class DocumentoPago {
     @OneToOne
     @JoinColumn(name = "DetalleDePagoId")
     private DetalleDePago detalleDePago;
+
+
 
     public DocumentoPago() {
     }
