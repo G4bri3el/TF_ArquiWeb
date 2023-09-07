@@ -22,4 +22,8 @@ public class CalificacionServiceImplement implements ICalificacionService {
     public List<Calificacion> list() {
         return cR.findAll();
     }
+
+    public void delete(int CalificacionId) {
+        cR.deleteById(CalificacionId);
+    }
 }
