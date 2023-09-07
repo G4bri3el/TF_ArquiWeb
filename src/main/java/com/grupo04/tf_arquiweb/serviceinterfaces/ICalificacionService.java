@@ -7,4 +7,5 @@ import java.util.List;
 public interface ICalificacionService {
     public void insert(Calificacion calificacion);
     public List<Calificacion> list();
+    public void delete(int Calificacion);
 }
