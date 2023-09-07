@@ -21,7 +21,7 @@ public class TipoPagoServiceImplement implements ITipoPagoService {
         return tpR.findAll();
     }
     @Override
-    public void delete(int TipoPagoID){
-        tpR.deleteById(TipoPagoID);
+    public void delete(int TipoPagoId){
+        tpR.deleteById(TipoPagoId);
     }
 }
