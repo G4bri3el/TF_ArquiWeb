@@ -3,17 +3,17 @@ package com.grupo04.tf_arquiweb.dtos;
 import com.grupo04.tf_arquiweb.entities.Reserva;
 
 public class CalificacionDTO {
-    private int CalificacionID;
+    private int CalificacionId;
     private int CalificacionEstrellas;
     private String CalificacionComentario;
     private Reserva reserva;
 
-    public int getCalificacionID() {
-        return CalificacionID;
+    public int getCalificacionId() {
+        return CalificacionId;
     }
 
-    public void setCalificacionID(int calificacionID) {
-        CalificacionID = calificacionID;
+    public void setCalificacionId(int calificacionId) {
+        CalificacionId = calificacionId;
     }
 
     public int getCalificacionEstrellas() {
