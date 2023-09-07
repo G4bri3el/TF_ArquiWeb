@@ -14,8 +14,8 @@ public class ResenaServiceImplement implements IResenaService {
     private IResenaRepository cR;
 
     @Override
-    public void insert(Resena calificacion) {
-        cR.save(calificacion);
+    public void insert(Resena resena) {
+        cR.save(resena);
     }
 
     @Override
@@ -23,7 +23,7 @@ public class ResenaServiceImplement implements IResenaService {
         return cR.findAll();
     }
 
-    public void delete(int CalificacionId) {
-        cR.deleteById(CalificacionId);
+    public void delete(int ResenaId) {
+        cR.deleteById(ResenaId);
     }
 }

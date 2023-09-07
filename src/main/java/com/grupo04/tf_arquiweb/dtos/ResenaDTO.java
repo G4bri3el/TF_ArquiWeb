@@ -2,7 +2,7 @@ package com.grupo04.tf_arquiweb.dtos;
 
 import com.grupo04.tf_arquiweb.entities.Reserva;
 
-public class CalificacionDTO {
+public class ResenaDTO {
     private int CalificacionId;
     private int CalificacionEstrellas;
     private String CalificacionComentario;
