@@ -1,15 +1,15 @@
 package com.grupo04.tf_arquiweb.dtos;
 
 public class TipoPagoDTO {
-    private int TipoPagoID;
+    private int TipoPagoId;
     private String TipoPagoModo;
 
-    public int getTipoPagoID() {
-        return TipoPagoID;
+    public int getTipoPagoId() {
+        return TipoPagoId;
     }
 
-    public void setTipoPagoID(int tipoPagoID) {
-        TipoPagoID = tipoPagoID;
+    public void setTipoPagoId(int tipoPagoId) {
+        TipoPagoId = tipoPagoId;
     }
 
     public String getTipoPagoModo() {

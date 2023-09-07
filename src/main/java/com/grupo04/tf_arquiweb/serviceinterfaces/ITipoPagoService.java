@@ -7,5 +7,5 @@ import java.util.List;
 public interface ITipoPagoService {
     public void insert(TipoPago tipoPago);
     public List<TipoPago> list();
-    public void delete(int TipoPagoID);
+    public void delete(int TipoPagoId);
 }

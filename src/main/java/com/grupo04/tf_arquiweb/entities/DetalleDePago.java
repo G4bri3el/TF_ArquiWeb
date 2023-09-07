@@ -7,25 +7,25 @@ import jakarta.persistence.*;
 public class DetalleDePago {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int DetalleDePagoID;
+    private int DetalleDePagoId;
     @OneToOne
-    @JoinColumn(name="ReservaID")
+    @JoinColumn(name="ReservaId")
     private Reserva reserva;
 
     public DetalleDePago() {
     }
 
-    public DetalleDePago(int detalleDePagoID, Reserva reserva) {
-        DetalleDePagoID = detalleDePagoID;
+    public DetalleDePago(int detalleDePagoId, Reserva reserva) {
+        DetalleDePagoId = detalleDePagoId;
         this.reserva = reserva;
     }
 
-    public int getDetalleDePagoID() {
-        return DetalleDePagoID;
+    public int getDetalleDePagoId() {
+        return DetalleDePagoId;
     }
 
-    public void setDetalleDePagoID(int detalleDePagoID) {
-        DetalleDePagoID = detalleDePagoID;
+    public void setDetalleDePagoId(int detalleDePagoId) {
+        DetalleDePagoId = detalleDePagoId;
     }
 
     public Reserva getReserva() {

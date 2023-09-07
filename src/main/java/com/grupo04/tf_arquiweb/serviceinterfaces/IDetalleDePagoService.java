@@ -7,5 +7,5 @@ import java.util.List;
 public interface IDetalleDePagoService {
     public void insert(DetalleDePago detalleDePago);
     public List<DetalleDePago> list();
-    public void delete(int DetalleDePagoID);
+    public void delete(int DetalleDePagoId);
 }

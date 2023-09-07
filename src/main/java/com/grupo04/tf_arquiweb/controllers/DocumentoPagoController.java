@@ -1,0 +1,41 @@
+package com.grupo04.tf_arquiweb.controllers;
+
+import com.grupo04.tf_arquiweb.dtos.DocumentoPagoDTO;
+import com.grupo04.tf_arquiweb.entities.DocumentoPago;
+import com.grupo04.tf_arquiweb.serviceinterfaces.IDocumentoPagoService;
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+@RestController
+@RequestMapping("/documentospagos")
+public class DocumentoPagoController {
+    @Autowired
+    private IDocumentoPagoService dpS;
+    @PostMapping
+    public void registrar(@RequestBody DocumentoPagoDTO dto){
+        ModelMapper m=new ModelMapper();
+        DocumentoPago dp=m.map(dto,DocumentoPago.class);
+        dpS.insert(dp);
+    }
+    @GetMapping
+    public List<DocumentoPagoDTO> listar(){
+        return dpS.list().stream().map(x->{
+            ModelMapper m=new ModelMapper();
+            return m.map(x,DocumentoPagoDTO.class);
+        }).collect(Collectors.toList());
+    }
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable("id") Integer id){
+        dpS.delete(id);
+    }
+    @PutMapping
+    public void modificar(@RequestBody DocumentoPagoDTO dto){
+        ModelMapper m=new ModelMapper();
+        DocumentoPago dp=m.map(dto, DocumentoPago.class);
+        dpS.insert(dp);
+    }
+}

@@ -20,7 +20,7 @@ public class Local {
     @Column(name = "LocalFoto", length = 50, nullable = false)
     private String LocalFoto;
     @ManyToOne
-    @JoinColumn(name = "UserId")
+    @JoinColumn(name = "UsuarioId")
     private Usuario usuario;
 
     public Local() {
