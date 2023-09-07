@@ -1,2 +1,4 @@
-package com.grupo04.tf_arquiweb.security;public class WebSecurityConfig {
+package com.grupo04.tf_arquiweb.security;
+
+public class WebSecurityConfig {
 }
