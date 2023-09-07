@@ -11,7 +11,7 @@ public class Reserva {
     private int ReservaId;
 
     @ManyToOne
-    @JoinColumn(name="UserId")
+    @JoinColumn(name="UsuarioId")
     private Usuario usuario;
 
     public Reserva(){
