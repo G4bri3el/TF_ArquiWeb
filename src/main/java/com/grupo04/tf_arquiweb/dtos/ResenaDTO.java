@@ -3,33 +3,33 @@ package com.grupo04.tf_arquiweb.dtos;
 import com.grupo04.tf_arquiweb.entities.Reserva;
 
 public class ResenaDTO {
-    private int CalificacionId;
-    private int CalificacionEstrellas;
-    private String CalificacionComentario;
+    private int ResenaId;
+    private int ResenaEstrellas;
+    private String ResenaComentario;
     private Reserva reserva;
 
-    public int getCalificacionId() {
-        return CalificacionId;
+    public int getResenaId() {
+        return ResenaId;
     }
 
-    public void setCalificacionId(int calificacionId) {
-        CalificacionId = calificacionId;
+    public void setResenaId(int resenaId) {
+        ResenaId = resenaId;
     }
 
-    public int getCalificacionEstrellas() {
-        return CalificacionEstrellas;
+    public int getResenaEstrellas() {
+        return ResenaEstrellas;
     }
 
-    public void setCalificacionEstrellas(int calificacionEstrellas) {
-        CalificacionEstrellas = calificacionEstrellas;
+    public void setResenaEstrellas(int resenaEstrellas) {
+        ResenaEstrellas = resenaEstrellas;
     }
 
-    public String getCalificacionComentario() {
-        return CalificacionComentario;
+    public String getResenaComentario() {
+        return ResenaComentario;
     }
 
-    public void setCalificacionComentario(String calificacionComentario) {
-        CalificacionComentario = calificacionComentario;
+    public void setResenaComentario(String resenaComentario) {
+        ResenaComentario = resenaComentario;
     }
 
     public Reserva getReserva() {
