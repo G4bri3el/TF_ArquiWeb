@@ -14,23 +14,23 @@ public class Usuario {
     private String UsuarioContrasena;
     @Column(name = "UsuarioTelefono", nullable = false)
     private int UsuarioTelefono;
-    @Column(name = "UsuarioNombre", nullable = false, length = 50)
+        @Column(name = "UsuarioNombre", nullable = true, length = 50)
     private String UsuarioNombre;
-    @Column(name = "UsuarioApellido", nullable = false, length = 50)
+    @Column(name = "UsuarioApellido", nullable = true, length = 50)
     private String UsuarioApellido;
-    @Column(name = "UsuarioDni",nullable = false,length = 8)
+    @Column(name = "UsuarioDni",nullable = true,length = 8)
     private String UsuarioDni;
-    @Column(name = "UsuarioEdad",nullable = false)
+    @Column(name = "UsuarioEdad",nullable = true)
     private int UsuarioEdad;
-    @Column(name = "UsuarioCiudad", nullable = false, length = 50)
+    @Column(name = "UsuarioCiudad", nullable = true, length = 50)
     private String UsuarioCiudad;
-    @Column(name = "UsuarioFoto", nullable = false, length = 50)
+    @Column(name = "UsuarioFoto", nullable = true, length = 50)
     private String UsuarioFoto;
-    @Column(name = "UsuarioRazonsocial", nullable = false, length = 50)
+    @Column(name = "UsuarioRazonsocial", nullable = true, length = 50)
     private String UsuarioRazonsocial;
-    @Column(name = "UsuarioDireccion", nullable = false, length = 50)
+    @Column(name = "UsuarioDireccion", nullable = true, length = 50)
     private String UsuarioDireccion;
-    @Column(name = "UsuarioRuc", nullable = false, length = 50)
+    @Column(name = "UsuarioRuc", nullable = true, length = 50)
     private String UsuarioRuc;
 
     @ManyToOne
