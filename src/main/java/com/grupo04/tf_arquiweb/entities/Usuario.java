@@ -30,7 +30,7 @@ public class Usuario {
     private String UsuarioRazonsocial;
     @Column(name = "UsuarioDireccion", nullable = true, length = 50)
     private String UsuarioDireccion;
-    @Column(name = "UsuarioRuc", nullable = true, length = 50)
+    @Column(name = "UsuarioRuc", nullable = true, length = 11)
     private String UsuarioRuc;
 
     @ManyToOne
