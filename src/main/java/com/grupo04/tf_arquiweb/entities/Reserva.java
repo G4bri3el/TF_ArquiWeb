@@ -24,15 +24,19 @@ public class Reserva {
     @JoinColumn(name="UsuarioId")
     private Usuario usuario;
 
+    @Column(name = "ReservaMontoTotal", nullable = false)
+    private int ReservaMontoTotal;
+
     public Reserva(){
 
     }
 
-    public Reserva(int reservaId, Date reservaFechaInicio, Date reservaFechaFin, Usuario usuario) {
+    public Reserva(int reservaId, Date reservaFechaInicio, Date reservaFechaFin, Usuario usuario, int reservaMontoTotal) {
         ReservaId = reservaId;
         ReservaFechaInicio = reservaFechaInicio;
         ReservaFechaFin = reservaFechaFin;
         this.usuario = usuario;
+        ReservaMontoTotal= reservaMontoTotal;
     }
 
     public int getReservaId() {
@@ -67,5 +71,11 @@ public class Reserva {
         this.usuario = usuario;
     }
 
+    public int getReservaMontoTotal() {
+        return ReservaMontoTotal;
+    }
 
+    public void setReservaMontoTotal(int reservaMontoTotal) {
+        ReservaMontoTotal = reservaMontoTotal;
+    }
 }
