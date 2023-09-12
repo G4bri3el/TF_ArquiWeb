@@ -1,7 +1,8 @@
 package com.grupo04.tf_arquiweb.dtos;
 
-import com.grupo04.tf_arquiweb.entities.DetalleDePago;
+import com.grupo04.tf_arquiweb.entities.Reserva;
 import com.grupo04.tf_arquiweb.entities.TipoPago;
+
 
 import java.sql.Date;
 
@@ -11,7 +12,13 @@ public class DocumentoPagoDTO {
     private int DocumentoPagoMonto;
     private String DocumentoPagoMoneda;
     private TipoPago tipoPago;
-    private DetalleDePago detalleDePago;
+    private Reserva reserva;
+
+    private String ComprobanteNombre;
+    private String ComprobanteDNI;
+    private String ComprobanteRUC;
+    private String ComprobanteRazonSocial;
+    private String ComprobanteDireccion;
 
     public int getDocumentoPagoId() {
         return DocumentoPagoId;
@@ -53,11 +60,51 @@ public class DocumentoPagoDTO {
         this.tipoPago = tipoPago;
     }
 
-    public DetalleDePago getDetalleDePago() {
-        return detalleDePago;
+    public Reserva getReserva() {
+        return reserva;
     }
 
-    public void setDetalleDePago(DetalleDePago detalleDePago) {
-        this.detalleDePago = detalleDePago;
+    public void setReserva(Reserva reserva) {
+        this.reserva = reserva;
+    }
+
+    public String getComprobanteNombre() {
+        return ComprobanteNombre;
+    }
+
+    public void setComprobanteNombre(String comprobanteNombre) {
+        ComprobanteNombre = comprobanteNombre;
+    }
+
+    public String getComprobanteDNI() {
+        return ComprobanteDNI;
+    }
+
+    public void setComprobanteDNI(String comprobanteDNI) {
+        ComprobanteDNI = comprobanteDNI;
+    }
+
+    public String getComprobanteRUC() {
+        return ComprobanteRUC;
+    }
+
+    public void setComprobanteRUC(String comprobanteRUC) {
+        ComprobanteRUC = comprobanteRUC;
+    }
+
+    public String getComprobanteRazonSocial() {
+        return ComprobanteRazonSocial;
+    }
+
+    public void setComprobanteRazonSocial(String comprobanteRazonSocial) {
+        ComprobanteRazonSocial = comprobanteRazonSocial;
+    }
+
+    public String getComprobanteDireccion() {
+        return ComprobanteDireccion;
+    }
+
+    public void setComprobanteDireccion(String comprobanteDireccion) {
+        ComprobanteDireccion = comprobanteDireccion;
     }
 }
