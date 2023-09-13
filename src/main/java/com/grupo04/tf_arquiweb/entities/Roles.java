@@ -3,9 +3,14 @@ package com.grupo04.tf_arquiweb.entities;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
+
 @Entity
-@Table(name = "Roles")
-public class Roles {
+@Table(name = "Roles", uniqueConstraints = { @UniqueConstraint(columnNames = { "user_id", "rol" }) })
+public class Roles implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int RolesId;
