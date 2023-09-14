@@ -2,6 +2,7 @@ package com.grupo04.tf_arquiweb.serviceimplements;
 
 import com.grupo04.tf_arquiweb.entities.Usuario;
 import com.grupo04.tf_arquiweb.repositories.IUsuarioRepository;
+import com.grupo04.tf_arquiweb.serviceinterfaces.IRolesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -22,19 +23,23 @@ public class JwtUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+
         Usuario user = repo.findByUsername(username);
 
         if(user == null) {
             throw new UsernameNotFoundException(String.format("User not exists", username));
         }
 
+
         List<GrantedAuthority> roles = new ArrayList<>();
 
-        user.getRoles().forEach(rol -> {
-            roles.add(new SimpleGrantedAuthority(rol.getRol()));
-        });
 
-        UserDetails ud = new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), user.getEnabled(), true, true, true, roles);
+        roles.add(new SimpleGrantedAuthority(user.getRoles().getRol()));
+
+
+
+
+        UserDetails ud = new org.springframework.security.core.userdetails.User(user.getUsuarioCorreo(), user.getUsuarioContrasena(), true, true, true, true, roles);
 
         return ud;
     }

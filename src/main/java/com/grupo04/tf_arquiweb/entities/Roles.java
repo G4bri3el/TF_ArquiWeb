@@ -4,9 +4,10 @@ package com.grupo04.tf_arquiweb.entities;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
-@Table(name = "Roles", uniqueConstraints = { @UniqueConstraint(columnNames = { "user_id", "rol" }) })
+@Table(name = "Roles")
 public class Roles implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -15,11 +16,13 @@ public class Roles implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int RolesId;
 
-    @Column(name = "Rol", nullable = false, length = 50)
+    @Column(name = "Rol", length = 50, unique = true)
     private String Rol;
 
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "UsuarioId")
+    private List<Usuario> usuarios;
     public Roles() {
-
     }
 
     public Roles(int rolesId, String rol) {
@@ -41,5 +44,13 @@ public class Roles implements Serializable {
 
     public void setRol(String rol) {
         Rol = rol;
+    }
+
+    public List<Usuario> getUsuarios() {
+        return usuarios;
+    }
+
+    public void setUsuarios(List<Usuario> usuarios) {
+        this.usuarios = usuarios;
     }
 }
