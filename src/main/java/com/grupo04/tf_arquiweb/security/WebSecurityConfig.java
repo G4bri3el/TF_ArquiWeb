@@ -28,6 +28,7 @@ public class WebSecurityConfig {
     @Autowired
     private JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
 
+
     @Autowired
     private UserDetailsService jwtUserDetailsService;
 
@@ -58,6 +59,7 @@ public class WebSecurityConfig {
     //METODO ACTUALIZADO AL SPRING SECURITY 6.0
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
+        /*
         httpSecurity.cors().configurationSource(request -> new CorsConfiguration().applyPermitDefaultValues())
                 .and()
                 .csrf().disable() //Spring Security tiene sus propios mecanimos para evitar estos ataques
@@ -71,8 +73,8 @@ public class WebSecurityConfig {
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         httpSecurity.addFilterBefore(jwtRequestFilter,UsernamePasswordAuthenticationFilter.class);
         return httpSecurity.build();
+        */
 
-        /*
         httpSecurity
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth->auth
@@ -80,13 +82,12 @@ public class WebSecurityConfig {
                 .anyRequest().authenticated()
                 )
                 .exceptionHandling(exp->exp.authenticationEntryPoint(jwtAuthenticationEntryPoint))
-                //formLogin().disable()
+                .formLogin(form -> form.disable())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
 
         httpSecurity.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
 
         return httpSecurity.build();
-        */
 
     }
 

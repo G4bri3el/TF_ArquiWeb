@@ -19,9 +19,6 @@ public class Roles implements Serializable {
     @Column(name = "Rol", length = 50, unique = true)
     private String Rol;
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "UsuarioId")
-    private List<Usuario> usuarios;
     public Roles() {
     }
 
@@ -46,11 +43,4 @@ public class Roles implements Serializable {
         Rol = rol;
     }
 
-    public List<Usuario> getUsuarios() {
-        return usuarios;
-    }
-
-    public void setUsuarios(List<Usuario> usuarios) {
-        this.usuarios = usuarios;
-    }
 }

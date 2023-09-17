@@ -11,9 +11,9 @@ import org.springframework.transaction.annotation.Transactional;
 @Repository
 public interface IUsuarioRepository extends JpaRepository<Usuario,Integer> {
 
-    public Usuario findByUsername(String username);
+    public Usuario findByUsuarionombre(String Usuarionombre);
 
-
+    /*
     //BUSCAR POR NOMBRE
     @Query("select count(u.UsuarioNombre) from Usuario u where u.UsuarioNombre =:username")
     public int buscarUsername(@Param("username") String nombre);
@@ -24,5 +24,5 @@ public interface IUsuarioRepository extends JpaRepository<Usuario,Integer> {
     @Modifying
     @Query(value = "insert into roles (rol, user_id) VALUES (:rol, :user_id)", nativeQuery = true)
     public void insRol(@Param("rol") String authority, @Param("user_id") Long user_id);
-
+    */
 }

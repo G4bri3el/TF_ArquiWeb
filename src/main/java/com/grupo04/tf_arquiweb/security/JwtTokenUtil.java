@@ -23,8 +23,7 @@ public class JwtTokenUtil implements Serializable {
     //milisegundos || 18 minutos, le quitamos mil 18 segundos demo
     public static final long JWT_TOKEN_VALIDITY = 7 * 60 * 60 * 1000;
 
-    @Value("${jwt.secret}")
-    private String secret;
+    private String secret = "springboot";
 
     //retrieve username from jwt token
     public String getUsernameFromToken(String token) {
