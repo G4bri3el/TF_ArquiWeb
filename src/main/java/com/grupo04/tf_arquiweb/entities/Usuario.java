@@ -1,8 +1,9 @@
 package com.grupo04.tf_arquiweb.entities;
 
-import jakarta.persistence.*;
 
-@Entity
+import javax.persistence.*;
+
+
 @Table(name = "Usuario")
 public class Usuario {
     @Id
@@ -14,7 +15,7 @@ public class Usuario {
     private String UsuarioContrasena;
     @Column(name = "UsuarioTelefono", nullable = false)
     private int UsuarioTelefono;
-        @Column(name = "UsuarioNombre", nullable = true, length = 50)
+    @Column(name = "UsuarioNombre", nullable = true, length = 50)
     private String UsuarioNombre;
     @Column(name = "UsuarioApellido", nullable = true, length = 50)
     private String UsuarioApellido;
