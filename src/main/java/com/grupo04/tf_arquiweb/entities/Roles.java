@@ -1,10 +1,10 @@
 package com.grupo04.tf_arquiweb.entities;
 
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
-@Table(name = "Roles", uniqueConstraints = { @UniqueConstraint(columnNames = { "RolesId", "Rol" }) })
+@Table(name = "Roles")
 public class Roles {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -12,6 +12,7 @@ public class Roles {
 
     @Column(name = "Rol", nullable = false, length = 50)
     private String Rol;
+
 
 
     public Roles() {

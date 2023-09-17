@@ -1,10 +1,6 @@
 package com.grupo04.tf_arquiweb.entities;
 
-import javax.persistence.*;
-
-
-import java.awt.Image;
-
+import jakarta.persistence.*;
 @Entity
 @Table(name = "Local")
 public class Local {

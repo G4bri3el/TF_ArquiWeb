@@ -1,7 +1,7 @@
 package com.grupo04.tf_arquiweb.entities;
 
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Table(name = "Usuario")
 public class Usuario {
@@ -32,7 +32,7 @@ public class Usuario {
     private String UsuarioDireccion;
     @Column(name = "UsuarioRuc", nullable = true, length = 11)
     private String UsuarioRuc;
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "RolesId")
     private Roles Roles;
 

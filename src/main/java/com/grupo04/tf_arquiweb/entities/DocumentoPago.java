@@ -1,7 +1,8 @@
 package com.grupo04.tf_arquiweb.entities;
 
 
-import javax.persistence.*;
+import jakarta.persistence.*;
+
 import java.sql.Date;
 
 @Entity
