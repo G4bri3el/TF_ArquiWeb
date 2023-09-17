@@ -12,9 +12,11 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.servlet.HandlerExceptionResolver;
 
 
@@ -44,6 +46,7 @@ public class WebSecurityConfig {
     @Bean
     public static PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
+        //return NoOpPasswordEncoder.getInstance();
     }
 
     @Autowired
@@ -55,6 +58,21 @@ public class WebSecurityConfig {
     //METODO ACTUALIZADO AL SPRING SECURITY 6.0
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
+        httpSecurity.cors().configurationSource(request -> new CorsConfiguration().applyPermitDefaultValues())
+                .and()
+                .csrf().disable() //Spring Security tiene sus propios mecanimos para evitar estos ataques
+                .authorizeHttpRequests()
+                .requestMatchers("/authenticate")
+                .permitAll()
+                .anyRequest()
+                .authenticated()
+                .and().exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint)
+                .and().sessionManagement()
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+        httpSecurity.addFilterBefore(jwtRequestFilter,UsernamePasswordAuthenticationFilter.class);
+        return httpSecurity.build();
+
+        /*
         httpSecurity
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth->auth
@@ -68,6 +86,8 @@ public class WebSecurityConfig {
         httpSecurity.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
 
         return httpSecurity.build();
+        */
+
     }
 
 

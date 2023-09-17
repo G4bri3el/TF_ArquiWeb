@@ -1,6 +1,7 @@
 package com.grupo04.tf_arquiweb.security;
 
 import com.grupo04.tf_arquiweb.serviceimplements.JwtUserDetailsService;
+import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -22,20 +23,25 @@ public class JwtRequestFilter extends OncePerRequestFilter {
     private JwtUserDetailsService jwtUserDetailsService;
     @Autowired
     private JwtTokenUtil jwtTokenUtil;
+
+    private Claims claims = null;
+    private String username = null;
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
             throws ServletException, IOException {
+
         final String requestTokenHeader = request.getHeader("Authorization");
-        String username = null;
         String jwtToken = null;
         // JWT Token is in the form "Bearer token". Remove Bearer word and get
         // only the Token
         if (requestTokenHeader != null && requestTokenHeader.startsWith("Bearer ")) {
-            //jwtToken = requestTokenHeader.substring(7);
-            jwtToken = requestTokenHeader.split(" ")[1].trim();
+            jwtToken = requestTokenHeader.substring(7);
+            //otra manera
+            //jwtToken = requestTokenHeader.split(" ")[1].trim();
 
             try {
                 username = jwtTokenUtil.getUsernameFromToken(jwtToken);
+                claims = jwtTokenUtil.getAllClaimsFromToken(jwtToken);
             } catch (IllegalArgumentException e) {
                 System.out.println("No se puede encontrar el token JWT");
             } catch (ExpiredJwtException e) {
@@ -54,8 +60,8 @@ public class JwtRequestFilter extends OncePerRequestFilter {
             // authentication
             if (jwtTokenUtil.validateToken(jwtToken, userDetails)) {
 
-                UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(
-                        userDetails, null, userDetails.getAuthorities());
+                UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken =
+                        new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
                 usernamePasswordAuthenticationToken
                         .setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
                 // After setting the Authentication in the context, we specify
@@ -65,5 +71,16 @@ public class JwtRequestFilter extends OncePerRequestFilter {
             }
         }
         chain.doFilter(request, response);
+    }
+
+    public Boolean isAdmin(){
+        return "admin".equalsIgnoreCase((String) claims.get("role"));
+    }
+    public Boolean isUser() {
+        return "user".equalsIgnoreCase((String) claims.get("role"));
+    }
+
+    public String getCurrentUser(){
+        return username;
     }
 }
