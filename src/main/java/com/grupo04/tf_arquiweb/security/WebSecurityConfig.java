@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -78,11 +79,11 @@ public class WebSecurityConfig {
         httpSecurity
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth->auth
-                .requestMatchers("/authenticate").permitAll() //.hasAuthority("ADMIN")
+                .requestMatchers("/usuarios/signup","/usuarios/login","/authenticate").permitAll() //.hasAuthority("ADMIN")
                 .anyRequest().authenticated()
                 )
                 .exceptionHandling(exp->exp.authenticationEntryPoint(jwtAuthenticationEntryPoint))
-                .formLogin(form -> form.disable())
+                .formLogin(Customizer.withDefaults())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
 
         httpSecurity.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);

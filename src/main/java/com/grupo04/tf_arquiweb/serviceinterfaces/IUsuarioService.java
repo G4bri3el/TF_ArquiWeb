@@ -14,5 +14,7 @@ public interface IUsuarioService { //Se pone todos los metodos que tendra la ent
     public void delete(int UsuarioId);
 
     //Metodo para que se pueda logear
+
+    ResponseEntity<String> signUp(Map<String,String> requestMap);
     ResponseEntity<String> login(Map<String,String> requestMap);
 }

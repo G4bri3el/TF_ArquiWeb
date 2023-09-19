@@ -44,9 +44,33 @@ public class UsuarioServiceImplement implements IUsuarioService {
         uR.deleteById(UsuarioId);
     }
 
+
+    //------------------------------------------
+    @Override
+    public ResponseEntity<String> signUp(Map<String, String> requestMap) {
+        return null;
+    }
     @Override
     public ResponseEntity<String> login(Map<String, String> requestMap) {
-        return null;
+
+        try {
+            Authentication authentication = authenticationManager.authenticate(
+                    new UsernamePasswordAuthenticationToken(requestMap.get("usuario_correo"), requestMap.get("usuario_contrasena"))
+            );
+
+            if (authentication.isAuthenticated()){
+
+                return new ResponseEntity<String>("{\"token\":\""+
+                        jwtTokenUtil.generateToken(jwtUserDetailsService.getUsuarioDetail().getUsuariocorreo(),
+                        jwtUserDetailsService.getUsuarioDetail().getNombreRol()) +"\"}", HttpStatus.OK);
+
+            }
+        }catch (Exception exception){
+
+        }
+
+        return new ResponseEntity<>("{\"mensaje\":\""+" Credenciales incorrectas "+"\"}", HttpStatus.BAD_REQUEST);
+
     }
 
 

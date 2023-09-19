@@ -171,6 +171,10 @@ public class Usuario implements Serializable {
         return Roles;
     }
 
+
+    public String getNombreRol(){
+        return getRoles().getRol();
+    }
     public void setRoles(com.grupo04.tf_arquiweb.entities.Roles roles) {
         Roles = roles;
     }
