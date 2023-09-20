@@ -1,6 +1,6 @@
 package com.grupo04.tf_arquiweb.entities;
-import javax.persistence.*;
 
+import jakarta.persistence.*;
 
 import java.util.Date;
 
@@ -19,13 +19,13 @@ public class Reserva {
     @Column(name="ReservaFechaFin", nullable = false)
     private Date ReservaFechaFin;
 
-    @Column(name = "ReservaMontoTotal", nullable = false)
-    private int ReservaMontoTotal;
 
     @ManyToOne
     @JoinColumn(name="UsuarioId")
     private Usuario usuario;
 
+    @Column(name = "ReservaMontoTotal", nullable = false)
+    private int ReservaMontoTotal;
 
     public Reserva(){
 

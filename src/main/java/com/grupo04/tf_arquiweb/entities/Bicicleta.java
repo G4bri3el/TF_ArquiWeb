@@ -1,8 +1,6 @@
 package com.grupo04.tf_arquiweb.entities;
 
-import javax.persistence.*;
-
-
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "Bicicleta")

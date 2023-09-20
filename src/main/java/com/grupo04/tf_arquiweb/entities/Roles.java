@@ -1,7 +1,7 @@
 package com.grupo04.tf_arquiweb.entities;
 
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 import java.io.Serializable;
 import java.util.List;
@@ -18,8 +18,6 @@ public class Roles implements Serializable {
 
     @Column(name = "Rol", length = 50, unique = true)
     private String Rol;
-
-
 
     public Roles() {
     }
