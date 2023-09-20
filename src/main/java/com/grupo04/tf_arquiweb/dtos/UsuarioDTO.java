@@ -30,6 +30,7 @@ public class UsuarioDTO {
 
     private String UsuarioRuc;
 
+    private boolean UsuarioEnabled;
     private Roles Roles;
 
     public int getUsuarioId() {
@@ -126,6 +127,14 @@ public class UsuarioDTO {
 
     public void setUsuarioDireccion(String usuarioDireccion) {
         UsuarioDireccion = usuarioDireccion;
+    }
+
+    public boolean isUsuarioEnabled() {
+        return UsuarioEnabled;
+    }
+
+    public void setUsuarioEnabled(boolean usuarioEnabled) {
+        UsuarioEnabled = usuarioEnabled;
     }
 
     public String getUsuarioRuc() {
