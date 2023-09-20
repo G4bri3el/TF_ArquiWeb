@@ -52,7 +52,7 @@ public class UsuarioServiceImplement implements IUsuarioService {
     }
     @Override
     public ResponseEntity<String> login(Map<String, String> requestMap) {
-
+        /*
         try {
             Authentication authentication = authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(requestMap.get("usuario_correo"), requestMap.get("usuario_contrasena"))
@@ -70,7 +70,8 @@ public class UsuarioServiceImplement implements IUsuarioService {
         }
 
         return new ResponseEntity<>("{\"mensaje\":\""+" Credenciales incorrectas "+"\"}", HttpStatus.BAD_REQUEST);
-
+        */
+        return new ResponseEntity<>("{\"mensaje\":\""+" Credenciales incorrectas "+"\"}", HttpStatus.BAD_REQUEST);
     }
 
 

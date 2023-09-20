@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "Usuario")
+@Table(name = "Usuario", uniqueConstraints = {@UniqueConstraint(columnNames = {"UsuarioCorreo"})})
 public class Usuario implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -15,7 +15,7 @@ public class Usuario implements Serializable {
     private int UsuarioId;
     @Column(name = "UsuarioCorreo", nullable = false, length = 50)
     private String usuariocorreo;
-    @Column(name = "UsuarioContrasena", nullable = false, length = 150)
+    @Column(name = "UsuarioContrasena", nullable = false, length = 200)
     private String usuariocontrasena;
     @Column(name = "UsuarioTelefono", nullable = false)
     private int usuariotelefono;
@@ -37,7 +37,8 @@ public class Usuario implements Serializable {
     private String usuariodireccion;
     @Column(name = "UsuarioRuc", nullable = true, length = 11)
     private String usuarioruc;
-
+    @Column(name = "UsuarioEnabled")
+    private boolean usuarioenabled;
     @ManyToOne
     @JoinColumn(name = "RolesId")
     private Roles Roles;
@@ -46,7 +47,7 @@ public class Usuario implements Serializable {
     public Usuario() {
     }
 
-    public Usuario(int usuarioId, String usuariocorreo, String usuariocontrasena, int usuariotelefono, String usuarionombre, String usuarioapellido, String usuariodni, int usuarioedad, String usuariociudad, String usuariofoto, String usuariorazonsocial, String usuariodireccion, String usuarioruc, com.grupo04.tf_arquiweb.entities.Roles roles) {
+    public Usuario(int usuarioId, String usuariocorreo, String usuariocontrasena, int usuariotelefono, String usuarionombre, String usuarioapellido, String usuariodni, int usuarioedad, String usuariociudad, String usuariofoto, String usuariorazonsocial, String usuariodireccion, String usuarioruc, boolean usuarioenabled, com.grupo04.tf_arquiweb.entities.Roles roles) {
         UsuarioId = usuarioId;
         this.usuariocorreo = usuariocorreo;
         this.usuariocontrasena = usuariocontrasena;
@@ -60,6 +61,7 @@ public class Usuario implements Serializable {
         this.usuariorazonsocial = usuariorazonsocial;
         this.usuariodireccion = usuariodireccion;
         this.usuarioruc = usuarioruc;
+        this.usuarioenabled = usuarioenabled;
         Roles = roles;
     }
 
@@ -165,6 +167,14 @@ public class Usuario implements Serializable {
 
     public void setUsuarioruc(String usuarioruc) {
         this.usuarioruc = usuarioruc;
+    }
+
+    public boolean isUsuarioenabled() {
+        return usuarioenabled;
+    }
+
+    public void setUsuarioenabled(boolean usuarioenabled) {
+        this.usuarioenabled = usuarioenabled;
     }
 
     public com.grupo04.tf_arquiweb.entities.Roles getRoles() {

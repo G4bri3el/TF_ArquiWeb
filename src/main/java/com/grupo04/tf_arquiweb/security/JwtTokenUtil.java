@@ -23,7 +23,8 @@ public class JwtTokenUtil implements Serializable {
     //milisegundos || 18 minutos, le quitamos mil 18 segundos demo
     public static final long JWT_TOKEN_VALIDITY = 7 * 60 * 60 * 1000;
 
-    private String secret = "springboot";
+    @Value("${jwt.secret}")
+    private String secret;
 
     //retrieve username from jwt token
     public String getUsernameFromToken(String token) {
@@ -54,11 +55,11 @@ public class JwtTokenUtil implements Serializable {
     }
 
     //generate token for user
-    public String generateToken(String username, String rol) {
+    public String generateToken(UserDetails userDetails) {
         Map<String, Object> claims = new HashMap<>();
-        claims.put("nombre", username);
-        claims.put("role", rol);
-        return doGenerateToken(claims, username);
+        claims.put("nombre", "gabriel");
+        claims.put("role", userDetails.getAuthorities().stream().map(r->r.getAuthority()).collect(Collectors.joining()));
+        return doGenerateToken(claims, userDetails.getUsername());
     }
 
     private String doGenerateToken(Map<String, Object> claims, String subject) {
