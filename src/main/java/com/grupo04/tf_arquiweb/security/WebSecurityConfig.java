@@ -1,4 +1,5 @@
 package com.grupo04.tf_arquiweb.security;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
@@ -61,29 +62,14 @@ public class WebSecurityConfig {
     //METODO ACTUALIZADO AL SPRING SECURITY 6.0
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
-        /*
-        httpSecurity.cors().configurationSource(request -> new CorsConfiguration().applyPermitDefaultValues())
-                .and()
-                .csrf().disable() //Spring Security tiene sus propios mecanimos para evitar estos ataques
-                .authorizeHttpRequests()
-                .requestMatchers("/authenticate")
-                .permitAll()
-                .anyRequest()
-                .authenticated()
-                .and().exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint)
-                .and().sessionManagement()
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-        httpSecurity.addFilterBefore(jwtRequestFilter,UsernamePasswordAuthenticationFilter.class);
-        return httpSecurity.build();
-        */
 
         httpSecurity
                 .csrf(csrf -> csrf.disable())
-                .authorizeHttpRequests(auth->auth
-                .requestMatchers("/login/authenticate","/roles").permitAll() //.hasAuthority("ADMIN")
-                .anyRequest().authenticated()
+                .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/login/authenticate", "/usuarios/signup").permitAll() //.hasAuthority("ADMIN")
+                        .anyRequest().authenticated()
                 )
-                .exceptionHandling(exp->exp.authenticationEntryPoint(jwtAuthenticationEntryPoint))
+                .exceptionHandling(exp -> exp.authenticationEntryPoint(jwtAuthenticationEntryPoint))
                 .formLogin(form -> form.disable())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
 

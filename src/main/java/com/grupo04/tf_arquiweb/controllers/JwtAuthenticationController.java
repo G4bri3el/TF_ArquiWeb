@@ -25,7 +25,6 @@ public class JwtAuthenticationController {
     @Autowired
     private JwtUserDetailsService userDetailsService;
 
-
     @PostMapping("/authenticate")
     public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest) throws Exception {
 
@@ -38,7 +37,6 @@ public class JwtAuthenticationController {
 
 
     private void authenticate(String username, String password) throws Exception {
-
         try {
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));
 
