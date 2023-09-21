@@ -38,11 +38,13 @@ public class UsuarioController {
     }
 
     @DeleteMapping("/{id}")
+    @PreAuthorize("hasAuthority('CLIENTE') OR hasAuthority('EMPRESARIO') OR hasAuthority('ADMIN')")
     public void eliminar(@PathVariable("id") Integer id) {
         uS.delete(id);
     }
 
     @PutMapping
+    @PreAuthorize("hasAuthority('CLIENTE') OR hasAuthority('EMPRESARIO') OR hasAuthority('ADMIN')")
     public void modificar(@RequestBody UsuarioDTO dto){
         ModelMapper m = new ModelMapper();
         Usuario u = m.map(dto,Usuario.class);
@@ -50,6 +52,7 @@ public class UsuarioController {
     }
 
     //LOGIN
+    /*
     @PostMapping("/login")
     public ResponseEntity<String> login(@RequestBody(required = true) Map<String,String> requestMap){
         try {
@@ -60,4 +63,5 @@ public class UsuarioController {
 
         return new ResponseEntity<String>("mensaje: Algo ha salido mal", HttpStatus.INTERNAL_SERVER_ERROR);
     }
+    */
 }

@@ -6,6 +6,7 @@ import com.grupo04.tf_arquiweb.entities.Roles;
 import com.grupo04.tf_arquiweb.serviceinterfaces.IRolesService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,6 +19,7 @@ public class RolesController {
     private IRolesService rS;
 
     @PostMapping
+    @PreAuthorize("hasAuthority('ADMIN')")
     public void registrar(@RequestBody RolesDTO dto) {
         ModelMapper m = new ModelMapper();
         Roles r = m.map(dto, Roles.class);
@@ -25,6 +27,7 @@ public class RolesController {
     }
 
     @GetMapping
+    @PreAuthorize("hasAuthority('ADMIN')")
     public List<RolesDTO> listar() {
         return rS.list().stream().map(x -> {
             ModelMapper m = new ModelMapper();
@@ -33,11 +36,13 @@ public class RolesController {
     }
 
     @DeleteMapping("/{id}")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public void eliminar(@PathVariable("id") Integer id) {
         rS.delete(id);
     }
 
     @PutMapping
+    @PreAuthorize("hasAuthority('ADMIN')")
     public void modificar(@RequestBody RolesDTO dto) {
         ModelMapper m = new ModelMapper();
         Roles r = m.map(dto, Roles.class);
