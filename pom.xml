@@ -11,7 +11,7 @@
     <groupId>com.grupo04</groupId>
     <artifactId>TF_ArquiWeb</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <name>TF_ArquiWeb</name>
     <description>TF_ArquiWeb</description>
     <properties>
