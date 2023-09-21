@@ -5,6 +5,7 @@ import com.grupo04.tf_arquiweb.entities.Roles;
 
 public class UsuarioDTO {
 
+    private int UsuarioId;
     private String UsuarioCorreo;
 
     private String UsuarioContrasena;
@@ -30,6 +31,14 @@ public class UsuarioDTO {
     private String UsuarioRuc;
 
     private Roles Roles;
+
+    public int getUsuarioId() {
+        return UsuarioId;
+    }
+
+    public void setUsuarioId(int usuarioId) {
+        UsuarioId = usuarioId;
+    }
 
     public String getUsuarioCorreo() {
         return UsuarioCorreo;

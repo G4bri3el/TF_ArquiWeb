@@ -9,7 +9,7 @@ public interface IDetalledeReservaService {
     public void insert(DetalledeReserva detalledeReserva);
     public List<DetalledeReserva> list();
 
-    public void delete(int DetalleID);
+    public void delete(int DetalleId);
 
 
 

@@ -43,5 +43,4 @@ public class UsuarioController {
         Usuario u = m.map(dto,Usuario.class);
         uS.insert(u);
     }
-
 }

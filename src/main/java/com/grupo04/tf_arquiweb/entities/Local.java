@@ -1,8 +1,8 @@
 package com.grupo04.tf_arquiweb.entities;
 
-import jakarta.persistence.*;
 
-import java.awt.Image;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "Local")
@@ -20,7 +20,7 @@ public class Local {
     @Column(name = "LocalFoto", length = 50, nullable = false)
     private String LocalFoto;
     @ManyToOne
-    @JoinColumn(name = "UserId")
+    @JoinColumn(name = "UsuarioId")
     private Usuario usuario;
 
     public Local() {

@@ -1,7 +1,7 @@
 package com.grupo04.tf_arquiweb.entities;
 
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "Roles")
@@ -12,6 +12,8 @@ public class Roles {
 
     @Column(name = "Rol", nullable = false, length = 50)
     private String Rol;
+
+
 
     public Roles() {
 

@@ -1,13 +1,13 @@
 package com.grupo04.tf_arquiweb.entities;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 @Entity
 @Table(name="TipoPago")
 public class TipoPago {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int TipoPagoID;
+    private int TipoPagoId;
 
     @Column(name = "TipoPagoModo",nullable = false,length = 50)
     private String TipoPagoModo;
@@ -15,17 +15,17 @@ public class TipoPago {
     public TipoPago() {
     }
 
-    public TipoPago(int tipoPagoID, String tipoPagoModo) {
-        TipoPagoID = tipoPagoID;
+    public TipoPago(int tipoPagoId, String tipoPagoModo) {
+        TipoPagoId = tipoPagoId;
         TipoPagoModo = tipoPagoModo;
     }
 
-    public int getTipoPagoID() {
-        return TipoPagoID;
+    public int getTipoPagoId() {
+        return TipoPagoId;
     }
 
-    public void setTipoPagoID(int tipoPagoID) {
-        TipoPagoID = tipoPagoID;
+    public void setTipoPagoId(int tipoPagoId) {
+        TipoPagoId = tipoPagoId;
     }
 
     public String getTipoPagoModo() {

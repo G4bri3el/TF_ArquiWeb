@@ -1,34 +1,31 @@
 package com.grupo04.tf_arquiweb.controllers;
 
-import com.grupo04.tf_arquiweb.dtos.DetalleDePagoDTO;
-import com.grupo04.tf_arquiweb.entities.DetalleDePago;
-import com.grupo04.tf_arquiweb.serviceinterfaces.IDetalleDePagoService;
+import com.grupo04.tf_arquiweb.dtos.DocumentoPagoDTO;
+import com.grupo04.tf_arquiweb.entities.DocumentoPago;
+import com.grupo04.tf_arquiweb.serviceinterfaces.IDocumentoPagoService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/detallesdepago")
-public class DetalleDePagoController {
+@RequestMapping("/documentospagos")
+public class DocumentoPagoController {
     @Autowired
-    private IDetalleDePagoService dpS;
-
+    private IDocumentoPagoService dpS;
     @PostMapping
-    public void registrar(@RequestBody DetalleDePagoDTO dto){
+    public void registrar(@RequestBody DocumentoPagoDTO dto){
         ModelMapper m=new ModelMapper();
-        DetalleDePago dp=m.map(dto,DetalleDePago.class);
+        DocumentoPago dp=m.map(dto,DocumentoPago.class);
         dpS.insert(dp);
     }
-
     @GetMapping
-    public List<DetalleDePagoDTO> listar(){
+    public List<DocumentoPagoDTO> listar(){
         return dpS.list().stream().map(x->{
             ModelMapper m=new ModelMapper();
-            return m.map(x,DetalleDePagoDTO.class);
+            return m.map(x,DocumentoPagoDTO.class);
         }).collect(Collectors.toList());
     }
     @DeleteMapping("/{id}")
@@ -36,9 +33,9 @@ public class DetalleDePagoController {
         dpS.delete(id);
     }
     @PutMapping
-    public void modificar(@RequestBody DetalleDePagoDTO dto){
+    public void modificar(@RequestBody DocumentoPagoDTO dto){
         ModelMapper m=new ModelMapper();
-        DetalleDePago dp=m.map(dto, DetalleDePago.class);
+        DocumentoPago dp=m.map(dto, DocumentoPago.class);
         dpS.insert(dp);
     }
 }
