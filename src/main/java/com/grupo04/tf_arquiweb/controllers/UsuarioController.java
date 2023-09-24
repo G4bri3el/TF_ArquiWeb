@@ -51,17 +51,13 @@ public class UsuarioController {
         uS.insert(u);
     }
 
-    //LOGIN
-    /*
-    @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody(required = true) Map<String,String> requestMap){
-        try {
-            return uS.login(requestMap);
-        }catch (Exception exception){
-            exception.printStackTrace();
-        }
 
-        return new ResponseEntity<String>("mensaje: Algo ha salido mal", HttpStatus.INTERNAL_SERVER_ERROR);
+    //CAMBIAR CONTRASEÑA
+    /*
+    @PutMapping("/cambiarcontraseña")
+    @PreAuthorize("hasAuthority('CLIENTE') OR hasAuthority('EMPRESARIO') OR hasAuthority('ADMIN')")
+    public void cambiarContraseña(@RequestBody String contraseña){
+
     }
     */
 }

@@ -32,4 +32,19 @@ public class LocalServiceImplement implements ILocalService {
     public void delete(int LocalId) {
         lR.deleteById(LocalId);
     }
+
+    @Override
+    public List<Local> findByLocalNombre(String localnombre) {
+        return lR.findByLocalNombre(localnombre);
+    }
+
+    @Override
+    public List<Local> findByLocalDireccion(String localdireccion) {
+        return lR.findByLocalDireccion(localdireccion);
+    }
+
+    @Override
+    public List<Local> buscarXcalificacion(int estrellas) {
+        return lR.buscarXcalificacion(estrellas);
+    }
 }
