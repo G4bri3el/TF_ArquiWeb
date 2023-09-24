@@ -11,4 +11,6 @@ public interface IReservaService {
 
     public void delete(int ReservaId);
 
+    List<Reserva> reservasPorEmpresario(int usuarioid);
+
 }
