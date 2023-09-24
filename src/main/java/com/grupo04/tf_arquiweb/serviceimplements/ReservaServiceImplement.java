@@ -32,7 +32,7 @@ public class ReservaServiceImplement implements IReservaService {
     }
 
     @Override
-    public List<Reserva> reservasPorEmpresario(int usuarioid){
-       return reR.reservasPorEmpresario(usuarioid);
+    public List<Reserva> reservasPorEmpresario(int Usuarioid){
+       return reR.reservasPorEmpresario(Usuarioid);
     }
 }
