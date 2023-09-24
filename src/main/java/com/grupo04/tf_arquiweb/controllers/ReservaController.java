@@ -48,5 +48,9 @@ public class ReservaController {
         Reserva re = m.map(dto, Reserva.class);
         reS.insert(re);
     }
+    @GetMapping("/reservasporempresario")
+    public List<Reserva> reservasPorEmpresario(@RequestParam("UsuarioId")int UsuarioId){
+        return reS.reservasPorEmpresario(UsuarioId);
+    }
 
 }
