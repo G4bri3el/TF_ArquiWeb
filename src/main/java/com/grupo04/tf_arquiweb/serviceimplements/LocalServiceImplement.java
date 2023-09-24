@@ -34,14 +34,15 @@ public class LocalServiceImplement implements ILocalService {
     }
 
     @Override
-    public List<Local> findByLocalNombre(String localnombre) {
-        return lR.findByLocalNombre(localnombre);
+    public List<Local> findByLocalnombre(String localnombre) {
+        return lR.findByLocalnombre(localnombre);
     }
 
     @Override
-    public List<Local> findByLocalDireccion(String localdireccion) {
-        return lR.findByLocalDireccion(localdireccion);
+    public List<Local> findByLocaldireccion(String localdireccion) {
+        return lR.findByLocaldireccion(localdireccion);
     }
+
 
     @Override
     public List<Local> buscarXcalificacion(int estrellas) {

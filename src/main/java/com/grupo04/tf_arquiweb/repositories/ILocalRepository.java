@@ -12,12 +12,12 @@ import java.util.List;
 @Repository
 public interface ILocalRepository extends JpaRepository<Local, Integer> {
 
-    public List<Local> findByLocalNombre(String localnombre);
+    public List<Local> findByLocalnombre(String localnombre);
 
-    public List<Local> findByLocalDireccion(String localdireccion);
+    public List<Local> findByLocaldireccion(String localdireccion);
 
 
-    @Query("SELECT f FROM Local f INNER JOIN Bicicleta b ON f.LocalId = b.local.LocalId\n" +
+    @Query("SELECT f FROM Local f INNER JOIN Bicicleta b ON f.localid = b.local.localid\n" +
             " INNER JOIN DetalledeReserva dr ON b.BicicletaId=dr.bicicleta.BicicletaId\n" +
             " INNER JOIN Reserva rv ON dr.reserva.ReservaId = rv.ReservaId\n" +
             " INNER JOIN Resena rn ON rv.ReservaId = rn.reserva.ReservaId\n" +
