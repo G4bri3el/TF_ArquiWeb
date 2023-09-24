@@ -11,8 +11,8 @@ public interface ILocalService {
     public List<Local> list();
     public void delete(int LocalId);
 
-    public List<Local> findByLocalNombre(String localnombre);
-    public List<Local> findByLocalDireccion(String localdireccion);
+    public List<Local> findByLocalnombre(String localnombre);
+    public List<Local> findByLocaldireccion(String localdireccion);
 
     public List<Local> buscarXcalificacion(int estrellas);
 }
