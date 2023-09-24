@@ -21,7 +21,7 @@ public interface ILocalRepository extends JpaRepository<Local, Integer> {
             " INNER JOIN DetalledeReserva dr ON b.BicicletaId=dr.bicicleta.BicicletaId\n" +
             " INNER JOIN Reserva rv ON dr.reserva.ReservaId = rv.ReservaId\n" +
             " INNER JOIN Resena rn ON rv.ReservaId = rn.reserva.ReservaId\n" +
-            " WHERE rn.ResenaEstrellas = :estrellas\n")
+            " WHERE rn.ResenaEstrellas = :estrellas")
     public List<Local> buscarXcalificacion(@Param("estrellas") int estrellas);
 
 }

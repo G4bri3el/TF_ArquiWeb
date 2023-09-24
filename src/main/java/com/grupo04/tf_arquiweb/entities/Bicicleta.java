@@ -25,7 +25,7 @@ public class Bicicleta {
     @Column(name = "BicicletaDetalles", nullable = false, length = 100)
     private String BicicletaDetalles;
 
-    @Column(name = "BicicletaFoto", nullable = false, length = 50)
+    @Column(name = "BicletaFoto", nullable = false, length = 50)
     private String BicletaFoto;
 
     @ManyToOne

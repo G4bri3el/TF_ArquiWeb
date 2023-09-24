@@ -1,2 +1,3 @@
-package com.grupo04.tf_arquiweb.dtos;public class BicicletaLocalDTO {
+package com.grupo04.tf_arquiweb.dtos;
+public class BicicletaLocalDTO {
 }
