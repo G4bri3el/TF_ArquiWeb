@@ -9,7 +9,7 @@ import java.util.List;
 
 @Repository
 public interface IReservaRepository extends JpaRepository<Reserva, Integer> {
-@Query(value = "select r.ReservaId, u.UsuarioId, u.UsuarioNombre, r.ReservaFechaInicio, r.ReservaFechaFin, r.ReservaMontoTotal" +
-        " from Reserva r inner join Usuario u on r.ReservaId=u.UsuarioId Group by r.UsuarioId",nativeQuery = true)
+@Query(value = "select r.ReservaId, u.UsuarioId, u.UsuarioNombre, r.ReservaFechaInicio, r.ReservaFechaFin, r.ReservaMontoTotal " +
+        "from Reserva r inner join Usuario u on r.ReservaId=u.UsuarioId Group by r.UsuarioId",nativeQuery = true)
     List<Reserva> reservasPorEmpresario(int usuarioid);
 }
