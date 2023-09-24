@@ -51,4 +51,30 @@ public class LocalController {
         Local l = m.map(dto, Local.class);
         lS.insert(l);
     }
+
+    @PostMapping("/buscarXnombre")
+    @PreAuthorize("hasAuthority('EMPRESARIO') OR hasAuthority('ADMIN')")
+    public List<LocalDTO> buscarXnombre(@RequestBody String localnombre) {
+        return lS.findByLocalNombre(localnombre).stream().map(x->{
+            ModelMapper m=new ModelMapper();
+            return m.map(x,LocalDTO.class);
+        }).collect(Collectors.toList());
+    }
+
+    @PostMapping("/buscarXdireccion")
+    @PreAuthorize("hasAuthority('EMPRESARIO') OR hasAuthority('ADMIN')")
+    public List<LocalDTO> buscarXdireccion(@RequestBody String localdireccion) {
+        return lS.findByLocalDireccion(localdireccion).stream().map(x->{
+            ModelMapper m=new ModelMapper();
+            return m.map(x,LocalDTO.class);
+        }).collect(Collectors.toList());
+    }
+    @PostMapping("/buscarXcalificacion")
+    @PreAuthorize("hasAuthority('EMPRESARIO') OR hasAuthority('ADMIN')")
+    public List<LocalDTO> buscarXcalificacion(@RequestBody int estrellas) {
+        return lS.buscarXcalificacion(estrellas).stream().map(x->{
+            ModelMapper m=new ModelMapper();
+            return m.map(x,LocalDTO.class);
+        }).collect(Collectors.toList());
+    }
 }

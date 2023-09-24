@@ -30,4 +30,9 @@ public class ReservaServiceImplement implements IReservaService {
     public void delete(int ReservaId) {
         reR.deleteById(ReservaId);
     }
+
+    @Override
+    public List<Reserva> reservasXcliente(int id) {
+        return reR.reservasXcliente(id);
+    }
 }
