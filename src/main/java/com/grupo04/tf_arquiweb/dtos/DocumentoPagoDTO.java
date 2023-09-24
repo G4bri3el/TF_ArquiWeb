@@ -2,6 +2,7 @@ package com.grupo04.tf_arquiweb.dtos;
 
 import com.grupo04.tf_arquiweb.entities.Reserva;
 import com.grupo04.tf_arquiweb.entities.TipoPago;
+import jakarta.persistence.Column;
 
 
 import java.sql.Date;
@@ -19,6 +20,16 @@ public class DocumentoPagoDTO {
     private String ComprobanteRUC;
     private String ComprobanteRazonSocial;
     private String ComprobanteDireccion;
+
+    private int ComprobanteNombre;
+    private int ComprobanteDNI;
+    private int ComprobanteRUC;
+    private int ComprobanteRazonSocial;
+    private int ComprobanteDireccion;
+
+
+
+
 
     public int getDocumentoPagoId() {
         return DocumentoPagoId;
@@ -107,4 +118,24 @@ public class DocumentoPagoDTO {
     public void setComprobanteDireccion(String comprobanteDireccion) {
         ComprobanteDireccion = comprobanteDireccion;
     }
+
+    public int getComprobanteNombre() { return ComprobanteNombre;}
+
+    public void setComprobanteNombre(int comprobanteNombre) { ComprobanteNombre = comprobanteNombre;}
+
+    public int getComprobanteDNI() { return ComprobanteDNI; }
+
+    public void setComprobanteDNI(int comprobanteDNI) { ComprobanteDNI = comprobanteDNI; }
+
+    public int getComprobanteRUC() { return ComprobanteRUC; }
+
+    public void setComprobanteRUC(int comprobanteRUC) { ComprobanteRUC = comprobanteRUC; }
+
+    public int getComprobanteRazonSocial() { return ComprobanteRazonSocial; }
+
+    public void setComprobanteRazonSocial(int comprobanteRazonSocial) { ComprobanteRazonSocial = comprobanteRazonSocial; }
+
+    public int getComprobanteDireccion() { return ComprobanteDireccion; }
+
+    public void setComprobanteDireccion(int comprobanteDireccion) { ComprobanteDireccion = comprobanteDireccion; }
 }
