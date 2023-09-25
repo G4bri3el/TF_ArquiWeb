@@ -23,7 +23,7 @@ public class Reserva {
     private Usuario usuario;
 
     @Column(name = "ReservaMontoTotal", nullable = false)
-    private int reservamontoTotal;
+    private int reservamontototal;
 
     public Reserva() {
     }
@@ -33,7 +33,7 @@ public class Reserva {
         this.reservafechainicio = reservafechaInicio;
         this.reservafechafin = reservafechaFin;
         this.usuario = usuario;
-        this.reservamontoTotal = reservamontoTotal;
+        this.reservamontototal = reservamontoTotal;
     }
 
     public int getReservaid() {
@@ -69,10 +69,10 @@ public class Reserva {
     }
 
     public int getReservamontoTotal() {
-        return reservamontoTotal;
+        return reservamontototal;
     }
 
     public void setReservamontoTotal(int reservamontoTotal) {
-        this.reservamontoTotal = reservamontoTotal;
+        this.reservamontototal = reservamontoTotal;
     }
 }
