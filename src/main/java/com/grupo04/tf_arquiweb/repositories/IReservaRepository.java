@@ -17,7 +17,7 @@ public interface IReservaRepository extends JpaRepository<Reserva, Integer> {
 
     @Query("select r from Reserva r\n" +
             " inner join DetalledeReserva dr on r.reservaid=dr.reserva.reservaid\n" +
-            " inner join Bicicleta b on dr.bicicleta.BicicletaId=b.BicicletaId\n" +
+            " inner join Bicicleta b on dr.bicicleta.bicicletaId=b.bicicletaId\n" +
             " inner join Local l on b.local.localid = l.localid\n" +
             " where l.usuario.UsuarioId=:usuarioid")
     public List<Reserva> reservasPorEmpresario(@Param("usuarioid") int id);

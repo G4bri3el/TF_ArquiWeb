@@ -8,25 +8,25 @@ public class Bicicleta {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int BicicletaId;
+    private int bicicletaId;
 
     @Column(name = "BicicletaModelo", nullable = false, length = 50)
-    private String BicicletaModelo;
+    private String bicicletamodelo;
 
     @Column(name = "BicicletaEstado", nullable = false)
-    private Boolean BicicletaEstado;
+    private Boolean bicicletaestado;
 
     @Column(name = "BicicletaPrecio", nullable = false)
-    private double BicicletaPrecio; //ver esto (money)**********
+    private double bicicletaprecio; //ver esto (money)**********
 
     @Column(name = "BicicletaNumAro", nullable = false)
-    private int BicicletaNumAro;
+    private int bicicletanumaro;
 
     @Column(name = "BicicletaDetalles", nullable = false, length = 100)
-    private String BicicletaDetalles;
+    private String bicicletadetalles;
 
     @Column(name = "BicletaFoto", nullable = false, length = 50)
-    private String BicletaFoto;
+    private String bicletafoto;
 
     @ManyToOne
     @JoinColumn(name = "LocalId")
@@ -36,72 +36,71 @@ public class Bicicleta {
 
     }
 
-    public Bicicleta(int bicicletaId, String bicicletaModelo, Boolean bicicletaEstado, double bicicletaPrecio, int bicicletaNumAro, String bicicletaDetalles, String bicletaFoto, Local local) {
-        BicicletaId = bicicletaId;
-        BicicletaModelo = bicicletaModelo;
-        BicicletaEstado = bicicletaEstado;
-        BicicletaPrecio = bicicletaPrecio;
-        BicicletaNumAro = bicicletaNumAro;
-        BicicletaDetalles = bicicletaDetalles;
-        BicletaFoto = bicletaFoto;
+    public Bicicleta(int bicicletaId, String bicicletamodelo, Boolean bicicletaestado, double bicicletaprecio, int bicicletanumaro, String bicicletadetalles, String bicletafoto, Local local) {
+        this.bicicletaId = bicicletaId;
+        this.bicicletamodelo = bicicletamodelo;
+        this.bicicletaestado = bicicletaestado;
+        this.bicicletaprecio = bicicletaprecio;
+        this.bicicletanumaro = bicicletanumaro;
+        this.bicicletadetalles = bicicletadetalles;
+        this.bicletafoto = bicletafoto;
         this.local = local;
     }
 
-
     public int getBicicletaId() {
-        return BicicletaId;
+        return bicicletaId;
     }
 
     public void setBicicletaId(int bicicletaId) {
-        BicicletaId = bicicletaId;
+        this.bicicletaId = bicicletaId;
     }
 
-    public String getBicicletaModelo() {
-        return BicicletaModelo;
+    public String getBicicletamodelo() {
+        return bicicletamodelo;
     }
 
-    public void setBicicletaModelo(String bicicletaModelo) {
-        BicicletaModelo = bicicletaModelo;
+    public void setBicicletamodelo(String bicicletamodelo) {
+        this.bicicletamodelo = bicicletamodelo;
     }
 
-    public Boolean getBicicletaEstado() {
-        return BicicletaEstado;
+    public Boolean getBicicletaestado() {
+        return bicicletaestado;
     }
 
-    public void setBicicletaEstado(Boolean bicicletaEstado) {
-        BicicletaEstado = bicicletaEstado;
+    public void setBicicletaestado(Boolean bicicletaestado) {
+        this.bicicletaestado = bicicletaestado;
     }
 
-    public double getBicicletaPrecio() {
-        return BicicletaPrecio;
+    public double getBicicletaprecio() {
+        return bicicletaprecio;
     }
 
-    public void setBicicletaPrecio(double bicicletaPrecio) {
-        BicicletaPrecio = bicicletaPrecio;
+    public void setBicicletaprecio(double bicicletaprecio) {
+        this.bicicletaprecio = bicicletaprecio;
     }
 
-    public int getBicicletaNumAro() {
-        return BicicletaNumAro;
+    public int getBicicletanumaro() {
+        return bicicletanumaro;
     }
 
-    public void setBicicletaNumAro(int bicicletaNumAro) {
-        BicicletaNumAro = bicicletaNumAro;
+    public void setBicicletanumaro(int bicicletanumaro) {
+        this.bicicletanumaro = bicicletanumaro;
     }
 
-    public String getBicicletaDetalles() {
-        return BicicletaDetalles;
+    public String getBicicletadetalles() {
+        return bicicletadetalles;
     }
 
-    public void setBicicletaDetalles(String bicicletaDetalles) {
-        BicicletaDetalles = bicicletaDetalles;
+    public void setBicicletadetalles(String bicicletadetalles) {
+        this.bicicletadetalles = bicicletadetalles;
     }
 
-    public String getBicletaFoto() {
-        return BicletaFoto;
+    public String getBicletafoto() {
+        return bicletafoto;
     }
 
-    public void setBicletaFoto(String bicletaFoto) {
-        BicletaFoto = bicletaFoto;
+    public void setBicletafoto(String bicletafoto) {
+        this.bicletafoto = bicletafoto;
     }
 
     public Local getLocal() {

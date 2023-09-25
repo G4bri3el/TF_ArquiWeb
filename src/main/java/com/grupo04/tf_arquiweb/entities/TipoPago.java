@@ -7,32 +7,32 @@ import jakarta.persistence.*;
 public class TipoPago {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int TipoPagoId;
+    private int tipopagoid;
 
     @Column(name = "TipoPagoModo",nullable = false,length = 50)
-    private String TipoPagoModo;
+    private String tipopagomodo;
 
     public TipoPago() {
     }
 
-    public TipoPago(int tipoPagoId, String tipoPagoModo) {
-        TipoPagoId = tipoPagoId;
-        TipoPagoModo = tipoPagoModo;
+    public TipoPago(int tipopagoid, String tipopagomodo) {
+        this.tipopagoid = tipopagoid;
+        this.tipopagomodo = tipopagomodo;
     }
 
-    public int getTipoPagoId() {
-        return TipoPagoId;
+    public int getTipopagoid() {
+        return tipopagoid;
     }
 
-    public void setTipoPagoId(int tipoPagoId) {
-        TipoPagoId = tipoPagoId;
+    public void setTipopagoid(int tipopagoid) {
+        this.tipopagoid = tipopagoid;
     }
 
-    public String getTipoPagoModo() {
-        return TipoPagoModo;
+    public String getTipopagomodo() {
+        return tipopagomodo;
     }
 
-    public void setTipoPagoModo(String tipoPagoModo) {
-        TipoPagoModo = tipoPagoModo;
+    public void setTipopagomodo(String tipopagomodo) {
+        this.tipopagomodo = tipopagomodo;
     }
 }

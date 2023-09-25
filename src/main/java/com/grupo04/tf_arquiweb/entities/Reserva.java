@@ -13,10 +13,10 @@ public class Reserva {
     private int reservaid;
 
     @Column(name = "ReservaFechaInicio", nullable = false)
-    private Date reservafechaInicio;
+    private Date reservafechainicio;
 
     @Column(name = "ReservaFechaFin", nullable = false)
-    private Date reservafechaFin;
+    private Date reservafechafin;
 
     @ManyToOne
     @JoinColumn(name = "UsuarioId")
@@ -30,8 +30,8 @@ public class Reserva {
 
     public Reserva(int reservaid, Date reservafechaInicio, Date reservafechaFin, Usuario usuario, int reservamontoTotal) {
         this.reservaid = reservaid;
-        this.reservafechaInicio = reservafechaInicio;
-        this.reservafechaFin = reservafechaFin;
+        this.reservafechainicio = reservafechaInicio;
+        this.reservafechafin = reservafechaFin;
         this.usuario = usuario;
         this.reservamontoTotal = reservamontoTotal;
     }
@@ -45,19 +45,19 @@ public class Reserva {
     }
 
     public Date getReservafechaInicio() {
-        return reservafechaInicio;
+        return reservafechainicio;
     }
 
     public void setReservafechaInicio(Date reservafechaInicio) {
-        this.reservafechaInicio = reservafechaInicio;
+        this.reservafechainicio = reservafechaInicio;
     }
 
     public Date getReservafechaFin() {
-        return reservafechaFin;
+        return reservafechafin;
     }
 
     public void setReservafechaFin(Date reservafechaFin) {
-        this.reservafechaFin = reservafechaFin;
+        this.reservafechafin = reservafechaFin;
     }
 
     public Usuario getUsuario() {
