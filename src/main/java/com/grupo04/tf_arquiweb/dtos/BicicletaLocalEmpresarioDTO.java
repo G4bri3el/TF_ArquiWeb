@@ -1,9 +1,6 @@
 package com.grupo04.tf_arquiweb.dtos;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+
 
 public class BicicletaLocalEmpresarioDTO {
 

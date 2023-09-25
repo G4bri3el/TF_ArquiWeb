@@ -2,11 +2,6 @@ package com.grupo04.tf_arquiweb.dtos;
 
 import com.grupo04.tf_arquiweb.entities.Local;
 
-import javax.persistence.Column;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-
-
 public class BicicletaDTO {
 
     private int bicicletaid;

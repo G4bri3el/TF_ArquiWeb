@@ -18,7 +18,7 @@ public interface ILocalRepository extends JpaRepository<Local, Integer> {
 
 
     @Query("SELECT f FROM Local f INNER JOIN Bicicleta b ON f.localid = b.local.localid\n" +
-            " INNER JOIN DetalledeReserva dr ON b.bicicletaId=dr.bicicleta.bicicletaId\n" +
+            " INNER JOIN DetalledeReserva dr ON b.bicicletaid=dr.bicicleta.bicicletaid\n" +
             " INNER JOIN Reserva rv ON dr.reserva.reservaid = rv.reservaid\n" +
             " INNER JOIN Resena rn ON rv.reservaid = rn.reserva.reservaid\n" +
             " WHERE rn.resenaestrellas = :estrellas")

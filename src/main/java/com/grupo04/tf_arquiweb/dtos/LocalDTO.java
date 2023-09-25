@@ -1,9 +1,7 @@
 package com.grupo04.tf_arquiweb.dtos;
 
 import com.grupo04.tf_arquiweb.entities.Usuario;
-import jakarta.persistence.*;
 
-import javax.persistence.*;
 
 public class LocalDTO {
 
