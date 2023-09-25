@@ -24,8 +24,7 @@ public interface ILocalRepository extends JpaRepository<Local, Integer> {
             " WHERE rn.resenaestrellas = :estrellas")
     public List<Local> buscarXcalificacion(@Param("estrellas") int estrellas);
 
-    @Query("SELECT u.UsuarioId, l.localid, l.localnombre, l.localdireccion FROM Local l\n" +
-            " Inner join Usuario u on l.usuario.UsuarioId = u.UsuarioId\n" +
-            " ORDER BY u.UsuarioId ASC ")
+    @Query("SELECT l FROM Local l\n" +
+            " Inner join Usuario u on l.usuario.UsuarioId = u.UsuarioId")
     public List<Local> buscarXempresario(int usuarioid);
 }
