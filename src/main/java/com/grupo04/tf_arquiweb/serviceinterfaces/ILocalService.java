@@ -15,4 +15,6 @@ public interface ILocalService {
     public List<Local> findByLocaldireccion(String localdireccion);
 
     public List<Local> buscarXcalificacion(int estrellas);
+
+    public List<Local> buscarXempresario(int usuarioid);
 }

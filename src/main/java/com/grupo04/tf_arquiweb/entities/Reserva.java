@@ -5,62 +5,59 @@ import jakarta.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table (name = "Reserva")
+@Table(name = "Reserva")
 public class Reserva {
 
     @Id//anotación para marcar atributo como ID
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int ReservaId;
+    private int reservaid;
 
+    @Column(name = "ReservaFechaInicio", nullable = false)
+    private Date reservafechaInicio;
 
-    @Column(name="ReservaFechaInicio", nullable = false)
-    private Date ReservaFechaInicio;
-
-    @Column(name="ReservaFechaFin", nullable = false)
-    private Date ReservaFechaFin;
-
+    @Column(name = "ReservaFechaFin", nullable = false)
+    private Date reservafechaFin;
 
     @ManyToOne
-    @JoinColumn(name="UsuarioId")
+    @JoinColumn(name = "UsuarioId")
     private Usuario usuario;
 
     @Column(name = "ReservaMontoTotal", nullable = false)
-    private int ReservaMontoTotal;
+    private int reservamontoTotal;
 
-    public Reserva(){
-
+    public Reserva() {
     }
 
-    public Reserva(int reservaId, Date reservaFechaInicio, Date reservaFechaFin, Usuario usuario, int reservaMontoTotal) {
-        ReservaId = reservaId;
-        ReservaFechaInicio = reservaFechaInicio;
-        ReservaFechaFin = reservaFechaFin;
+    public Reserva(int reservaid, Date reservafechaInicio, Date reservafechaFin, Usuario usuario, int reservamontoTotal) {
+        this.reservaid = reservaid;
+        this.reservafechaInicio = reservafechaInicio;
+        this.reservafechaFin = reservafechaFin;
         this.usuario = usuario;
-        ReservaMontoTotal= reservaMontoTotal;
+        this.reservamontoTotal = reservamontoTotal;
     }
 
-    public int getReservaId() {
-        return ReservaId;
+    public int getReservaid() {
+        return reservaid;
     }
 
-    public void setReservaId(int reservaId) {
-        ReservaId = reservaId;
+    public void setReservaid(int reservaid) {
+        this.reservaid = reservaid;
     }
 
-    public Date getReservaFechaInicio() {
-        return ReservaFechaInicio;
+    public Date getReservafechaInicio() {
+        return reservafechaInicio;
     }
 
-    public void setReservaFechaInicio(Date reservaFechaInicio) {
-        ReservaFechaInicio = reservaFechaInicio;
+    public void setReservafechaInicio(Date reservafechaInicio) {
+        this.reservafechaInicio = reservafechaInicio;
     }
 
-    public Date getReservaFechaFin() {
-        return ReservaFechaFin;
+    public Date getReservafechaFin() {
+        return reservafechaFin;
     }
 
-    public void setReservaFechaFin(Date reservaFechaFin) {
-        ReservaFechaFin = reservaFechaFin;
+    public void setReservafechaFin(Date reservafechaFin) {
+        this.reservafechaFin = reservafechaFin;
     }
 
     public Usuario getUsuario() {
@@ -71,11 +68,11 @@ public class Reserva {
         this.usuario = usuario;
     }
 
-    public int getReservaMontoTotal() {
-        return ReservaMontoTotal;
+    public int getReservamontoTotal() {
+        return reservamontoTotal;
     }
 
-    public void setReservaMontoTotal(int reservaMontoTotal) {
-        ReservaMontoTotal = reservaMontoTotal;
+    public void setReservamontoTotal(int reservamontoTotal) {
+        this.reservamontoTotal = reservamontoTotal;
     }
 }

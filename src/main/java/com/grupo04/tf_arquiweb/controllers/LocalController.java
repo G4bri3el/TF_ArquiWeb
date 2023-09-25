@@ -77,4 +77,14 @@ public class LocalController {
             return m.map(x,LocalDTO.class);
         }).collect(Collectors.toList());
     }
+
+    @PostMapping("/buscarXempresario")
+    @PreAuthorize("hasAuthority('EMPRESARIO') OR hasAuthority('ADMIN')")
+    public List<LocalDTO> buscarXempresario(@RequestBody int usuarioId) {
+        return lS.buscarXempresario(usuarioId).stream().map(x->{
+            ModelMapper m=new ModelMapper();
+            return m.map(x,LocalDTO.class);
+        }).collect(Collectors.toList());
+    }
+
 }

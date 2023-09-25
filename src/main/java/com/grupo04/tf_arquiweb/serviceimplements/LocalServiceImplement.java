@@ -48,4 +48,9 @@ public class LocalServiceImplement implements ILocalService {
     public List<Local> buscarXcalificacion(int estrellas) {
         return lR.buscarXcalificacion(estrellas);
     }
+
+    @Override
+    public List<Local> buscarXempresario(int usuarioid) {
+        return lR.buscarXempresario(usuarioid);
+    }
 }
