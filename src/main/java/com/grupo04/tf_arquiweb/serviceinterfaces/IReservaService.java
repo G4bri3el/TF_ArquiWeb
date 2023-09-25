@@ -13,4 +13,6 @@ public interface IReservaService {
     public void delete(int ReservaId);
 
     public List<Reserva> reservasXcliente(int id);
+    public List<Reserva> reservasPorEmpresario(@Param("usuarioid") int id);
+
 }

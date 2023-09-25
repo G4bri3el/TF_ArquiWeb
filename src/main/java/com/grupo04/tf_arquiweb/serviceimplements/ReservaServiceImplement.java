@@ -35,4 +35,9 @@ public class ReservaServiceImplement implements IReservaService {
     public List<Reserva> reservasXcliente(int id) {
         return reR.reservasXcliente(id);
     }
+
+    @Override
+    public List<Reserva> reservasPorEmpresario(int id) {
+        return reR.reservasPorEmpresario(id);
+    }
 }
