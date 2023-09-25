@@ -7,37 +7,37 @@ import java.util.Date;
 
 public class ReservaDTO {
 
-    private int ReservaId;
+    private int reservaid;
 
-    private Date ReservaFechaInicio;
+    private Date reservafechainicio;
 
 
-    private Date ReservaFechaFin;
+    private Date reservafechafin;
 
     private Usuario usuario;
 
-    public int getReservaId() {
-        return ReservaId;
+    public int getReservaid() {
+        return reservaid;
     }
 
-    public void setReservaId(int reservaId) {
-        ReservaId = reservaId;
+    public void setReservaid(int reservaid) {
+        this.reservaid = reservaid;
     }
 
-    public Date getReservaFechaInicio() {
-        return ReservaFechaInicio;
+    public Date getReservafechainicio() {
+        return reservafechainicio;
     }
 
-    public void setReservaFechaInicio(Date reservaFechaInicio) {
-        ReservaFechaInicio = reservaFechaInicio;
+    public void setReservafechainicio(Date reservafechainicio) {
+        this.reservafechainicio = reservafechainicio;
     }
 
-    public Date getReservaFechaFin() {
-        return ReservaFechaFin;
+    public Date getReservafechafin() {
+        return reservafechafin;
     }
 
-    public void setReservaFechaFin(Date reservaFechaFin) {
-        ReservaFechaFin = reservaFechaFin;
+    public void setReservafechafin(Date reservafechafin) {
+        this.reservafechafin = reservafechafin;
     }
 
     public Usuario getUsuario() {
