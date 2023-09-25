@@ -19,13 +19,11 @@ public class Reserva {
     @Column(name="ReservaFechaFin", nullable = false)
     private Date reservafechafin;
 
-
+    @Column(name = "ReservaMontoTotal", nullable = false)
+    private int reservamontototal;
     @ManyToOne
     @JoinColumn(name="UsuarioId")
     private Usuario usuario;
-
-    @Column(name = "ReservaMontoTotal", nullable = false)
-    private int reservamontototal;
 
     public Reserva() {
     }
