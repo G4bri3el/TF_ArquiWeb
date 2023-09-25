@@ -26,7 +26,7 @@ public interface IReservaRepository extends JpaRepository<Reserva, Integer> {
             " on l.usuario_id=u.usuario_id\n" +
             " inner join reserva re\n" +
             " on u.usuario_id=re.usuario_id\n" +
-            "where u.usuario_id=:usuario_id" +
+            " where u.usuario_id=:usuario_id\n" +
             " group by l.local_nombre",nativeQuery = true)
     public List<String[]> cantidadreservasporlocal(@Param("usuario_id")int usuarioid);
 

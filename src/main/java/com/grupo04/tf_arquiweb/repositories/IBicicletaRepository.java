@@ -12,12 +12,11 @@ import java.util.List;
 @Repository
 public interface IBicicletaRepository extends JpaRepository<Bicicleta, Integer> {
 
-    @Query(value = "SELECT b.bicicleta_modelo, b.bicicleta_estado," +
-            "b.bicicleta_precio, b.bicicleta_num_aro, b.bicicleta_detalles, " +
-            "b.bicicleta_foto FROM bicicleta b INNER JOIN Local l \n" +
-            "ON l.localid = b.local_id INNER JOIN\n" +
-            "usuario u ON u.usuarioid = l.usuario_id  WHERE u.usuarioid =:usuarioid and \n" +
-            "l.localid = :localid", nativeQuery = true)
+    @Query(value = "SELECT b.bicicleta_modelo, b.bicicleta_estado,\n" +
+            " b.bicicleta_precio, b.bicicleta_num_aro, b.bicicleta_detalles,\n" +
+            " b.bicicleta_foto FROM bicicleta b INNER JOIN Local l\n" +
+            " ON l.localid = b.local_id\n" +
+            " INNER JOIN usuario u ON u.usuario_id = l.usuario_id\n" +
+            " WHERE u.usuario_id =:usuarioid and l.localid = :localid", nativeQuery = true)
     public List<String[]> listaBicicletasPorLocalEmpresario(@Param("usuarioid") int usuarioid, @Param("localid") int localid);
-
 }

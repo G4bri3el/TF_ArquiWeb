@@ -56,6 +56,7 @@ public class BicicletaController {
     }
 
     @GetMapping("/{user_id}/{local_id}")
+    @PreAuthorize("hasAuthority('EMPRESARIO') OR hasAuthority('ADMIN')")
     public List<BicicletaLocalEmpresarioDTO> listaBicicletasPorLocalEmpresario(@PathVariable("user_id") Integer user_id,
                                                                                @PathVariable("local_id")  Integer local_id){
 
