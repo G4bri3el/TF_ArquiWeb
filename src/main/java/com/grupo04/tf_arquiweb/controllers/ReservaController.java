@@ -51,7 +51,7 @@ public class ReservaController {
         reS.insert(re);
     }
 
-    @GetMapping("/{user_id}")
+    @GetMapping("/cantidad/{user_id}")
     @PreAuthorize("hasAuthority('EMPRESARIO') OR hasAuthority('ADMIN')")
     public List<ReservaLocalDTO> cantidadreservasporlocal(@PathVariable("user_id") Integer userid){
 
@@ -66,5 +66,21 @@ public class ReservaController {
         return listaDTO;
     }
 
+    @GetMapping("/{id}")
+    @PreAuthorize("hasAuthority('CLIENTE') OR hasAuthority('ADMIN')")
+    public List<ReservaDTO> reservasXcliente(@PathVariable("id") Integer id){
+        return  reS.reservasXcliente(id).stream().map(x->{
+            ModelMapper m = new ModelMapper();
+            return m.map(x,ReservaDTO.class);
+        }).collect(Collectors.toList());
+    }
 
+    @GetMapping("/empresario/{id}")
+    @PreAuthorize("hasAuthority('EMPRESARIO') OR hasAuthority('ADMIN')")
+    public List<ReservaDTO> reservasXempresario(@PathVariable("id") Integer id){
+        return  reS.reservasPorEmpresario(id).stream().map(x->{
+            ModelMapper m = new ModelMapper();
+            return m.map(x,ReservaDTO.class);
+        }).collect(Collectors.toList());
+    }
 }

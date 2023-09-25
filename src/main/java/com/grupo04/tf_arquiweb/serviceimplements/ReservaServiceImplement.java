@@ -38,12 +38,12 @@ public class ReservaServiceImplement implements IReservaService {
 
     @Override
     public List<Reserva> reservasXcliente(int id) {
-        return null;
+        return reR.reservasXcliente(id);
     }
 
     @Override
     public List<Reserva> reservasPorEmpresario(int id) {
-        return null;
+        return reR.reservasPorEmpresario(id);
     }
 
 }

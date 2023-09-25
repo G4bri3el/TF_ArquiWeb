@@ -10,9 +10,9 @@ public interface IReservaService {
     public void insert(Reserva reserva);
     public List<Reserva> list();
     public void delete(int reservaId);
-    public List<String[]> cantidadreservasporlocal(@Param("usuario_id")int usuarioid);
+    public List<String[]> cantidadreservasporlocal(int usuarioid);
 
     public List<Reserva> reservasXcliente(int id);
-    public List<Reserva> reservasPorEmpresario(@Param("usuarioid") int id);
+    public List<Reserva> reservasPorEmpresario(int id);
 
 }
