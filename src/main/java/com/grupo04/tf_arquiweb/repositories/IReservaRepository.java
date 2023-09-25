@@ -21,7 +21,7 @@ public interface IReservaRepository extends JpaRepository<Reserva, Integer> {
             " where l.usuario.UsuarioId=:usuarioid")
     public List<Reserva> reservasPorEmpresario(@Param("usuarioid") int id);
 
-    @Query(value = "select l.local_nombre, count(re.reservaid) as cantidadreservas\n" +
+    @Query(value = "select l.local_nombre, count(v.reservaid) as cantidadreservas\n" +
             " from reserva v inner join detallede_reserva dr\n" +
             " on v.reservaid=dr.reserva_id\n" +
             " inner join bicicleta b\n" +
