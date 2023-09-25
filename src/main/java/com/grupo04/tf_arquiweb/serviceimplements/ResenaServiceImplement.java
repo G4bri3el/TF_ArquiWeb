@@ -23,7 +23,9 @@ public class ResenaServiceImplement implements IResenaService {
         return cR.findAll();
     }
 
-    public void delete(int ResenaId) {
-        cR.deleteById(ResenaId);
+    public void delete(int resenaid) {
+        cR.deleteById(resenaid);
     }
+
+
 }
