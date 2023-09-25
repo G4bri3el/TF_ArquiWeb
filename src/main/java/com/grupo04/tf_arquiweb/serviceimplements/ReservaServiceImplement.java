@@ -27,17 +27,13 @@ public class ReservaServiceImplement implements IReservaService {
     }
 
     @Override
-    public void delete(int ReservaId) {
-        reR.deleteById(ReservaId);
+    public void delete(int reservaid) {
+        reR.deleteById(reservaid);
     }
 
     @Override
-    public List<Reserva> reservasXcliente(int id) {
-        return reR.reservasXcliente(id);
+    public List<String[]> cantidadreservasporlocal(int usuarioid) {
+        return reR.cantidadreservasporlocal(usuarioid);
     }
 
-    @Override
-    public List<Reserva> reservasPorEmpresario(int id) {
-        return reR.reservasPorEmpresario(id);
-    }
 }

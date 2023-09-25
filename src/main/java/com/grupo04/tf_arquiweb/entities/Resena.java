@@ -8,7 +8,7 @@ public class Resena {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int resenaId;
+    private int resenaid;
     @Column(name = "ResenaEstrellas", nullable = false)
     private int resenaestrellas;
     @Column(name = "ResenaComentario", length = 200, nullable = false)
@@ -21,19 +21,19 @@ public class Resena {
 
     }
 
-    public Resena(int resenaId, int resenaestrellas, String resenacomentario, Reserva reserva) {
-        this.resenaId = resenaId;
+    public Resena(int resenaid, int resenaestrellas, String resenacomentario, Reserva reserva) {
+        this.resenaid = resenaid;
         this.resenaestrellas = resenaestrellas;
         this.resenacomentario = resenacomentario;
         this.reserva = reserva;
     }
 
-    public int getResenaId() {
-        return resenaId;
+    public int getResenaid() {
+        return resenaid;
     }
 
-    public void setResenaId(int resenaId) {
-        this.resenaId = resenaId;
+    public void setResenaid(int resenaid) {
+        this.resenaid = resenaid;
     }
 
     public int getResenaestrellas() {
@@ -59,4 +59,5 @@ public class Resena {
     public void setReserva(Reserva reserva) {
         this.reserva = reserva;
     }
+
 }

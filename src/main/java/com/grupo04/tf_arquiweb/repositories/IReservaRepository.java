@@ -10,15 +10,13 @@ import java.util.List;
 
 @Repository
 public interface IReservaRepository extends JpaRepository<Reserva, Integer> {
+    @Query(value = "select l.local_nombre, count(re.reserva_id) as cantidadreservas\n" +
+            " from local l inner join usuario u\n" +
+            " on l.usuario_id=u.usuario_id\n" +
+            " inner join reserva re\n" +
+            " on u.usuario_id=re.usuario_id\n" +
+            "where u.usuario_id=:usuario_id" +
+            " group by l.local_nombre",nativeQuery = true)
+    public List<String[]> cantidadreservasporlocal(@Param("usuario_id")int usuarioid);
 
-    @Query("select r from Reserva r where r.usuario.UsuarioId =:usuarioid")
-    public List<Reserva> reservasXcliente(@Param("usuarioid") int id);
-
-
-    @Query("select r from Reserva r\n" +
-            " inner join DetalledeReserva dr on r.reservaid=dr.reserva.reservaid\n" +
-            " inner join Bicicleta b on dr.bicicleta.bicicletaId=b.bicicletaId\n" +
-            " inner join Local l on b.local.localid = l.localid\n" +
-            " where l.usuario.UsuarioId=:usuarioid")
-    public List<Reserva> reservasPorEmpresario(@Param("usuarioid") int id);
 }

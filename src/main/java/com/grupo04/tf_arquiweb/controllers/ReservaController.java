@@ -1,6 +1,7 @@
 package com.grupo04.tf_arquiweb.controllers;
 
 import com.grupo04.tf_arquiweb.dtos.ReservaDTO;
+import com.grupo04.tf_arquiweb.dtos.ReservaLocalDTO;
 import com.grupo04.tf_arquiweb.entities.Reserva;
 import com.grupo04.tf_arquiweb.serviceinterfaces.IReservaService;
 import org.modelmapper.ModelMapper;
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -49,23 +51,20 @@ public class ReservaController {
         reS.insert(re);
     }
 
-    @GetMapping("/{id}")
-    @PreAuthorize("hasAuthority('CLIENTE') OR hasAuthority('ADMIN')")
-    public List<ReservaDTO> reservasXcliente(@PathVariable("id") Integer id){
-        return  reS.reservasXcliente(id).stream().map(x->{
-            ModelMapper m = new ModelMapper();
-            return m.map(x,ReservaDTO.class);
-        }).collect(Collectors.toList());
-    }
-
-    @GetMapping("/empresario/{id}")
+    @GetMapping("/{user_id}")
     @PreAuthorize("hasAuthority('EMPRESARIO') OR hasAuthority('ADMIN')")
-    public List<ReservaDTO> reservasXempresario(@PathVariable("id") Integer id){
-        return  reS.reservasPorEmpresario(id).stream().map(x->{
-            ModelMapper m = new ModelMapper();
-            return m.map(x,ReservaDTO.class);
-        }).collect(Collectors.toList());
+    public List<ReservaLocalDTO> cantidadreservasporlocal(@PathVariable("user_id") Integer userid){
+
+        List<String[]> lista = reS.cantidadreservasporlocal(userid);
+        List<ReservaLocalDTO> listaDTO = new ArrayList<>();
+        for(String[] data:lista){
+            ReservaLocalDTO dto = new ReservaLocalDTO();
+            dto.setNombrelocal(data[0]);
+            dto.setCantidadreservas(Integer.parseInt(data[1]));
+            listaDTO.add(dto);
+        }
+        return listaDTO;
     }
 
-    //pryeba q no se borrre
+
 }
