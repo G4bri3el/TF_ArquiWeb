@@ -3,144 +3,149 @@ package com.grupo04.tf_arquiweb.dtos;
 
 import com.grupo04.tf_arquiweb.entities.Roles;
 
+import javax.persistence.*;
+
 public class UsuarioDTO {
 
-    private int UsuarioId;
-    private String UsuarioCorreo;
 
-    private String UsuarioContrasena;
+    private int usuarioid;
 
-    private int UsuarioTelefono;
+    private String usuariocorreo;
 
-    private String UsuarioNombre;
+    private String usuariocontrasena;
 
-    private String UsuarioApellido;
+    private int usuariotelefono;
 
-    private String UsuarioDni;
+    private String usuarionombre;
 
-    private int UsuarioEdad;
+    private String usuarioapellido;
 
-    private String UsuarioCiudad;
+    private String usuariodni;
 
-    private String UsuarioFoto;
+    private int usuarioedad;
 
-    private String UsuarioRazonsocial;
+    private String usuariociudad;
 
-    private String UsuarioDireccion;
+     private String usuariofoto;
 
-    private String UsuarioRuc;
+    private String usuariorazonsocial;
+
+    private String usuariodireccion;
+
+    private String usuarioruc;
+
 
     private Roles Roles;
 
-    public int getUsuarioId() {
-        return UsuarioId;
+    public int getUsuarioid() {
+        return usuarioid;
     }
 
-    public void setUsuarioId(int usuarioId) {
-        UsuarioId = usuarioId;
+    public void setUsuarioid(int usuarioid) {
+        this.usuarioid = usuarioid;
     }
 
-    public String getUsuarioCorreo() {
-        return UsuarioCorreo;
+    public String getUsuariocorreo() {
+        return usuariocorreo;
     }
 
-    public void setUsuarioCorreo(String usuarioCorreo) {
-        UsuarioCorreo = usuarioCorreo;
+    public void setUsuariocorreo(String usuariocorreo) {
+        this.usuariocorreo = usuariocorreo;
     }
 
-    public String getUsuarioContrasena() {
-        return UsuarioContrasena;
+    public String getUsuariocontrasena() {
+        return usuariocontrasena;
     }
 
-    public void setUsuarioContrasena(String usuarioContrasena) {
-        UsuarioContrasena = usuarioContrasena;
+    public void setUsuariocontrasena(String usuariocontrasena) {
+        this.usuariocontrasena = usuariocontrasena;
     }
 
-    public int getUsuarioTelefono() {
-        return UsuarioTelefono;
+    public int getUsuariotelefono() {
+        return usuariotelefono;
     }
 
-    public void setUsuarioTelefono(int usuarioTelefono) {
-        UsuarioTelefono = usuarioTelefono;
+    public void setUsuariotelefono(int usuariotelefono) {
+        this.usuariotelefono = usuariotelefono;
     }
 
-    public String getUsuarioNombre() {
-        return UsuarioNombre;
+    public String getUsuarionombre() {
+        return usuarionombre;
     }
 
-    public void setUsuarioNombre(String usuarioNombre) {
-        UsuarioNombre = usuarioNombre;
+    public void setUsuarionombre(String usuarionombre) {
+        this.usuarionombre = usuarionombre;
     }
 
-    public String getUsuarioApellido() {
-        return UsuarioApellido;
+    public String getUsuarioapellido() {
+        return usuarioapellido;
     }
 
-    public void setUsuarioApellido(String usuarioApellido) {
-        UsuarioApellido = usuarioApellido;
+    public void setUsuarioapellido(String usuarioapellido) {
+        this.usuarioapellido = usuarioapellido;
     }
 
-    public String getUsuarioDni() {
-        return UsuarioDni;
+    public String getUsuariodni() {
+        return usuariodni;
     }
 
-    public void setUsuarioDni(String usuarioDni) {
-        UsuarioDni = usuarioDni;
+    public void setUsuariodni(String usuariodni) {
+        this.usuariodni = usuariodni;
     }
 
-    public int getUsuarioEdad() {
-        return UsuarioEdad;
+    public int getUsuarioedad() {
+        return usuarioedad;
     }
 
-    public void setUsuarioEdad(int usuarioEdad) {
-        UsuarioEdad = usuarioEdad;
+    public void setUsuarioedad(int usuarioedad) {
+        this.usuarioedad = usuarioedad;
     }
 
-    public String getUsuarioCiudad() {
-        return UsuarioCiudad;
+    public String getUsuariociudad() {
+        return usuariociudad;
     }
 
-    public void setUsuarioCiudad(String usuarioCiudad) {
-        UsuarioCiudad = usuarioCiudad;
+    public void setUsuariociudad(String usuariociudad) {
+        this.usuariociudad = usuariociudad;
     }
 
-    public String getUsuarioFoto() {
-        return UsuarioFoto;
+    public String getUsuariofoto() {
+        return usuariofoto;
     }
 
-    public void setUsuarioFoto(String usuarioFoto) {
-        UsuarioFoto = usuarioFoto;
+    public void setUsuariofoto(String usuariofoto) {
+        this.usuariofoto = usuariofoto;
     }
 
-    public String getUsuarioRazonsocial() {
-        return UsuarioRazonsocial;
+    public String getUsuariorazonsocial() {
+        return usuariorazonsocial;
     }
 
-    public void setUsuarioRazonsocial(String usuarioRazonsocial) {
-        UsuarioRazonsocial = usuarioRazonsocial;
+    public void setUsuariorazonsocial(String usuariorazonsocial) {
+        this.usuariorazonsocial = usuariorazonsocial;
     }
 
-    public String getUsuarioDireccion() {
-        return UsuarioDireccion;
+    public String getUsuariodireccion() {
+        return usuariodireccion;
     }
 
-    public void setUsuarioDireccion(String usuarioDireccion) {
-        UsuarioDireccion = usuarioDireccion;
+    public void setUsuariodireccion(String usuariodireccion) {
+        this.usuariodireccion = usuariodireccion;
     }
 
-    public String getUsuarioRuc() {
-        return UsuarioRuc;
+    public String getUsuarioruc() {
+        return usuarioruc;
     }
 
-    public void setUsuarioRuc(String usuarioRuc) {
-        UsuarioRuc = usuarioRuc;
+    public void setUsuarioruc(String usuarioruc) {
+        this.usuarioruc = usuarioruc;
     }
 
-    public Roles getRoles() {
+    public com.grupo04.tf_arquiweb.entities.Roles getRoles() {
         return Roles;
     }
 
-    public void setRoles(Roles rol) {
-        Roles = rol;
+    public void setRoles(com.grupo04.tf_arquiweb.entities.Roles roles) {
+        Roles = roles;
     }
 }

@@ -2,47 +2,52 @@ package com.grupo04.tf_arquiweb.dtos;
 
 import com.grupo04.tf_arquiweb.entities.Usuario;
 
+import javax.persistence.*;
+
 public class LocalDTO {
 
-    private int LocalId;
 
-    private String LocalDireccion;
+    private int localid;
 
-    private String LocalNombre;
+    private String localdireccion;
 
-    private String LocalFoto;
+    private String localnombre;
+
+
+    private String localfoto;
+
     private Usuario usuario;
 
-    public int getLocalId() {
-        return LocalId;
+    public int getLocalid() {
+        return localid;
     }
 
-    public void setLocalId(int localId) {
-        LocalId = localId;
+    public void setLocalid(int localid) {
+        this.localid = localid;
     }
 
-    public String getLocalDireccion() {
-        return LocalDireccion;
+    public String getLocaldireccion() {
+        return localdireccion;
     }
 
-    public void setLocalDireccion(String localDireccion) {
-        LocalDireccion = localDireccion;
+    public void setLocaldireccion(String localdireccion) {
+        this.localdireccion = localdireccion;
     }
 
-    public String getLocalNombre() {
-        return LocalNombre;
+    public String getLocalnombre() {
+        return localnombre;
     }
 
-    public void setLocalNombre(String localNombre) {
-        LocalNombre = localNombre;
+    public void setLocalnombre(String localnombre) {
+        this.localnombre = localnombre;
     }
 
-    public String getLocalFoto() {
-        return LocalFoto;
+    public String getLocalfoto() {
+        return localfoto;
     }
 
-    public void setLocalFoto(String localFoto) {
-        LocalFoto = localFoto;
+    public void setLocalfoto(String localfoto) {
+        this.localfoto = localfoto;
     }
 
     public Usuario getUsuario() {

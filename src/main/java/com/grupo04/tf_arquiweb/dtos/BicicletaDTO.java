@@ -2,79 +2,91 @@ package com.grupo04.tf_arquiweb.dtos;
 
 import com.grupo04.tf_arquiweb.entities.Local;
 
+import javax.persistence.Column;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
 
 public class BicicletaDTO {
 
-    private int BicicletaId;
+    private int bicicletaid;
 
-    private String BicicletaModelo;
 
-    private Boolean BicicletaEstado;
+    private String bicicletamodelo;
 
-    private double BicicletaPrecio; //ver esto (money)**********
 
-    private int BicicletaNumAro;
+    private Boolean bicicletaestado;
 
-    private String BicicletaDetalles;
 
-    private String BicletaFoto;
+    private double bicicletaprecio;
+
+
+    private int bicicletanumaro;
+
+
+    private String bicicletadetalles;
+
+
+    private String bicicletafoto;
+
 
     private Local local;
 
-    public int getBicicletaId() {
-        return BicicletaId;
+
+    public int getBicicletaid() {
+        return bicicletaid;
     }
 
-    public void setBicicletaId(int bicicletaId) {
-        BicicletaId = bicicletaId;
+    public void setBicicletaid(int bicicletaid) {
+        this.bicicletaid = bicicletaid;
     }
 
-    public String getBicicletaModelo() {
-        return BicicletaModelo;
+    public String getBicicletamodelo() {
+        return bicicletamodelo;
     }
 
-    public void setBicicletaModelo(String bicicletaModelo) {
-        BicicletaModelo = bicicletaModelo;
+    public void setBicicletamodelo(String bicicletamodelo) {
+        this.bicicletamodelo = bicicletamodelo;
     }
 
-    public Boolean getBicicletaEstado() {
-        return BicicletaEstado;
+    public Boolean getBicicletaestado() {
+        return bicicletaestado;
     }
 
-    public void setBicicletaEstado(Boolean bicicletaEstado) {
-        BicicletaEstado = bicicletaEstado;
+    public void setBicicletaestado(Boolean bicicletaestado) {
+        this.bicicletaestado = bicicletaestado;
     }
 
-    public double getBicicletaPrecio() {
-        return BicicletaPrecio;
+    public double getBicicletaprecio() {
+        return bicicletaprecio;
     }
 
-    public void setBicicletaPrecio(double bicicletaPrecio) {
-        BicicletaPrecio = bicicletaPrecio;
+    public void setBicicletaprecio(double bicicletaprecio) {
+        this.bicicletaprecio = bicicletaprecio;
     }
 
-    public int getBicicletaNumAro() {
-        return BicicletaNumAro;
+    public int getBicicletanumaro() {
+        return bicicletanumaro;
     }
 
-    public void setBicicletaNumAro(int bicicletaNumAro) {
-        BicicletaNumAro = bicicletaNumAro;
+    public void setBicicletanumaro(int bicicletanumaro) {
+        this.bicicletanumaro = bicicletanumaro;
     }
 
-    public String getBicicletaDetalles() {
-        return BicicletaDetalles;
+    public String getBicicletadetalles() {
+        return bicicletadetalles;
     }
 
-    public void setBicicletaDetalles(String bicicletaDetalles) {
-        BicicletaDetalles = bicicletaDetalles;
+    public void setBicicletadetalles(String bicicletadetalles) {
+        this.bicicletadetalles = bicicletadetalles;
     }
 
-    public String getBicletaFoto() {
-        return BicletaFoto;
+    public String getBicicletafoto() {
+        return bicicletafoto;
     }
 
-    public void setBicletaFoto(String bicletaFoto) {
-        BicletaFoto = bicletaFoto;
+    public void setBicicletafoto(String bicicletafoto) {
+        this.bicicletafoto = bicicletafoto;
     }
 
     public Local getLocal() {
