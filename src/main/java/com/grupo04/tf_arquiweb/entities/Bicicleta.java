@@ -1,6 +1,8 @@
 package com.grupo04.tf_arquiweb.entities;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
+
+
 
 @Entity
 @Table(name = "Bicicleta")
@@ -8,7 +10,7 @@ public class Bicicleta {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int bicicletaId;
+    private int bicicletaid;
 
     @Column(name = "BicicletaModelo", nullable = false, length = 50)
     private String bicicletamodelo;
@@ -25,8 +27,8 @@ public class Bicicleta {
     @Column(name = "BicicletaDetalles", nullable = false, length = 100)
     private String bicicletadetalles;
 
-    @Column(name = "BicletaFoto", nullable = false, length = 50)
-    private String bicletafoto;
+    @Column(name = "BicicletaFoto", nullable = false, length = 50)
+    private String bicicletafoto;
 
     @ManyToOne
     @JoinColumn(name = "LocalId")
@@ -36,23 +38,23 @@ public class Bicicleta {
 
     }
 
-    public Bicicleta(int bicicletaId, String bicicletamodelo, Boolean bicicletaestado, double bicicletaprecio, int bicicletanumaro, String bicicletadetalles, String bicletafoto, Local local) {
-        this.bicicletaId = bicicletaId;
+    public Bicicleta(int bicicletaid, String bicicletamodelo, Boolean bicicletaestado, double bicicletaprecio, int bicicletanumaro, String bicicletadetalles, String bicicletafoto, Local local) {
+        this.bicicletaid = bicicletaid;
         this.bicicletamodelo = bicicletamodelo;
         this.bicicletaestado = bicicletaestado;
         this.bicicletaprecio = bicicletaprecio;
         this.bicicletanumaro = bicicletanumaro;
         this.bicicletadetalles = bicicletadetalles;
-        this.bicletafoto = bicletafoto;
+        this.bicicletafoto = bicicletafoto;
         this.local = local;
     }
 
-    public int getBicicletaId() {
-        return bicicletaId;
+    public int getBicicletaid() {
+        return bicicletaid;
     }
 
-    public void setBicicletaId(int bicicletaId) {
-        this.bicicletaId = bicicletaId;
+    public void setBicicletaid(int bicicletaid) {
+        this.bicicletaid = bicicletaid;
     }
 
     public String getBicicletamodelo() {
@@ -95,12 +97,12 @@ public class Bicicleta {
         this.bicicletadetalles = bicicletadetalles;
     }
 
-    public String getBicletafoto() {
-        return bicletafoto;
+    public String getBicicletafoto() {
+        return bicicletafoto;
     }
 
-    public void setBicletafoto(String bicletafoto) {
-        this.bicletafoto = bicletafoto;
+    public void setBicicletafoto(String bicicletafoto) {
+        this.bicicletafoto = bicicletafoto;
     }
 
     public Local getLocal() {
