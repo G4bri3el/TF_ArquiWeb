@@ -1,8 +1,6 @@
 package com.grupo04.tf_arquiweb.entities;
 
-
-import javax.persistence.*;
-
+import jakarta.persistence.*;
 
 @Entity
 @Table(name="DetalledeReserva")
@@ -10,7 +8,7 @@ public class DetalledeReserva {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int DetalleId;
+    private int detalleId;
 
     @ManyToOne
     @JoinColumn(name="ReservaId")
@@ -26,17 +24,17 @@ public class DetalledeReserva {
     }
 
     public DetalledeReserva(int detalleId, Reserva reserva, Bicicleta bicicleta) {
-        DetalleId = detalleId;
+        this.detalleId = detalleId;
         this.reserva = reserva;
         this.bicicleta = bicicleta;
     }
 
     public int getDetalleId() {
-        return DetalleId;
+        return detalleId;
     }
 
     public void setDetalleId(int detalleId) {
-        DetalleId = detalleId;
+        this.detalleId = detalleId;
     }
 
     public Reserva getReserva() {

@@ -1,8 +1,6 @@
 package com.grupo04.tf_arquiweb.entities;
 
-import javax.persistence.*;
-
-
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "Resena")
@@ -10,11 +8,11 @@ public class Resena {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int ResenaId;
+    private int resenaid;
     @Column(name = "ResenaEstrellas", nullable = false)
-    private int ResenaEstrellas;
+    private int resenaestrellas;
     @Column(name = "ResenaComentario", length = 200, nullable = false)
-    private String ResenaComentario;
+    private String resenacomentario;
     @OneToOne
     @JoinColumn(name = "ReservaId")
     private Reserva reserva;
@@ -23,35 +21,35 @@ public class Resena {
 
     }
 
-    public Resena(int resenaId, int resenaEstrellas, String resenaComentario, Reserva reserva) {
-        ResenaId = resenaId;
-        ResenaEstrellas = resenaEstrellas;
-        ResenaComentario = resenaComentario;
+    public Resena(int resenaid, int resenaestrellas, String resenacomentario, Reserva reserva) {
+        this.resenaid = resenaid;
+        this.resenaestrellas = resenaestrellas;
+        this.resenacomentario = resenacomentario;
         this.reserva = reserva;
     }
 
-    public int getResenaId() {
-        return ResenaId;
+    public int getResenaid() {
+        return resenaid;
     }
 
-    public void setResenaId(int resenaId) {
-        ResenaId = resenaId;
+    public void setResenaid(int resenaid) {
+        this.resenaid = resenaid;
     }
 
-    public int getResenaEstrellas() {
-        return ResenaEstrellas;
+    public int getResenaestrellas() {
+        return resenaestrellas;
     }
 
-    public void setResenaEstrellas(int resenaEstrellas) {
-        ResenaEstrellas = resenaEstrellas;
+    public void setResenaestrellas(int resenaestrellas) {
+        this.resenaestrellas = resenaestrellas;
     }
 
-    public String getResenaComentario() {
-        return ResenaComentario;
+    public String getResenacomentario() {
+        return resenacomentario;
     }
 
-    public void setResenaComentario(String resenaComentario) {
-        ResenaComentario = resenaComentario;
+    public void setResenacomentario(String resenacomentario) {
+        this.resenacomentario = resenacomentario;
     }
 
     public Reserva getReserva() {
@@ -61,4 +59,5 @@ public class Resena {
     public void setReserva(Reserva reserva) {
         this.reserva = reserva;
     }
+
 }

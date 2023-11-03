@@ -1,10 +1,8 @@
 package com.grupo04.tf_arquiweb.dtos;
 
-import com.grupo04.tf_arquiweb.entities.Local;
 
-public class BicicletaDTO {
 
-    private int bicicletaid;
+public class BicicletaLocalEmpresarioDTO {
 
 
     private String bicicletamodelo;
@@ -13,7 +11,7 @@ public class BicicletaDTO {
     private Boolean bicicletaestado;
 
 
-    private double bicicletaprecio;
+    private double bicicletaprecio; //ver esto (money)**********
 
 
     private int bicicletanumaro;
@@ -23,18 +21,6 @@ public class BicicletaDTO {
 
 
     private String bicicletafoto;
-
-
-    private Local local;
-
-
-    public int getBicicletaid() {
-        return bicicletaid;
-    }
-
-    public void setBicicletaid(int bicicletaid) {
-        this.bicicletaid = bicicletaid;
-    }
 
     public String getBicicletamodelo() {
         return bicicletamodelo;
@@ -82,13 +68,5 @@ public class BicicletaDTO {
 
     public void setBicicletafoto(String bicicletafoto) {
         this.bicicletafoto = bicicletafoto;
-    }
-
-    public Local getLocal() {
-        return local;
-    }
-
-    public void setLocal(Local local) {
-        this.local = local;
     }
 }
