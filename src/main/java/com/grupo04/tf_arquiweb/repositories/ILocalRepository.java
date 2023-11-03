@@ -16,7 +16,8 @@ public interface ILocalRepository extends JpaRepository<Local, Integer> {
 
     public List<Local> findByLocaldireccion(String localdireccion);
 
-
+    @Query("SELECT COUNT(l.localid) FROM Local l")
+    public int cantidadLocales();
     @Query("SELECT f FROM Local f INNER JOIN Bicicleta b ON f.localid = b.local.localid\n" +
             " INNER JOIN DetalledeReserva dr ON b.bicicletaid=dr.bicicleta.bicicletaid\n" +
             " INNER JOIN Reserva rv ON dr.reserva.reservaid = rv.reservaid\n" +
@@ -27,5 +28,8 @@ public interface ILocalRepository extends JpaRepository<Local, Integer> {
     @Query("SELECT l FROM Local l\n" +
             " Inner join Usuario u on l.usuario.UsuarioId = u.UsuarioId\n" +
             " Where u.UsuarioId=:usuarioid")
+
     public List<Local> buscarXempresario(@Param("usuarioid")int usuarioid);
+
+
 }

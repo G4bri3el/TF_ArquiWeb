@@ -13,6 +13,8 @@ public class ReservaDTO {
 
     private Date reservafechafin;
 
+    private int reservamontototal;
+
     private Usuario usuario;
 
     public int getReservaid() {
@@ -45,5 +47,13 @@ public class ReservaDTO {
 
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
+    }
+
+    public int getReservamontototal() {
+        return reservamontototal;
+    }
+
+    public void setReservamontototal(int reservamontototal) {
+        this.reservamontototal = reservamontototal;
     }
 }

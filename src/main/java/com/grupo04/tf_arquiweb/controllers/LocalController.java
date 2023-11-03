@@ -38,6 +38,12 @@ public class LocalController {
         }).collect(Collectors.toList());
     }
 
+    @GetMapping("/Amaya")
+    @PreAuthorize("hasAuthority('EMPRESARIO') OR hasAuthority('ADMIN')")
+    public int cantidadLocales() {
+        return lS.cantidadLocales();
+    }
+
     @DeleteMapping("/{id}")
     @PreAuthorize("hasAuthority('EMPRESARIO') OR hasAuthority('ADMIN')")
     public void delete(@PathVariable("id") Integer id) {

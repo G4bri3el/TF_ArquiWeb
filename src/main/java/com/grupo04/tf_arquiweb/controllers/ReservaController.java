@@ -76,12 +76,9 @@ public class ReservaController {
         }).collect(Collectors.toList());
     }
 
-    @GetMapping("/empresario/{id}")
+    @PostMapping("/empresario/{id}")
     @PreAuthorize("hasAuthority('EMPRESARIO') OR hasAuthority('ADMIN')")
-    public List<ReservaDTO> reservasXempresario(@PathVariable("id") Integer id){
-        return  reS.reservasPorEmpresario(id).stream().map(x->{
-            ModelMapper m = new ModelMapper();
-            return m.map(x,ReservaDTO.class);
-        }).collect(Collectors.toList());
+    public long reservasXempresario(@PathVariable("id") Integer id){
+        return reS.reservasPorEmpresario(id).size();
     }
 }

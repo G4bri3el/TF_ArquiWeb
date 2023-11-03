@@ -20,26 +20,12 @@ public class JwtUserDetailsService implements UserDetailsService {
 
     @Autowired
     private IUsuarioRepository repo;
-
     private Usuario userdetail;
-
-
-
-
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
         userdetail = repo.findByUsuarionombre(username);
-        /*
-        if (!Objects.isNull(userdetail)) {
 
-            return new org.springframework.security.core.userdetails.User(userdetail.getUsuariocorreo(), userdetail.getUsuariocontrasena(), new ArrayList<>());
-
-        } else {
-            throw new UsernameNotFoundException("Usuario no encontrado");
-        }
-
-         */
 
         if(userdetail == null) {
             throw new UsernameNotFoundException(String.format("User not exists", username));

@@ -17,14 +17,14 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/bicicletas")
+@RequestMapping("/TP1")
 public class BicicletaController {
 
     @Autowired
     private IBicicletaService bS;
 
     @PostMapping
-    @PreAuthorize("hasAuthority('EMPRESARIO') OR hasAuthority('ADMIN')")
+    @PreAuthorize("hasAuthority('Prueba2')")
     public void registrar(@RequestBody BicicletaDTO dto) {
         ModelMapper m = new ModelMapper();
         Bicicleta b= m.map(dto, Bicicleta.class);

@@ -17,4 +17,6 @@ public interface ILocalService {
     public List<Local> buscarXcalificacion(int estrellas);
 
     public List<Local> buscarXempresario(int usuarioid);
+
+    public int cantidadLocales();
 }

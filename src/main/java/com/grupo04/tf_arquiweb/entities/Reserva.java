@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table (name = "Reserva")
+@Table(name = "Reserva")
 public class Reserva {
 
     @Id//anotación para marcar atributo como ID
@@ -13,16 +13,16 @@ public class Reserva {
     private int reservaid;
 
 
-    @Column(name="ReservaFechaInicio", nullable = false)
+    @Column(name = "ReservaFechaInicio", nullable = false)
     private Date reservafechainicio;
 
-    @Column(name="ReservaFechaFin", nullable = false)
+    @Column(name = "ReservaFechaFin", nullable = false)
     private Date reservafechafin;
 
     @Column(name = "ReservaMontoTotal", nullable = false)
     private int reservamontototal;
     @ManyToOne
-    @JoinColumn(name="UsuarioId")
+    @JoinColumn(name = "UsuarioId")
     private Usuario usuario;
 
     public Reserva() {

@@ -53,4 +53,10 @@ public class LocalServiceImplement implements ILocalService {
     public List<Local> buscarXempresario(int usuarioid) {
         return lR.buscarXempresario(usuarioid);
     }
+
+    @Override
+    public int cantidadLocales() {
+        return lR.cantidadLocales();
+    }
+
 }
