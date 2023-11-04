@@ -6,7 +6,6 @@ import com.grupo04.tf_arquiweb.entities.Reserva;
 import com.grupo04.tf_arquiweb.serviceinterfaces.IReservaService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -21,7 +20,6 @@ public class ReservaController {
     private IReservaService reS;
 
     @PostMapping
-    @PreAuthorize("hasAuthority('CLIENTE') OR hasAuthority('ADMIN')")
     public void registrar(@RequestBody ReservaDTO dto) {
         ModelMapper m = new ModelMapper();
         Reserva re = m.map(dto, Reserva.class);
@@ -29,7 +27,6 @@ public class ReservaController {
     }
 
     @GetMapping
-    @PreAuthorize("hasAuthority('CLIENTE') OR hasAuthority('ADMIN')")
     public List<ReservaDTO> listar() {
         return reS.list().stream().map(x -> {
             ModelMapper m = new ModelMapper();
@@ -38,13 +35,11 @@ public class ReservaController {
     }
 
     @DeleteMapping("/{id}")
-    @PreAuthorize("hasAuthority('CLIENTE') OR hasAuthority('ADMIN')")
     public void eliminar(@PathVariable("id") Integer id) {
         reS.delete(id);
     }
 
     @PutMapping
-    @PreAuthorize("hasAuthority('CLIENTE') OR hasAuthority('ADMIN')")
     public void modificar(@RequestBody ReservaDTO dto) {
         ModelMapper m = new ModelMapper();
         Reserva re = m.map(dto, Reserva.class);
@@ -52,7 +47,6 @@ public class ReservaController {
     }
 
     @GetMapping("/cantidad/{user_id}")
-    @PreAuthorize("hasAuthority('EMPRESARIO') OR hasAuthority('ADMIN')")
     public List<ReservaLocalDTO> cantidadreservasporlocal(@PathVariable("user_id") Integer userid){
 
         List<String[]> lista = reS.cantidadreservasporlocal(userid);
@@ -68,7 +62,6 @@ public class ReservaController {
     }
 
     @GetMapping("/{id}")
-    @PreAuthorize("hasAuthority('CLIENTE') OR hasAuthority('ADMIN')")
     public List<ReservaDTO> reservasXcliente(@PathVariable("id") Integer id){
         return  reS.reservasXcliente(id).stream().map(x->{
             ModelMapper m = new ModelMapper();
@@ -77,7 +70,6 @@ public class ReservaController {
     }
 
     @PostMapping("/empresario/{id}")
-    @PreAuthorize("hasAuthority('EMPRESARIO') OR hasAuthority('ADMIN')")
     public long reservasXempresario(@PathVariable("id") Integer id){
         return reS.reservasPorEmpresario(id).size();
     }

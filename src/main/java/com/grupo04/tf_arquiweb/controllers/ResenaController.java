@@ -7,7 +7,6 @@ import com.grupo04.tf_arquiweb.entities.Reserva;
 import com.grupo04.tf_arquiweb.serviceinterfaces.IResenaService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,14 +18,12 @@ public class ResenaController {
     @Autowired
     private IResenaService cS;
     @PostMapping
-    @PreAuthorize("hasAuthority('CLIENTE') OR hasAuthority('ADMIN')")
     public void registrar(@RequestBody ResenaDTO dto){
         ModelMapper m=new ModelMapper();
         Resena c=m.map(dto, Resena.class);
         cS.insert(c);
     }
     @GetMapping
-    @PreAuthorize("hasAuthority('CLIENTE') OR hasAuthority('ADMIN')")
     public List<ResenaDTO> listar() {
         return cS.list().stream().map(x -> {
             ModelMapper m = new ModelMapper();
@@ -35,13 +32,11 @@ public class ResenaController {
     }
 
     @DeleteMapping("/{id}")
-    @PreAuthorize("hasAuthority('CLIENTE') OR hasAuthority('ADMIN')")
     public void eliminar(@PathVariable("id")Integer id){
         cS.delete(id);
     }
 
     @PutMapping
-    @PreAuthorize("hasAuthority('CLIENTE') OR hasAuthority('ADMIN')")
     public void modificar(@RequestBody ResenaDTO dto) {
         ModelMapper m = new ModelMapper();
         Resena r = m.map(dto, Resena.class);
