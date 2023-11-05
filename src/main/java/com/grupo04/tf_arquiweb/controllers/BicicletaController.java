@@ -50,6 +50,13 @@ public class BicicletaController {
         bS.insert(b);
     }
 
+    @GetMapping("/{id}")
+    public BicicletaDTO listId(@PathVariable("id") Integer id) {
+        ModelMapper m = new ModelMapper();
+        BicicletaDTO i = m.map(bS.listId(id), BicicletaDTO.class);
+        return i;
+    }
+
     @GetMapping("/{user_id}/{local_id}")
     public List<BicicletaLocalEmpresarioDTO> listaBicicletasPorLocalEmpresario(@PathVariable("user_id") Integer user_id,
                                                                                @PathVariable("local_id")  Integer local_id){
