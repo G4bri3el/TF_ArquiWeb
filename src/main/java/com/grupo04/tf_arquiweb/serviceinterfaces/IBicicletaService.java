@@ -8,8 +8,14 @@ import java.util.List;
 public interface IBicicletaService {
 
     public void insert(Bicicleta bicicleta);
+
     public List<Bicicleta> list();
+
     public void delete(int BicicletaId);
+
+
+    public Bicicleta listId(int bicicletaid);
+
 
     public List<String[]> listaBicicletasPorLocalEmpresario( int usuarioid,  int localid);
 
