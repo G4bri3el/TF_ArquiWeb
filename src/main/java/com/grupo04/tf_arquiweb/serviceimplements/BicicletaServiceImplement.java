@@ -30,7 +30,12 @@ public class BicicletaServiceImplement implements IBicicletaService {
     }
 
     @Override
+    public Bicicleta listId(int bicicletaid) {
+        return bR.findById(bicicletaid).orElse(new Bicicleta());
+    }
+
+    @Override
     public List<String[]> listaBicicletasPorLocalEmpresario(int usuarioid, int localid) {
-        return  bR.listaBicicletasPorLocalEmpresario(usuarioid, localid);
+        return bR.listaBicicletasPorLocalEmpresario(usuarioid, localid);
     }
 }

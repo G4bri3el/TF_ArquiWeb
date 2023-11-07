@@ -24,7 +24,6 @@ public class BicicletaController {
     private IBicicletaService bS;
 
     @PostMapping
-    @PreAuthorize("hasAuthority('Prueba2')")
     public void registrar(@RequestBody BicicletaDTO dto) {
         ModelMapper m = new ModelMapper();
         Bicicleta b= m.map(dto, Bicicleta.class);
@@ -32,7 +31,6 @@ public class BicicletaController {
     }
 
     @GetMapping
-    @PreAuthorize("hasAuthority('EMPRESARIO') OR hasAuthority('ADMIN')")
     public List<BicicletaDTO> listar() {
         return bS.list().stream().map(x -> {
             ModelMapper m = new ModelMapper();
@@ -41,22 +39,27 @@ public class BicicletaController {
     }
 
     @DeleteMapping("/{id}")
-    @PreAuthorize("hasAuthority('EMPRESARIO') OR hasAuthority('ADMIN')")
     public void delete(@PathVariable("id") Integer id) {
         bS.delete(id);
     }
 
 
     @PutMapping
-    @PreAuthorize("hasAuthority('EMPRESARIO') OR hasAuthority('ADMIN')")
     public void modificar(@RequestBody BicicletaDTO dto) {
         ModelMapper m = new ModelMapper();
         Bicicleta b = m.map(dto, Bicicleta.class);
         bS.insert(b);
     }
 
+
+    @GetMapping("/{id}")
+    public BicicletaDTO listId(@PathVariable("id") Integer id) {
+        ModelMapper m = new ModelMapper();
+        BicicletaDTO i = m.map(bS.listId(id), BicicletaDTO.class);
+        return i;
+    }
+
     @GetMapping("/{user_id}/{local_id}")
-    @PreAuthorize("hasAuthority('EMPRESARIO') OR hasAuthority('ADMIN')")
     public List<BicicletaLocalEmpresarioDTO> listaBicicletasPorLocalEmpresario(@PathVariable("user_id") Integer user_id,
                                                                                @PathVariable("local_id")  Integer local_id){
 

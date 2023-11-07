@@ -29,7 +29,6 @@ public class UsuarioController {
     }
 
     @GetMapping
-    //@PreAuthorize("hasAuthority('ADMIN')")
     public List<UsuarioDTO> listar() {
         return uS.list().stream().map(x -> {
             ModelMapper m = new ModelMapper();
@@ -38,13 +37,11 @@ public class UsuarioController {
     }
 
     @DeleteMapping("/{id}")
-    @PreAuthorize("hasAuthority('CLIENTE') OR hasAuthority('EMPRESARIO') OR hasAuthority('ADMIN')")
     public void eliminar(@PathVariable("id") Integer id) {
         uS.delete(id);
     }
 
     @PutMapping
-    @PreAuthorize("hasAuthority('CLIENTE') OR hasAuthority('EMPRESARIO') OR hasAuthority('ADMIN')")
     public void modificar(@RequestBody UsuarioDTO dto){
         ModelMapper m = new ModelMapper();
         Usuario u = m.map(dto,Usuario.class);

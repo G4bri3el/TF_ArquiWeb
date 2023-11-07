@@ -11,6 +11,7 @@ public interface IBicicletaService {
     public List<Bicicleta> list();
     public void delete(int BicicletaId);
 
+    public Bicicleta listId(int bicicletaid);
     public List<String[]> listaBicicletasPorLocalEmpresario( int usuarioid,  int localid);
 
 }
