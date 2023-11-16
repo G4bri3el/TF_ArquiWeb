@@ -66,7 +66,7 @@ public class WebSecurityConfig {
         httpSecurity
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/login/authenticate", "/usuarios/signup").permitAll() //.hasAuthority("ADMIN")
+                        .requestMatchers("/login/authenticate", "/usuarios/signup","media/**").permitAll() //.hasAuthority("ADMIN")
                         .anyRequest().authenticated()
                 )
                 .exceptionHandling(exp -> exp.authenticationEntryPoint(jwtAuthenticationEntryPoint))

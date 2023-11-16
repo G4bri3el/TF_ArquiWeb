@@ -17,7 +17,7 @@ public class Local {
     @Column(name = "LocalNombre", length = 50, nullable = false)
     private String localnombre;
 
-    @Column(name = "LocalFoto", length = 50, nullable = false)
+    @Column(name = "LocalFoto", length = 100, nullable = false)
     private String localfoto;
     @ManyToOne
     @JoinColumn(name = "UsuarioId")
