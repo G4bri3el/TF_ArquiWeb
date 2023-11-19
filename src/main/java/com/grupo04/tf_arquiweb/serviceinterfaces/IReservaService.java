@@ -13,6 +13,8 @@ public interface IReservaService {
     public List<String[]> cantidadreservasporlocal(int usuarioid);
 
     public List<Reserva> reservasXcliente(int id);
+
+    public List<String[]> quantity();
     public List<Reserva> reservasPorEmpresario(int id);
 
 }
