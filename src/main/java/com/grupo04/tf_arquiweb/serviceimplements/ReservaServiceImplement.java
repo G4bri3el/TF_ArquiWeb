@@ -46,4 +46,10 @@ public class ReservaServiceImplement implements IReservaService {
         return reR.reservasPorEmpresario(id);
     }
 
+    @Override
+    public List<String[]> quantity() {
+        return reR.quantity();
+    }
+
+
 }

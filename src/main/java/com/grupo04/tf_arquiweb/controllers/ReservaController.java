@@ -2,6 +2,7 @@ package com.grupo04.tf_arquiweb.controllers;
 
 import com.grupo04.tf_arquiweb.dtos.ReservaDTO;
 import com.grupo04.tf_arquiweb.dtos.ReservaLocalDTO;
+import com.grupo04.tf_arquiweb.dtos.ReservasxEmpresarioDto;
 import com.grupo04.tf_arquiweb.entities.Reserva;
 import com.grupo04.tf_arquiweb.serviceinterfaces.IReservaService;
 import org.modelmapper.ModelMapper;
@@ -81,4 +82,20 @@ public class ReservaController {
     public long reservasXempresario(@PathVariable("id") Integer id){
         return reS.reservasPorEmpresario(id).size();
     }
+
+    @GetMapping("/reservaxem")
+    @PreAuthorize("hasAuthority('EMPRESARIO') OR hasAuthority('ADMIN')")
+    public List<ReservasxEmpresarioDto> calcular(){
+        List<String[]>lista=reS.quantity();
+        List<ReservasxEmpresarioDto> lista2=new ArrayList<>();
+        for(String[] data: lista){
+            ReservasxEmpresarioDto dto=new ReservasxEmpresarioDto();
+            dto.setUsuarionombre(data[0]);
+            dto.setReservasxempresario(Integer.parseInt(data[1]));
+            lista2.add(dto);
+        }
+        return lista2 ;
+    }
+
+
 }

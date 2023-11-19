@@ -2,6 +2,7 @@ package com.grupo04.tf_arquiweb.dtos;
 
 import com.grupo04.tf_arquiweb.entities.Reserva;
 import com.grupo04.tf_arquiweb.entities.TipoPago;
+import jakarta.persistence.Column;
 
 
 import java.sql.Date;
@@ -19,6 +20,7 @@ public class DocumentoPagoDTO {
     private String ComprobanteRUC;
     private String ComprobanteRazonSocial;
     private String ComprobanteDireccion;
+
 
     public int getDocumentoPagoId() {
         return DocumentoPagoId;
