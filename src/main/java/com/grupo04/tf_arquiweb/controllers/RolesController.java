@@ -34,13 +34,11 @@ public class RolesController {
     }
 
     @DeleteMapping("/{id}")
-    @PreAuthorize("hasAuthority('ADMIN')")
     public void eliminar(@PathVariable("id") Integer id) {
         rS.delete(id);
     }
 
     @PutMapping
-    @PreAuthorize("hasAuthority('ADMIN')")
     public void modificar(@RequestBody RolesDTO dto) {
         ModelMapper m = new ModelMapper();
         Roles r = m.map(dto, Roles.class);
