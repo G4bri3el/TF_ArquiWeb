@@ -59,4 +59,9 @@ public class LocalServiceImplement implements ILocalService {
         return lR.cantidadLocales();
     }
 
+    @Override
+    public List<String[]> gananciasporlocal(){
+        return lR.gananciasporlocal();
+    }
+
 }

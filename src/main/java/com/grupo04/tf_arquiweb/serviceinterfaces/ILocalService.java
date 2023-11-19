@@ -19,4 +19,6 @@ public interface ILocalService {
     public List<Local> buscarXempresario(int usuarioid);
 
     public int cantidadLocales();
+
+    public List<String[]> gananciasporlocal();
 }

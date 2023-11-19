@@ -1,5 +1,6 @@
 package com.grupo04.tf_arquiweb.controllers;
 
+import com.grupo04.tf_arquiweb.dtos.GananciaLocalDTO;
 import com.grupo04.tf_arquiweb.dtos.LocalDTO;
 import com.grupo04.tf_arquiweb.dtos.ReservaDTO;
 import com.grupo04.tf_arquiweb.entities.Local;
@@ -11,6 +12,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -22,7 +24,6 @@ public class LocalController {
     private ILocalService lS;
 
     @PostMapping
-    @PreAuthorize("hasAuthority('EMPRESARIO') OR hasAuthority('ADMIN')")
     public void registrar(@RequestBody LocalDTO dto) {
         ModelMapper m = new ModelMapper();
         Local l = m.map(dto, Local.class);
@@ -30,7 +31,7 @@ public class LocalController {
     }
 
     @GetMapping
-    @PreAuthorize("hasAuthority('EMPRESARIO') OR hasAuthority('ADMIN')")
+
     public List<LocalDTO> listar() {
         return lS.list().stream().map(x -> {
             ModelMapper m = new ModelMapper();
@@ -92,5 +93,19 @@ public class LocalController {
             return m.map(x,LocalDTO.class);
         }).collect(Collectors.toList());
     }
+
+    @GetMapping("/ganancia")
+    public List<GananciaLocalDTO> calcular(){
+        List<String[]>lista=lS.gananciasporlocal();
+        List<GananciaLocalDTO> lista2=new ArrayList<>();
+        for(String[] data: lista){
+            GananciaLocalDTO dto=new GananciaLocalDTO();
+            dto.setLocalname(data[0]);
+            dto.setGanancia(Double.parseDouble(data[1]));
+            lista2.add(dto);
+        }
+        return lista2 ;
+    }
+
 
 }

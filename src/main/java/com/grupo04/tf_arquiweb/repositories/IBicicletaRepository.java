@@ -19,4 +19,7 @@ public interface IBicicletaRepository extends JpaRepository<Bicicleta, Integer> 
             " INNER JOIN usuario u ON u.usuario_id = l.usuario_id\n" +
             " WHERE u.usuario_id =:usuarioid and l.localid = :localid", nativeQuery = true)
     public List<String[]> listaBicicletasPorLocalEmpresario(@Param("usuarioid") int usuarioid, @Param("localid") int localid);
+
+
+
 }
