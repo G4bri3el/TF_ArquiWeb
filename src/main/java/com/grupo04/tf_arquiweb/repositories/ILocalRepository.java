@@ -32,4 +32,12 @@ public interface ILocalRepository extends JpaRepository<Local, Integer> {
     public List<Local> buscarXempresario(@Param("usuarioid")int usuarioid);
 
 
+    @Query(value="SELECT l.local_nombre, SUM(b.bicicleta_precio) AS ingresos_totales\n" +
+            "FROM Local l\n" +
+            "INNER JOIN Bicicleta b ON l.localid = b.local_id\n" +
+            "WHERE b.bicicleta_estado = false  \n" +
+            "GROUP BY  l.local_nombre",  nativeQuery = true)
+    public List<String[]> gananciasporlocal();
+
+
 }
