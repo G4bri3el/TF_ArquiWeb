@@ -1,6 +1,7 @@
 package com.grupo04.tf_arquiweb.entities;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.Cascade;
 
 @Entity
 @Table(name="DetalledeReserva")
@@ -10,11 +11,11 @@ public class DetalledeReserva {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int detalleId;
 
-    @ManyToOne
+    @ManyToOne()
     @JoinColumn(name="ReservaId")
     private Reserva reserva;
 
-    @ManyToOne
+    @ManyToOne()
     @JoinColumn(name="BicicletaId")
     private Bicicleta bicicleta;
 

@@ -22,7 +22,6 @@ public class DetalledeReservaController {
     private IDetalledeReservaService dS;
 
     @PostMapping
-    @PreAuthorize("hasAuthority('ADMIN')")
     public void registrar(@RequestBody  DetalledeReservaDTO dto) {
         ModelMapper m = new ModelMapper();
         DetalledeReserva d= m.map(dto, DetalledeReserva.class);
@@ -30,7 +29,6 @@ public class DetalledeReservaController {
     }
 
     @GetMapping
-    @PreAuthorize("hasAuthority('ADMIN')")
     public List<DetalledeReservaDTO> listar() {
         return dS.list().stream().map(x -> {
             ModelMapper m = new ModelMapper();
@@ -39,14 +37,12 @@ public class DetalledeReservaController {
     }
 
     @DeleteMapping("/{id}")
-    @PreAuthorize("hasAuthority('ADMIN')")
     public void delete(@PathVariable("id") Integer id) {
         dS.delete(id);
     }
 
 
     @PutMapping
-    @PreAuthorize("hasAuthority('ADMIN')")
     public void modificar(@RequestBody DetalledeReservaDTO dto) {
         ModelMapper m = new ModelMapper();
         DetalledeReserva d = m.map(dto, DetalledeReserva.class);
