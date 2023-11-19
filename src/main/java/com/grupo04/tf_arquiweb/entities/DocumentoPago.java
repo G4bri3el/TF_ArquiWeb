@@ -9,115 +9,134 @@ import java.sql.Date;
 public class DocumentoPago {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int DocumentoPagoId;
+    private int documentopagoid;
 
     @Column(name = "DocumentoPagoFecha", nullable = false)
-    private Date DocumentoPagoFecha;
+    private Date documentopagofecha;
     @Column(name = "DocumentoPagoMonto", nullable = false)
-    private int DocumentoPagoMonto;
+    private int documentopagomonto;
     @Column(name = "DocumentoPagoMoneda", nullable = false, length = 50)
-    private String DocumentoPagoMoneda;
+    private String documentopagomoneda;
     @ManyToOne
     @JoinColumn(name = "TipoPagoId")
-    private TipoPago tipoPago;
+    private TipoPago tipopago;
     @OneToOne
-    @JoinColumn(name = "DetalleDePagoId")
-    private DetalleDePago detalleDePago;
+    @JoinColumn(name = "ReservaId")
+    private Reserva reserva;
 
-    @Column(name = "ComprobanteNombre", nullable = false)
-    private int ComprobanteNombre;
-    @Column(name = "ComprobanteDNI", nullable = false)
-    private int ComprobanteDNI;
-    @Column(name = "ComprobanteRUC", nullable = false)
-    private int ComprobanteRUC;
-    @Column(name = "ComprobanteRazonSocial", nullable = false)
-    private int ComprobanteRazonSocial;
-    @Column(name = "ComprobanteDireccion", nullable = false)
-    private int ComprobanteDireccion;
-
+    @Column(name = "ComprobanteNombre", nullable = true, length = 50)
+    private String comprobantenombre;
+    @Column(name = "ComprobanteDNI", nullable = true, length = 8)
+    private String comprobanteDNI;
+    @Column(name = "ComprobanteRUC", nullable = true, length = 11)
+    private String comprobanteRUC;
+    @Column(name = "ComprobanteRazonSocial", nullable = true, length = 50)
+    private String comprobanterazonsocial;
+    @Column(name = "ComprobanteDireccion", nullable = true, length = 50)
+    private String comprobantedireccion;
 
     public DocumentoPago() {
     }
 
-    public DocumentoPago(int documentoPagoId, Date documentoPagoFecha, int documentoPagoMonto, String documentoPagoMoneda, TipoPago tipoPago, DetalleDePago detalleDePago, int comprobanteNombre, int comprobanteDNI, int comprobanteRUC, int comprobanteRazonSocial, int comprobanteDireccion) {
-        DocumentoPagoId = documentoPagoId;
-        DocumentoPagoFecha = documentoPagoFecha;
-        DocumentoPagoMonto = documentoPagoMonto;
-        DocumentoPagoMoneda = documentoPagoMoneda;
-        this.tipoPago = tipoPago;
-        this.detalleDePago = detalleDePago;
-        ComprobanteNombre = comprobanteNombre;
-        ComprobanteDNI = comprobanteDNI;
-        ComprobanteRUC = comprobanteRUC;
-        ComprobanteRazonSocial = comprobanteRazonSocial;
-        ComprobanteDireccion = comprobanteDireccion;
+    public DocumentoPago(int documentopagoid, Date documentopagofecha, int documentopagomonto, String documentopagomoneda, TipoPago tipopago, Reserva reserva, String comprobantenombre, String comprobanteDNI, String comprobanteRUC, String comprobanterazonsocial, String comprobantedireccion) {
+        this.documentopagoid = documentopagoid;
+        this.documentopagofecha = documentopagofecha;
+        this.documentopagomonto = documentopagomonto;
+        this.documentopagomoneda = documentopagomoneda;
+        this.tipopago = tipopago;
+        this.reserva = reserva;
+        this.comprobantenombre = comprobantenombre;
+        this.comprobanteDNI = comprobanteDNI;
+        this.comprobanteRUC = comprobanteRUC;
+        this.comprobanterazonsocial = comprobanterazonsocial;
+        this.comprobantedireccion = comprobantedireccion;
     }
 
-    public int getDocumentoPagoId() {
-        return DocumentoPagoId;
+    public int getDocumentopagoid() {
+        return documentopagoid;
     }
 
-    public void setDocumentoPagoId(int documentoPagoId) {
-        DocumentoPagoId = documentoPagoId;
+    public void setDocumentopagoid(int documentopagoid) {
+        this.documentopagoid = documentopagoid;
     }
 
-    public Date getDocumentoPagoFecha() {
-        return DocumentoPagoFecha;
+    public Date getDocumentopagofecha() {
+        return documentopagofecha;
     }
 
-    public void setDocumentoPagoFecha(Date documentoPagoFecha) {
-        DocumentoPagoFecha = documentoPagoFecha;
+    public void setDocumentopagofecha(Date documentopagofecha) {
+        this.documentopagofecha = documentopagofecha;
     }
 
-    public int getDocumentoPagoMonto() {
-        return DocumentoPagoMonto;
+    public int getDocumentopagomonto() {
+        return documentopagomonto;
     }
 
-    public void setDocumentoPagoMonto(int documentoPagoMonto) {
-        DocumentoPagoMonto = documentoPagoMonto;
+    public void setDocumentopagomonto(int documentopagomonto) {
+        this.documentopagomonto = documentopagomonto;
     }
 
-    public String getDocumentoPagoMoneda() {
-        return DocumentoPagoMoneda;
+    public String getDocumentopagomoneda() {
+        return documentopagomoneda;
     }
 
-    public void setDocumentoPagoMoneda(String documentoPagoMoneda) {
-        DocumentoPagoMoneda = documentoPagoMoneda;
+    public void setDocumentopagomoneda(String documentopagomoneda) {
+        this.documentopagomoneda = documentopagomoneda;
     }
 
-    public TipoPago getTipoPago() {
-        return tipoPago;
+    public TipoPago getTipopago() {
+        return tipopago;
     }
 
-    public void setTipoPago(TipoPago tipoPago) {
-        this.tipoPago = tipoPago;
+    public void setTipopago(TipoPago tipopago) {
+        this.tipopago = tipopago;
     }
 
-    public DetalleDePago getDetalleDePago() {
-        return detalleDePago;
+    public Reserva getReserva() {
+        return reserva;
     }
 
-    public void setDetalleDePago(DetalleDePago detalleDePago) {
-        this.detalleDePago = detalleDePago;
+    public void setReserva(Reserva reserva) {
+        this.reserva = reserva;
     }
 
-    public int getComprobanteNombre() { return ComprobanteNombre; }
+    public String getComprobantenombre() {
+        return comprobantenombre;
+    }
 
-    public void setComprobanteNombre(int comprobanteNombre) { ComprobanteNombre = comprobanteNombre; }
+    public void setComprobantenombre(String comprobantenombre) {
+        this.comprobantenombre = comprobantenombre;
+    }
 
-    public int getComprobanteDNI() { return ComprobanteDNI; }
+    public String getComprobanteDNI() {
+        return comprobanteDNI;
+    }
 
-    public void setComprobanteDNI(int comprobanteDNI) { ComprobanteDNI = comprobanteDNI; }
+    public void setComprobanteDNI(String comprobanteDNI) {
+        this.comprobanteDNI = comprobanteDNI;
+    }
 
-    public int getComprobanteRUC() { return ComprobanteRUC; }
+    public String getComprobanteRUC() {
+        return comprobanteRUC;
+    }
 
-    public void setComprobanteRUC(int comprobanteRUC) { ComprobanteRUC = comprobanteRUC; }
+    public void setComprobanteRUC(String comprobanteRUC) {
+        this.comprobanteRUC = comprobanteRUC;
+    }
 
-    public int getComprobanteRazonSocial() { return ComprobanteRazonSocial; }
+    public String getComprobanterazonsocial() {
+        return comprobanterazonsocial;
+    }
 
-    public void setComprobanteRazonSocial(int comprobanteRazonSocial) { ComprobanteRazonSocial = comprobanteRazonSocial; }
+    public void setComprobanterazonsocial(String comprobanterazonsocial) {
+        this.comprobanterazonsocial = comprobanterazonsocial;
+    }
 
-    public int getComprobanteDireccion() { return ComprobanteDireccion; }
+    public String getComprobantedireccion() {
+        return comprobantedireccion;
+    }
 
-    public void setComprobanteDireccion(int comprobanteDireccion) { ComprobanteDireccion = comprobanteDireccion; }
+    public void setComprobantedireccion(String comprobantedireccion) {
+        this.comprobantedireccion = comprobantedireccion;
+    }
 }

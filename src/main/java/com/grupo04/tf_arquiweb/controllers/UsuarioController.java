@@ -6,9 +6,13 @@ import com.grupo04.tf_arquiweb.entities.Usuario;
 import com.grupo04.tf_arquiweb.serviceinterfaces.IUsuarioService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @RestController
@@ -17,7 +21,7 @@ public class UsuarioController {
     @Autowired
     private IUsuarioService uS;
 
-    @PostMapping
+    @PostMapping("/signup")
     public void registrar(@RequestBody UsuarioDTO dto) {
         ModelMapper m = new ModelMapper();
         Usuario u = m.map(dto, Usuario.class);
@@ -43,4 +47,16 @@ public class UsuarioController {
         Usuario u = m.map(dto,Usuario.class);
         uS.insert(u);
     }
+
+
+
+
+    //CAMBIAR CONTRASEÑA
+    /*
+    @PutMapping("/cambiarcontraseña")
+    @PreAuthorize("hasAuthority('CLIENTE') OR hasAuthority('EMPRESARIO') OR hasAuthority('ADMIN')")
+    public void cambiarContraseña(@RequestBody String contraseña){
+
+    }
+    */
 }

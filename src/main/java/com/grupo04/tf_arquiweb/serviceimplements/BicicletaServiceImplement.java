@@ -28,4 +28,14 @@ public class BicicletaServiceImplement implements IBicicletaService {
     public void delete(int BicicletaId) {
         bR.deleteById(BicicletaId);
     }
+
+    @Override
+    public Bicicleta listId(int bicicletaid) {
+        return bR.findById(bicicletaid).orElse(new Bicicleta());
+    }
+
+    @Override
+    public List<String[]> listaBicicletasPorLocalEmpresario(int usuarioid, int localid) {
+        return bR.listaBicicletasPorLocalEmpresario(usuarioid, localid);
+    }
 }
