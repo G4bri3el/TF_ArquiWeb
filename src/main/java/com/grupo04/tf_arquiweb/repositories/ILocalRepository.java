@@ -32,4 +32,12 @@ public interface ILocalRepository extends JpaRepository<Local, Integer> {
     public List<Local> buscarXempresario(@Param("usuarioid")int usuarioid);
 
 
+    @Query(value = "SELECT u.usuario_nombre, count(l.local_nombre)\n" +
+            "FROM local l\n" +
+            "JOIN usuario u ON l.usuario_id = u.usuario_id\n" +
+            "JOIN roles r ON u.roles_id = r.roles_id\n" +
+            "WHERE r.rol = 'EMPRESARIO'\n" +
+            "group by u.usuario_nombre", nativeQuery = true)
+    public List<String[]> quantityLocalesByEmpresario();
+
 }

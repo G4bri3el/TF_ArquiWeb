@@ -1,6 +1,7 @@
 package com.grupo04.tf_arquiweb.controllers;
 
 import com.grupo04.tf_arquiweb.dtos.LocalDTO;
+import com.grupo04.tf_arquiweb.dtos.LocalEmpresarioDTO;
 import com.grupo04.tf_arquiweb.dtos.ReservaDTO;
 import com.grupo04.tf_arquiweb.entities.Local;
 import com.grupo04.tf_arquiweb.entities.Reserva;
@@ -11,6 +12,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -92,5 +94,19 @@ public class LocalController {
             return m.map(x,LocalDTO.class);
         }).collect(Collectors.toList());
     }
+
+    @GetMapping("/cantidad")
+    public List<LocalEmpresarioDTO> CantidadLocalesporEmpresarioCantidadLocalesporEmpresario() {
+        List<String[]> lista = lS.quantityLocalesByEmpresario();
+        List<LocalEmpresarioDTO> listaDTO = new ArrayList<>();
+        for (String[] data : lista) {
+            LocalEmpresarioDTO dto = new LocalEmpresarioDTO();
+            dto.setUsuarioNombre(data[0]);
+            dto.setCantidadLocales(Integer.parseInt(data[1]));
+            listaDTO.add(dto);
+        }
+        return listaDTO;
+    }
+
 
 }
