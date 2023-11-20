@@ -1,5 +1,6 @@
 package com.grupo04.tf_arquiweb.controllers;
 
+import com.grupo04.tf_arquiweb.dtos.GananciaLocalDTO;
 import com.grupo04.tf_arquiweb.dtos.LocalDTO;
 import com.grupo04.tf_arquiweb.dtos.LocalEmpresarioDTO;
 import com.grupo04.tf_arquiweb.dtos.ReservaDTO;
@@ -98,6 +99,17 @@ public class LocalController {
         }
         return listaDTO;
     }
-
+    @GetMapping("/ganancia")
+    public List<GananciaLocalDTO> calcular(){
+        List<String[]>lista=lS.gananciasporlocal();
+        List<GananciaLocalDTO> lista2=new ArrayList<>();
+        for(String[] data: lista){
+            GananciaLocalDTO dto=new GananciaLocalDTO();
+            dto.setLocalname(data[0]);
+            dto.setGanancia(Double.parseDouble(data[1]));
+            lista2.add(dto);
+        }
+        return lista2 ;
+    }
 
 }

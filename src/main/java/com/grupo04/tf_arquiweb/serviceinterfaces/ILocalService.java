@@ -21,5 +21,6 @@ public interface ILocalService {
     public int cantidadLocales();
 
     public List<String[]> quantityLocalesByEmpresario();
+    public List<String[]> gananciasporlocal();
 
 }
