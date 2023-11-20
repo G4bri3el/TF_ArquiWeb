@@ -40,19 +40,16 @@ public class LocalController {
     }
 
     @GetMapping("/Amaya")
-    @PreAuthorize("hasAuthority('EMPRESARIO') OR hasAuthority('ADMIN')")
     public int cantidadLocales() {
         return lS.cantidadLocales();
     }
 
     @DeleteMapping("/{id}")
-    @PreAuthorize("hasAuthority('EMPRESARIO') OR hasAuthority('ADMIN')")
     public void delete(@PathVariable("id") Integer id) {
         lS.delete(id);
     }
 
     @PutMapping
-    @PreAuthorize("hasAuthority('EMPRESARIO') OR hasAuthority('ADMIN')")
     public void modificar(@RequestBody LocalDTO dto) {
         ModelMapper m = new ModelMapper();
         Local l = m.map(dto, Local.class);
@@ -60,7 +57,6 @@ public class LocalController {
     }
 
     @PostMapping("/buscarXnombre")
-    @PreAuthorize("hasAuthority('EMPRESARIO') OR hasAuthority('ADMIN')")
     public List<LocalDTO> buscarXnombre(@RequestBody String localnombre) {
         return lS.findByLocalnombre(localnombre).stream().map(x->{
             ModelMapper m=new ModelMapper();
@@ -69,7 +65,6 @@ public class LocalController {
     }
 
     @PostMapping("/buscarXdireccion")
-    @PreAuthorize("hasAuthority('EMPRESARIO') OR hasAuthority('ADMIN')")
     public List<LocalDTO> buscarXdireccion(@RequestBody String localdireccion) {
         return lS.findByLocaldireccion(localdireccion).stream().map(x->{
             ModelMapper m=new ModelMapper();
@@ -77,7 +72,6 @@ public class LocalController {
         }).collect(Collectors.toList());
     }
     @PostMapping("/buscarXcalificacion")
-    @PreAuthorize("hasAuthority('EMPRESARIO') OR hasAuthority('ADMIN')")
     public List<LocalDTO> buscarXcalificacion(@RequestBody int estrellas) {
         return lS.buscarXcalificacion(estrellas).stream().map(x->{
             ModelMapper m=new ModelMapper();
@@ -86,7 +80,6 @@ public class LocalController {
     }
 
     @PostMapping("/buscarXempresario")
-    @PreAuthorize("hasAuthority('EMPRESARIO') OR hasAuthority('ADMIN')")
     public List<LocalDTO> buscarXempresario(@RequestBody int usuarioId) {
         return lS.buscarXempresario(usuarioId).stream().map(x->{
             ModelMapper m=new ModelMapper();
